@@ -1,0 +1,172 @@
+/* ---------- Base */
+:root{
+  --bg:#f7f7f8;
+  --surface:#ffffff;
+  --text:#0f172a;        /* slate-900 */
+  --muted:#64748b;       /* slate-500 */
+  --border:#e5e7eb;      /* gray-200 */
+  --primary:#2563eb;     /* blue-600 */
+  --primary-ink:#ffffff;
+  --radius:16px;
+  --shadow:0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+img{max-width:100%;height:auto;display:block}
+
+/* ---------- Layout */
+.container{
+  width:100%;
+  max-width:1100px;
+  margin-inline:auto;
+  padding-inline:16px;
+}
+
+section{padding:56px 0}
+@media (min-width:900px){
+  section{padding:80px 0}
+}
+
+.micro{font-size:.9rem;color:var(--muted)}
+.center{text-align:center}
+.mt-l{margin-top:32px}
+
+/* ---------- Header */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+}
+.header-row{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding:14px 0;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:700; color:var(--text); text-decoration:none;
+}
+.nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+.nav a{
+  color:var(--text); text-decoration:none; padding:8px 10px; border-radius:10px;
+}
+.nav a:hover{background:#f1f5f9}
+.nav a.active{background:#eef2ff; color:#1e40af}
+
+/* ---------- Buttons */
+.btn{
+  display:inline-block; text-decoration:none; cursor:pointer;
+  padding:12px 18px; border-radius:14px; font-weight:600;
+  border:1px solid var(--border); background:var(--surface); color:var(--text);
+  box-shadow:0 1px 0 rgba(0,0,0,.03);
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{
+  background:var(--primary); color:var(--primary-ink);
+  border-color:transparent; box-shadow:var(--shadow);
+}
+.btn-primary:hover{filter:brightness(1.03)}
+.btn-secondary{}
+
+/* ---------- Hero */
+.hero{background:linear-gradient(180deg,#ffffff 0%, #f7f7f8 100%)}
+.hero-grid{
+  display:grid; gap:28px; align-items:center;
+  grid-template-columns:1fr; 
+}
+@media (min-width:960px){
+  .hero-grid{grid-template-columns:1.05fr .95fr; gap:40px}
+}
+
+.hero-copy h1{
+  font-size: clamp(1.9rem, 1.1rem + 2.6vw, 3rem);
+  line-height:1.2; margin:0 0 10px;
+  letter-spacing:-0.01em;
+}
+.tagline{font-weight:600; color:var(--text); margin:0 0 6px}
+.sub{color:var(--muted); margin:0 0 18px}
+.cta-row{display:flex; gap:12px; flex-wrap:wrap}
+
+.hero-media img{
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Services */
+.services h2, .coverage h2{font-size: clamp(1.4rem, 0.9rem + 1.6vw, 2rem); margin:0 0 18px}
+.cards{
+  display:grid; gap:14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.card{
+  background:var(--surface); border:1px solid var(--border);
+  padding:18px; border-radius:14px; box-shadow:0 1px 0 rgba(0,0,0,.03);
+}
+.card h3{margin:0 0 6px; font-size:1.05rem}
+.card p{margin:0; color:var(--muted)}
+
+/* ---------- Notice */
+.notice{
+  background:#fff7ed; /* amber-50 */
+  border-top:1px solid #fed7aa;
+  border-bottom:1px solid #fed7aa;
+}
+.notice .container{max-width:980px}
+
+/* ---------- Footer */
+.site-footer{
+  background:var(--surface); border-top:1px solid var(--border);
+  padding-top:28px; padding-bottom:28px;
+}
+.footer-grid{
+  display:grid; gap:16px; align-items:start;
+  grid-template-columns:1fr;
+}
+@media (min-width:760px){
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+.site-footer nav{
+  display:flex; gap:10px 14px; flex-wrap:wrap; justify-content:flex-end;
+}
+.site-footer nav a{color:var(--text); text-decoration:none}
+.site-footer nav a:hover{text-decoration:underline}
+
+/* ---------- Forms */
+input, select, textarea{
+  font:inherit; color:inherit; background:#fff;
+  border:1px solid var(--border); border-radius:12px;
+  padding:12px 14px; width:100%;
+}
+label{font-weight:600; display:block; margin:14px 0 6px}
+.form-row{display:grid; gap:12px}
+@media (min-width:760px){
+  .form-row.two{grid-template-columns:1fr 1fr}
+}
+
+/* ---------- Focus & a11y */
+:focus-visible{outline:3px solid color-mix(in oklab, var(--primary) 70%, white); outline-offset:2px; border-radius:10px}
+/* --- Skip link (hide until focus) */
+.skip-link{
+  position:absolute;
+  left:-9999px; top:auto;
+  width:1px; height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  left:16px; top:16px;
+  width:auto; height:auto;
+  padding:10px 14px;
+  background:#0f172a; color:#fff;
+  border-radius:10px; z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,.2);
+}

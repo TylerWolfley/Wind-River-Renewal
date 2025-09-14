@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Wind River Renewal</title>
+  <meta name="description" content="Call or text 307-349-4694, or email windriverrenewal@gmail.com. Riverton • Lander • Fremont County, WY." />
+  <link rel="canonical" href="https://windriverrenewal.com/contact.html" />
+
+  <!-- Icons -->
+  <link rel="icon" href="wrr-favicon.ico" />
+  <link rel="stylesheet" href="assets/style.css" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:site_name" content="Wind River Renewal" />
+  <meta property="og:title" content="Contact | Wind River Renewal" />
+  <meta property="og:description" content="Call or text 307-349-4694, or email windriverrenewal@gmail.com." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://windriverrenewal.com/contact.html" />
+  <meta property="og:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact | Wind River Renewal" />
+  <meta name="twitter:description" content="Call or text 307-349-4694, or email windriverrenewal@gmail.com." />
+  <meta name="twitter:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-038JRWGVWW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config','G-038JRWGVWW');
+  </script>
+
+  <!-- Page-scoped styles -->
+  <style>
+    .page-hero{padding:56px 0 24px}
+    .lead{color:#475569; max-width:72ch}
+    .contact-grid{display:grid; gap:18px; grid-template-columns:1fr; margin-top:18px}
+    @media (min-width: 960px){ .contact-grid{grid-template-columns: 1.1fr .9fr} }
+    .panel{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:18px}
+    form .form-row{display:grid; gap:12px}
+    @media (min-width:760px){ form .form-row.two{grid-template-columns:1fr 1fr} }
+    label{font-weight:600; display:block; margin:10px 0 6px}
+    input, textarea, select{width:100%; padding:12px 14px; border:1px solid #e5e7eb; border-radius:12px; font:inherit}
+    textarea{min-height:120px; resize:vertical}
+    .contact-cards{list-style:none; padding:0; margin:0; display:grid; gap:12px}
+    .contact-cards li{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px}
+    .contact-cards h3{margin:0 0 6px; font-size:1.05rem}
+    .micro{color:#64748b}
+  </style>
+
+  <!-- Structured data: ContactPage + ContactPoint -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ContactPage",
+    "name":"Contact — Wind River Renewal",
+    "url":"https://windriverrenewal.com/contact.html",
+    "about":{
+      "@type":"HomeAndConstructionBusiness",
+      "name":"Wind River Renewal",
+      "areaServed":{"@type":"AdministrativeArea","name":"Fremont County, WY"},
+      "telephone":"+1-307-349-4694",
+      "email":"windriverrenewal@gmail.com",
+      "contactPoint":[
+        {"@type":"ContactPoint","contactType":"customer service","telephone":"+1-307-349-4694","areaServed":"US","availableLanguage":"English"}
+      ]
+    }
+  }
+  </script>
+</head>
+<body class="light">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html">Wind River Renewal</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="quote.html" class="btn btn-primary js-keep-utm">Get a Quote</a>
+        <a href="contact.html" class="active" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="page-hero">
+      <h1>Contact</h1>
+      <p class="lead">We reply fast — daily 9–5, with same-day or ASAP when available. Fremont County (Riverton • Lander).</p>
+      <div class="cta-row" style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn btn-primary js-keep-utm" href="quote.html">Get My Quote</a>
+        <a class="btn" id="call-contact" href="tel:+13073494694" aria-label="Call or text Wind River Renewal at 307-349-4694">Call or Text 307-349-4694</a>
+      </div>
+    </section>
+
+    <section class="contact-grid">
+      <!-- Contact form -->
+      <div class="panel">
+        <h2>Send a Message</h2>
+        <form id="contact-form" action="https://formspree.io/f/mqadaqdp" method="POST">
+          <!-- Basic info -->
+          <div class="form-row two">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="307-349-4694" required>
+            </div>
+          </div>
+          <div class="form-row two">
+            <div>
+              <label for="email">Email (optional)</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+            </div>
+            <div>
+              <label for="city">City</label>
+              <select id="city" name="city">
+                <option value="Riverton">Riverton</option>
+                <option value="Lander">Lander</option>
+                <option value="Other">Other in Fremont County</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="help">How can we help?</label>
+              <textarea id="help" name="message" placeholder="Tell us what needs to go (photos welcome via links)."></textarea>
+            </div>
+          </div>
+          <!-- Optional photo links -->
+          <div class="form-row">
+            <div>
+              <label for="photos">Photo links (optional)</label>
+              <input id="photos" name="photo_links" type="url" placeholder="https://photos.app.goo.gl/... or https://imgur.com/...">
+            </div>
+          </div>
+
+          <!-- Hidden fields -->
+          <input type="hidden" name="_subject" value="New contact from windriverrenewal.com">
+          <input type="hidden" name="_redirect" value="https://windriverrenewal.com/thank-you.html">
+
+          <!-- UTM capture -->
+          <input type="hidden" name="utm_source" id="utm_source">
+          <input type="hidden" name="utm_medium" id="utm_medium">
+          <input type="hidden" name="utm_campaign" id="utm_campaign">
+          <input type="hidden" name="utm_term" id="utm_term">
+          <input type="hidden" name="utm_content" id="utm_content">
+
+          <!-- Honeypot -->
+          <input type="text" name="_gotcha" style="display:none">
+
+          <div class="cta-row" style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <a class="btn" href="tel:+13073494694">Or call now</a>
+          </div>
+          <p class="micro" style="margin-top:8px">By sending, you agree we may contact you at the phone or email provided about your service request.</p>
+        </form>
+      </div>
+
+      <!-- Quick contacts / hours -->
+      <div class="panel">
+        <h2>Quick Contacts</h2>
+        <ul class="contact-cards">
+          <li>
+            <h3>Call/Text</h3>
+            <p><a href="tel:+13073494694">307-349-4694</a></p>
+          </li>
+          <li>
+            <h3>Email</h3>
+            <p><a href="mailto:windriverrenewal@gmail.com">windriverrenewal@gmail.com</a></p>
+          </li>
+          <li>
+            <h3>Hours</h3>
+            <p>Every day 9–5 (same-day or ASAP when available)</p>
+          </li>
+          <li>
+            <h3>Google</h3>
+            <p><a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">View our profile</a></p>
+          </li>
+          <li>
+            <h3>Facebook</h3>
+            <p><a href="https://www.facebook.com/WindRiverRenewal" target="_blank" rel="noopener">Follow us</a></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="center mt-l">
+      <a class="btn btn-primary js-keep-utm" href="quote.html">Get a Quote</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Wind River Renewal</h4>
+        <p>
+          <a href="tel:+13073494694">307-349-4694</a> ·
+          <a href="mailto:windriverrenewal@gmail.com">windriverrenewal@gmail.com</a>
+        </p>
+        <p class="micro">Licensed & Insured</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="quote.html" class="js-keep-utm">Get a Quote</a>
+        <a href="contact.html" aria-current="page" class="active">Contact</a>
+        <a href="https://www.facebook.com/WindRiverRenewal" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">Google Business Profile</a>
+      </nav>
+    </div>
+    <p class="micro center">© 2025 Wind River Renewal</p>
+  </footer>
+
+  <!-- UTM preservation + GA events (your existing script expects these IDs/classes) -->
+  <script>
+    (function () {
+      function keepUTM(el, search) {
+        try {
+          const url = new URL(el.getAttribute('href'), window.location.origin);
+          const params = new URLSearchParams(search);
+          params.forEach((v,k) => { if (k.toLowerCase().startsWith('utm_')) url.searchParams.set(k,v); });
+          el.setAttribute('href', url.toString());
+        } catch(e) {}
+      }
+      function fillFormUTM(search) {
+        const p = new URLSearchParams(search);
+        const ids = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.value = p.get(id) || "";
+        });
+      }
+      function init() {
+        const search = window.location.search;
+        document.querySelectorAll('a.js-keep-utm').forEach(a => keepUTM(a, search));
+        fillFormUTM(search);
+      }
+      document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
+    })();
+  </script>
+
+  <script src="assets/script.js" defer></script>
+</body>
+</html>

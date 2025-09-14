@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Get a Quote | Wind River Renewal</title>
+  <meta name="description" content="Request a fast junk removal estimate. Calls & texts welcome: 307-349-4694." />
+  <link rel="canonical" href="https://windriverrenewal.com/quote.html" />
+
+  <!-- Icons -->
+  <link rel="icon" href="wrr-favicon.ico" />
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/logo-256.png" />
+
+  <link rel="stylesheet" href="assets/style.css" />
+
+  <!-- OG/Twitter -->
+  <meta property="og:site_name" content="Wind River Renewal" />
+  <meta property="og:title" content="Get a Quote | Wind River Renewal" />
+  <meta property="og:description" content="Send details and optional photos—get a quick estimate and availability." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://windriverrenewal.com/quote.html" />
+  <meta property="og:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Get a Quote | Wind River Renewal" />
+  <meta name="twitter:description" content="Send details and optional photos—get a quick estimate and availability." />
+  <meta name="twitter:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg.jpg" />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-038JRWGVWW"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-038JRWGVWW');</script>
+
+  <!-- Page-specific overrides -->
+  <style>
+    :root{ --panel:#0e1116; --bg:#0b0d10; --ink:#eaf1f9; --muted:#a9b8c8; --border:#1e2a38; --accent:#1fb6ad; }
+    body.light{ background:var(--bg); color:var(--ink); }
+    body.light .site-header{ background:#0b0d10 !important; border-bottom:1px solid var(--border); }
+    body.light .site-header .brand, body.light .site-header .nav a{ color:#eaf1f9 !important; }
+    body.light .site-header .nav a.active{ color:var(--accent) !important; }
+    body.light .site-header .nav a:hover{ color:#fff !important; }
+    .lead{ color:var(--muted); max-width:62ch }
+    .form-card{ background:var(--panel); border:1px solid var(--border); border-radius:20px; padding:28px; box-shadow:0 10px 30px rgba(0,0,0,.25); max-width:960px; margin:24px auto; }
+    .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:18px; }
+    @media (max-width: 720px){ .grid2{ grid-template-columns:1fr; } }
+    .field{ display:flex; flex-direction:column; gap:8px; }
+    .label{ font-size:.95rem; color:var(--muted); font-weight:600; letter-spacing:.02em; }
+    .ctrl, textarea, select, input[type="date"], input[type="file"]{ width:100%; color:var(--ink); background:#0f141b; border:1px solid var(--border); border-radius:12px; padding:12px 14px; outline:0; transition:border .2s, box-shadow .2s, background .2s; }
+    .ctrl:focus, textarea:focus, select:focus, input[type="date"]:focus{ border-color:var(--accent); box-shadow:0 0 0 3px rgba(31,182,173,.22); }
+    textarea{ min-height:140px; resize:vertical; }
+    .ctrl::placeholder, textarea::placeholder{ color:#7c8aa0; }
+    .help{ color:var(--muted); font-size:.9rem; }
+    .drop{ background:#0f141b; border:2px dashed var(--border); border-radius:14px; padding:16px; text-align:center; transition: border .2s, background .2s; cursor:pointer }
+    .drop.drag{ border-color:var(--accent); background:rgba(31,182,173,.10); }
+    .file-list{ color:var(--muted); font-size:.9rem; margin-top:8px; text-align:left; white-space:pre-line; }
+    .btn.btn-primary{ padding:12px 18px; font-weight:700; }
+    .actions{ display:flex; gap:12px; align-items:center; margin-top:8px; }
+  </style>
+</head>
+<body class="light">
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html">Wind River Renewal</a>
+      <nav class="nav">
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a class="active" aria-current="page" href="quote.html">Get a Quote</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Get a Quote</h1>
+    <p class="lead">Tell us what you need hauled away. Add photos if you can—we’ll reply quickly with availability and next steps.</p>
+
+    <form class="form-card" action="https://formspree.io/f/mqadaqdp" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
+      <input type="hidden" name="_redirect" value="thanks.html" />
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <div class="grid2">
+        <div class="field"><label class="label" for="q-name">Full name</label><input id="q-name" class="ctrl" name="name" required autocomplete="name" /></div>
+        <div class="field"><label class="label" for="q-phone">Phone</label><input id="q-phone" class="ctrl" name="phone" required autocomplete="tel" /></div>
+      </div>
+
+      <div class="grid2">
+        <div class="field"><label class="label" for="q-email">Email <span class="help">(optional)</span></label><input id="q-email" class="ctrl" name="email" type="email" autocomplete="email" /></div>
+        <div class="field"><label class="label" for="q-city">City</label><input id="q-city" class="ctrl" name="city" placeholder="Riverton / Lander" /></div>
+      </div>
+
+      <div class="field" style="margin-bottom:18px;"><label class="label" for="q-details">What do you need removed?</label><textarea id="q-details" class="ctrl" name="details" placeholder="Describe items (e.g., couch + boxes), access (stairs? gate width?), parking, timing." required></textarea></div>
+
+      <div class="field" style="margin-bottom:18px;">
+        <label class="label">Photos <span class="help">(up to 5)</span></label>
+        <label class="drop" id="drop">
+          <input id="q-photos" name="photos" type="file" accept="image/*" multiple style="display:none">
+          <div><strong>Drag & drop</strong> or <u>click to upload</u></div>
+          <div class="help">Clear photos help us price accurately.</div>
+        </label>
+        <div id="fileList" class="file-list"></div>
+      </div>
+
+      <div class="grid2">
+        <div class="field"><label class="label" for="q-date">Preferred date</label><input id="q-date" class="ctrl" name="date" type="date" /></div>
+        <div class="field"><label class="label" for="q-time">Preferred time</label>
+          <select id="q-time" class="ctrl" name="time"><option>Anytime</option><option>Morning</option><option>Afternoon</option></select>
+        </div>
+      </div>
+
+      <!-- UTM capture -->
+      <input type="hidden" name="utm_source" id="utm_source">
+      <input type="hidden" name="utm_medium" id="utm_medium">
+      <input type="hidden" name="utm_campaign" id="utm_campaign">
+      <input type="hidden" name="utm_term" id="utm_term">
+      <input type="hidden" name="utm_content" id="utm_content">
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">Request Quote</button>
+        <span class="help">Or call/text <a href="tel:+13073494694">307-349-4694</a></span>
+      </div>
+      <p class="help" style="margin-top:6px;">Hazardous materials may require special handling & additional fees—contact us with questions.</p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p class="micro center">© 2025 Wind River Renewal</p></div>
+  </footer>
+
+  <script src="assets/script.js" defer></script>
+  <script>
+    (function(){
+      const drop=document.getElementById('drop');
+      const input=document.getElementById('q-photos');
+      const list=document.getElementById('fileList');
+      drop.addEventListener('click',()=>input.click());
+      drop.addEventListener('dragover',e=>{e.preventDefault();drop.classList.add('drag');});
+      drop.addEventListener('dragleave',()=>drop.classList.remove('drag'));
+      drop.addEventListener('drop',e=>{e.preventDefault();drop.classList.remove('drag');input.files=e.dataTransfer.files;renderList();});
+      input.addEventListener('change',renderList);
+      function renderList(){const names=Array.from(input.files||[]).slice(0,5).map(f=>'• '+f.name);list.textContent=names.join('\n');}
+    })();
+  </script>
+</body>
+</html>
