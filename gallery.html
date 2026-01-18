@@ -1,9 +1,11 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Before & After Gallery | Wind River Renewal</title>
+  <meta name="description" content="Before & after results from real junk removal, cleanouts, and light demo jobs around Riverton, Lander, and Fremont County, WY." />
   <link rel="canonical" href="https://windriverrenewal.com/gallery.html" />
 
   <!-- Icons -->
@@ -12,17 +14,16 @@
 
   <link rel="stylesheet" href="assets/style.css" />
 
-  <!-- OG/Twitter -->
+  <!-- Swiper (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Open Graph -->
   <meta property="og:site_name" content="Wind River Renewal" />
   <meta property="og:title" content="Before & After Gallery | Wind River Renewal" />
-  <meta property="og:description" content="Real jobs. Real results. Junk removal & light demo in Fremont County, WY." />
+  <meta property="og:description" content="Real jobs. Real results. Junk removal, cleanouts, and light demo in Fremont County, WY." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://windriverrenewal.com/gallery.html" />
   <meta property="og:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Before & After Gallery | Wind River Renewal" />
-  <meta name="twitter:description" content="Real jobs. Real results. Junk removal & light demo in Fremont County, WY." />
-  <meta name="twitter:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
 
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-038JRWGVWW"></script>
@@ -32,28 +33,56 @@
     gtag('js',new Date()); gtag('config','G-038JRWGVWW');
   </script>
 
-  <!-- Slider styles -->
+  <!-- Gallery (Swiper) styles -->
   <style>
     .gallery-wrap{max-width:1200px;margin:2rem auto;padding:0 1rem}
-    .slider{position:relative;overflow:hidden;border-radius:16px;background:#0b0d10;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    .slides{display:flex;transition:transform .4s ease}
-    .slide{min-width:100%;display:flex;align-items:center;justify-content:center;background:#0b0d10}
-    .slide figure{margin:0;width:100%;text-align:center}
-    .slide img{width:100%;height:auto;max-height:90vh;object-fit:contain;display:block;background:#0b0d10}
-    .nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:999px;border:1px solid #2a3340;background:rgba(9,11,14,.75);color:#eaf1f9;cursor:pointer;display:grid;place-items:center;user-select:none}
-    .nav-btn:hover{background:rgba(9,11,14,.95)}
-    .nav-prev{left:12px}.nav-next{right:12px}
-    .dots{display:flex;gap:8px;justify-content:center;padding:10px 0 0}
-    .dot{width:10px;height:10px;border-radius:50%;border:1px solid #425066;background:#1a212b;cursor:pointer}
-    .dot[aria-current="true"]{background:#eaf1f9;border-color:#eaf1f9}
-    @media (max-width:640px){.nav-btn{width:38px;height:38px}}
+
+    .wrr-swiper{
+      border-radius:16px;
+      background:#0b0d10;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+      overflow:hidden;
+    }
+
+    .wrr-swiper .swiper-wrapper{min-height:320px}
+
+    .wrr-swiper .swiper-slide{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#0b0d10;
+    }
+
+    .wrr-swiper figure{margin:0;width:100%;text-align:center}
+    .wrr-swiper img{
+      width:100%;
+      height:auto;
+      max-height:84vh;
+      object-fit:contain;
+      display:block;
+      background:#0b0d10;
+    }
+    .wrr-swiper figcaption{
+      padding:10px 14px;
+      color:#eaf1f9;
+      font-size:.95rem;
+      line-height:1.35;
+      opacity:.92;
+    }
+
+    @media (max-width:640px){
+      .wrr-swiper .swiper-wrapper{min-height:260px}
+      .wrr-swiper img{max-height:72vh}
+      .wrr-swiper figcaption{font-size:.92rem}
+    }
   </style>
 </head>
+
 <body class="light">
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="index.html">Wind River Renewal</a>
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <a href="services.html">Services</a>
         <a class="active" aria-current="page" href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
@@ -65,102 +94,187 @@
 
   <main class="container">
     <h1>Before & After</h1>
+    <p class="sub">
+      Cleanouts, removals, and demo jobs in Riverton, Lander, and all of Fremont County.
+    </p>
   </main>
 
   <section class="gallery-wrap">
-    <div class="slider" id="wrrSlider" aria-roledescription="carousel" aria-label="Before and After Gallery">
-      <div class="slides" id="wrrTrack">
+    <div class="swiper wrr-swiper" aria-label="Before and After Gallery">
+      <div class="swiper-wrapper">
 
-        <!-- JOB 1: Fence line -->
-        <div class="slide"><figure><img loading="lazy" src="assets/images/fence-before.jpg" alt="Fence line — before"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/fence-after.jpg" alt="Fence line — after"></figure></div>
+        <!-- NOTE: If your files are not .jpg, change the extensions below to .png/.webp as needed. -->
 
-        <!-- JOB 2: Fire-damaged interior -->
-        <div class="slide"><figure><img loading="lazy" src="assets/images/fire-before.jpg" alt="Fire-damaged interior — before"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/fire-after.jpg" alt="Fire-damaged interior — after"></figure></div>
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/debris-removal-riverton-wy-foreclosure-before-after.jpg" alt="Debris removal foreclosure cleanout before and after in Riverton, Wyoming" loading="lazy">
+            <figcaption>Debris removal — foreclosure cleanout (before & after) · Riverton, WY</figcaption>
+          </figure>
+        </div>
 
-        <!-- JOB 3: Sequence -->
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_3827.jpg" alt="Job sequence IMG_3827"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_3830.jpg" alt="Job sequence IMG_3830"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_3832.jpg" alt="Job sequence IMG_3832"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_3833.jpg" alt="Job sequence IMG_3833"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_3834.jpg" alt="Job sequence IMG_3834"></figure></div>
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/fence-after.jpg" alt="Fence cleanup after photo in Fremont County, Wyoming" loading="lazy">
+            <figcaption>Fence cleanup — after</figcaption>
+          </figure>
+        </div>
 
-        <!-- JOB 4: Single photo -->
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_3889.jpg" alt="Job photo IMG_3889"></figure></div>
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/fence-before.jpg" alt="Fence cleanup before photo in Fremont County, Wyoming" loading="lazy">
+            <figcaption>Fence cleanup — before</figcaption>
+          </figure>
+        </div>
 
-        <!-- JOB 5: Sequence -->
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_4138.jpg" alt="Job sequence IMG_4138"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_4139.jpg" alt="Job sequence IMG_4139"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_4140.jpg" alt="Job sequence IMG_4140"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_4141.jpg" alt="Job sequence IMG_4141"></figure></div>
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/fence-cleanup-riverton-wy-apartment-cleanup-before-after.jpg" alt="Apartment fence cleanup before and after in Riverton, Wyoming" loading="lazy">
+            <figcaption>Fence cleanup — apartment (before & after) · Riverton, WY</figcaption>
+          </figure>
+        </div>
 
-        <!-- JOB 6: Sequence -->
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_4177.jpg" alt="Job sequence IMG_4177"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_4179.jpg" alt="Job sequence IMG_4179"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_4180.jpg" alt="Job sequence IMG_4180"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_4181.jpg" alt="Job sequence IMG_4181"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_4182.jpg" alt="Job sequence IMG_4182"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_4183.jpg" alt="Job sequence IMG_4183"></figure></div>
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/fire-after.jpg" alt="Fire cleanup after photo in Fremont County, Wyoming" loading="lazy">
+            <figcaption>Fire cleanup — after</figcaption>
+          </figure>
+        </div>
 
-        <!-- JOB 7: Single photo -->
-        <div class="slide"><figure><img loading="lazy" src="assets/images/IMG_0815%20(1).jpg" alt="Job photo IMG_0815"></figure></div>
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/fire-before.jpg" alt="Fire cleanup before photo in Fremont County, Wyoming" loading="lazy">
+            <figcaption>Fire cleanup — before</figcaption>
+          </figure>
+        </div>
 
-        <!-- JOB 8: Marketing set -->
-        <div class="slide"><figure><img loading="lazy" src="assets/images/main.jpg" alt="Cleanup results"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/tyler.jpg" alt="On site"></figure></div>
-        <div class="slide"><figure><img loading="lazy" src="assets/images/yard.jpg" alt="Outdoor cleanup"></figure></div>
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/garage-cleanout-riverton-wy-foreclosure-before-after.jpg" alt="Garage cleanout foreclosure before and after in Riverton, Wyoming" loading="lazy">
+            <figcaption>Garage cleanout — foreclosure (before & after) · Riverton, WY</figcaption>
+          </figure>
+        </div>
+
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/junk-removal-collage-fremont-county-property-maintenance.jpg" alt="Junk removal collage for property maintenance in Fremont County, Wyoming" loading="lazy">
+            <figcaption>Junk removal — property maintenance collage · Fremont County</figcaption>
+          </figure>
+        </div>
+
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/junk-removal-lander-wy-foreclosure-collage.jpg" alt="Junk removal foreclosure collage in Lander, Wyoming" loading="lazy">
+            <figcaption>Junk removal — foreclosure collage · Lander, WY</figcaption>
+          </figure>
+        </div>
+
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/junk-removal-riverton-wy-estate-cleanout-before-after.jpg" alt="Estate cleanout junk removal before and after in Riverton, Wyoming" loading="lazy">
+            <figcaption>Estate cleanout — before & after · Riverton, WY</figcaption>
+          </figure>
+        </div>
+
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/light-demo-lander-wy-estate-cleanout-before-after.jpg" alt="Light demolition estate cleanout before and after in Lander, Wyoming" loading="lazy">
+            <figcaption>Light demo — estate cleanout (before & after) · Lander, WY</figcaption>
+          </figure>
+        </div>
+
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/light-demo-lander-wy-estate-cleanout-before-after-2.jpg" alt="Light demolition estate cleanout before and after in Lander, Wyoming (set 2)" loading="lazy">
+            <figcaption>Light demo — estate cleanout (before & after) · Lander, WY (2)</figcaption>
+          </figure>
+        </div>
+
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/light-demo-riverton-wy-garage-cleanout-before-after.jpg" alt="Light demolition garage cleanout before and after in Riverton, Wyoming" loading="lazy">
+            <figcaption>Light demo — garage cleanout (before & after) · Riverton, WY</figcaption>
+          </figure>
+        </div>
+
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/main.jpg" alt="Wind River Renewal project photo" loading="lazy">
+            <figcaption>Wind River Renewal — main</figcaption>
+          </figure>
+        </div>
+
+        <div class="swiper-slide">
+          <figure>
+            <img src="assets/images/tree-trimming-riverton-wy-estate-cleanup-before-after.jpg" alt="Tree trimming and estate cleanup before and after in Riverton, Wyoming" loading="lazy">
+            <figcaption>Tree trimming — estate cleanup (before & after) · Riverton, WY</figcaption>
+          </figure>
+        </div>
 
       </div>
 
-      <button class="nav-btn nav-prev" aria-label="Previous photo" type="button">❮</button>
-      <button class="nav-btn nav-next" aria-label="Next photo" type="button">❯</button>
+      <div class="swiper-button-prev" aria-label="Previous slide"></div>
+      <div class="swiper-button-next" aria-label="Next slide"></div>
+      <div class="swiper-pagination" aria-label="Slide navigation"></div>
     </div>
-    <div class="dots" id="wrrDots" aria-label="Slide dots"></div>
   </section>
 
   <footer class="site-footer">
-    <div class="container"><p class="micro center">© 2025 Wind River Renewal</p></div>
+    <div class="container footer-grid">
+      <div>
+        <h4>Wind River Renewal</h4>
+        <p class="micro">Riverton, WY · Serving Riverton, Lander & Fremont County</p>
+        <p>
+          <a href="tel:+13073494694">307-349-4694</a> ·
+          <a href="mailto:windriverrenewal@gmail.com">windriverrenewal@gmail.com</a>
+        </p>
+        <p class="micro">Licensed & Insured · Every day 9–5</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="services.html">Services</a>
+        <a href="gallery.html" aria-current="page" class="active">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="quote.html" class="js-keep-utm">Get a Quote</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://www.facebook.com/WindRiverRenewal" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">Google Business Profile</a>
+      </nav>
+    </div>
+    <p class="micro center">© 2025 Wind River Renewal</p>
   </footer>
 
   <script src="assets/script.js" defer></script>
-  <script>
-    (function(){
-      const slider = document.getElementById('wrrSlider');
-      const track  = document.getElementById('wrrTrack');
-      const slides = Array.from(track.children);
-      const prev   = slider.querySelector('.nav-prev');
-      const next   = slider.querySelector('.nav-next');
-      const dotsEl = document.getElementById('wrrDots');
-      let i=0,x0=null,locked=false;
 
-      slides.forEach((_,idx)=>{
-        const d=document.createElement('button');
-        d.className='dot'; d.type='button';
-        d.setAttribute('aria-label','Go to slide '+(idx+1));
-        d.addEventListener('click',()=>go(idx));
-        dotsEl.appendChild(d);
+  <!-- Swiper (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    (function () {
+      const swiper = new Swiper('.wrr-swiper', {
+        loop: true,
+        spaceBetween: 16,
+        slidesPerView: 1,
+        navigation: {
+          nextEl: '.wrr-swiper .swiper-button-next',
+          prevEl: '.wrr-swiper .swiper-button-prev',
+        },
+        pagination: {
+          el: '.wrr-swiper .swiper-pagination',
+          clickable: true,
+        },
+        keyboard: { enabled: true },
+        a11y: { enabled: true },
       });
 
-      function update(){
-        track.style.transform='translateX('+(-i*100)+'%)';
-        dotsEl.querySelectorAll('.dot')
-          .forEach((d,idx)=>d.setAttribute('aria-current',idx===i?'true':'false'));
-      }
-      function go(n){ i=(n+slides.length)%slides.length; update(); }
-      function nextSlide(){ go(i+1); }
-      function prevSlide(){ go(i-1); }
-
-      prev.addEventListener('click',prevSlide);
-      next.addEventListener('click',nextSlide);
-      document.addEventListener('keydown',(e)=>{ if(e.key==='ArrowRight')nextSlide(); if(e.key==='ArrowLeft')prevSlide(); });
-
-      slider.addEventListener('pointerdown',(e)=>{ locked=true; x0=e.clientX; slider.setPointerCapture(e.pointerId); });
-      slider.addEventListener('pointermove',(e)=>{ if(!locked) return; const dx=e.clientX-x0; if(Math.abs(dx)>50){ locked=false; dx<0?nextSlide():prevSlide(); }});
-      slider.addEventListener('pointerup',()=>{ locked=false; });
-
-      update();
+      // If an image 404s, remove that slide so you don't get blank slides.
+      document.querySelectorAll('.wrr-swiper img').forEach((img) => {
+        img.addEventListener('error', () => {
+          const slide = img.closest('.swiper-slide');
+          if (!slide) return;
+          slide.remove();
+          swiper.update();
+        }, { once: true });
+      });
     })();
   </script>
 </body>
 </html>
+
