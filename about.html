@@ -63,6 +63,20 @@
     gtag('js', new Date());
     gtag('config', 'G-038JRWGVWW');
   </script>
+
+  <!-- About layout helper (keeps photo + text aligned) -->
+  <style>
+    @media (min-width: 900px){
+      .about-grid{
+        grid-template-columns: 420px 1fr !important;
+        gap: 32px !important;
+        align-items: start !important;
+      }
+      .about-grid > div:first-child{
+        justify-content: flex-start !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="light">
@@ -85,17 +99,20 @@
     <h1>About Wind River Renewal</h1>
     <p class="lead">Local, hands-on, and reliable property cleanup—junk removal, cleanouts, and light demolition done right.</p>
 
-    <img
-  src="assets/images/tyler-wolfley-wind-river-renewal.jpg"
-  alt="Tyler Wolfley, owner of Wind River Renewal"
-  style="
-    border-radius:16px;
-    box-shadow:var(--shadow);
-    max-width:420px;
-    width:100%;
-    margin-inline:auto;
-  "
-/>
+    <!-- Photo + Bio (fixed layout) -->
+    <div class="about-grid" style="display:grid;gap:24px;align-items:start;margin-top:22px;grid-template-columns:1fr">
+      <div style="display:flex;justify-content:center">
+        <img
+          src="assets/images/tyler-wolfley-wind-river-renewal.jpg"
+          alt="Tyler Wolfley, owner of Wind River Renewal"
+          style="
+            border-radius:16px;
+            box-shadow:var(--shadow);
+            width:100%;
+            max-width:420px;
+          "
+        />
+      </div>
 
       <div>
         <h2>Tyler Wolfley, Owner</h2>
