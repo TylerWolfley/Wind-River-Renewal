@@ -104,6 +104,11 @@ section:not(.hero){padding:56px 0}
   }
 }
 
+/* ✅ IMPORTANT: make ONLY the hero container wider so the image can actually grow */
+.hero .container{
+  max-width:1240px; /* was 1100 — this is the “real” reason it didn’t feel bigger */
+}
+
 .hero-grid{
   display:grid;
   gap:28px;
@@ -111,11 +116,11 @@ section:not(.hero){padding:56px 0}
   align-items:start;
 }
 
-/* ✅ Make photo column bigger on desktop (and copy column slightly smaller) */
+/* ✅ Give the image column more width on desktop */
 @media (min-width:960px){
   .hero-grid{
-    grid-template-columns:1fr 1.1fr; /* photo side bigger */
-    gap:40px;
+    grid-template-columns: .95fr 1.15fr; /* image side bigger */
+    gap:44px;
   }
 }
 
@@ -146,19 +151,37 @@ section:not(.hero){padding:56px 0}
 .sub{color:var(--muted);margin:0 0 18px}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap}
 
-/* ✅ HERO IMAGE: NO BORDER LOOK, NO CROP, BIGGER */
-.hero-media img{
-  border-radius:var(--radius);
-  box-shadow:none;              /* removes the ugly “border” vibe */
-  width:100%;
-  max-height:525px;             /* ~25% bigger than 420 */
-  object-fit:contain;           /* no crop */
-  background:transparent;       /* no frame */
+/* ✅ REMOVE any “frame” effects from wrappers too (not just the img) */
+.hero-media{
+  background:transparent !important;
+  border:0 !important;
+  padding:0 !important;
+  box-shadow:none !important;
+}
+.hero-media picture{
+  display:block;
+  background:transparent !important;
+  border:0 !important;
+  padding:0 !important;
+  box-shadow:none !important;
 }
 
-/* Desktop: also ~25% bigger than your old 380 cap */
+/* ✅ HERO IMAGE: NO CROP, NO SHADOW, BIGGER */
+.hero-media img{
+  border-radius:var(--radius);
+  box-shadow:none;              /* kills the “border/frame” vibe */
+  background:transparent;       /* no frame */
+  width:100%;
+  height:auto;
+
+  /* Let width drive size; keep a generous safety cap */
+  max-height:560px;             /* bigger than your current */
+  object-fit:contain;           /* no crop */
+}
+
+/* Desktop: bigger cap */
 @media (min-width:960px){
-  .hero-media img{max-height:475px;}
+  .hero-media img{max-height:540px;}
 }
 
 /* ---------- Services */
@@ -273,3 +296,4 @@ label{font-weight:600;margin:14px 0 6px;display:block}
   .btn{transition:none}
   .btn:hover{transform:none}
 }
+
