@@ -29,7 +29,6 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://windriverrenewal.com/quote.html" />
   <meta property="og:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
-
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Get a Quote | Wind River Renewal" />
   <meta name="twitter:description" content="Send details and optional photos—get a quick estimate and availability." />
@@ -44,101 +43,52 @@
     gtag('config','G-038JRWGVWW');
   </script>
 
-  <!-- Page-specific styles (dark quote page, but keeps structure consistent) -->
+  <!-- Quote page: clean + white to match site -->
   <style>
-    :root{
-      --q-panel:#0e1116;
-      --q-bg:#0b0d10;
-      --q-ink:#eaf1f9;
-      --q-muted:#a9b8c8;
-      --q-border:#1e2a38;
-      --q-accent:#1fb6ad;
-    }
-
-    body.light{ background:var(--q-bg); color:var(--q-ink); }
-
-    body.light .site-header{
-      background:var(--q-bg) !important;
-      border-bottom:1px solid var(--q-border);
-    }
-    body.light .site-header .brand,
-    body.light .site-header .nav a{ color:var(--q-ink) !important; }
-
-    body.light .site-header .nav a.active{ color:var(--q-accent) !important; }
-    body.light .site-header .nav a:hover{ color:#fff !important; }
-
-    /* keep hero spacing tight */
-    main .section{ padding:36px 0; }
-
-    .lead{ color:var(--q-muted); max-width:62ch }
-
+    .page-hero{padding:40px 0 10px}
+    .lead{max-width:70ch;color:var(--muted);margin:8px 0 0}
+    .quote-shell{max-width:980px;margin:0 auto}
     .form-card{
-      background:var(--q-panel);
-      border:1px solid var(--q-border);
-      border-radius:20px;
-      padding:28px;
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
-      max-width:960px;
-      margin:18px auto 0;
+      margin-top:16px;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
     }
+    @media (min-width:760px){ .form-card{padding:26px} }
 
-    .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:16px; }
-    @media (max-width:720px){ .grid2{ grid-template-columns:1fr; } }
+    .grid2{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:14px}
+    @media (min-width:760px){ .grid2{grid-template-columns:1fr 1fr} }
 
-    .field{ display:flex; flex-direction:column; gap:8px; }
-    .label{ font-size:.95rem; color:var(--q-muted); font-weight:600; letter-spacing:.02em; }
+    .field{display:flex;flex-direction:column;gap:8px}
+    .label{font-weight:700;font-size:.95rem}
+    .help{color:var(--muted);font-size:.9rem}
 
-    .ctrl,
-    textarea,
-    select,
-    input[type="date"],
-    input[type="file"]{
+    /* Use your global inputs, just tighten spacing and make it feel nicer */
+    .ctrl, textarea, select, input[type="date"]{
       width:100%;
-      color:var(--q-ink);
-      background:#0f141b;
-      border:1px solid var(--q-border);
-      border-radius:12px;
-      padding:12px 14px;
-      outline:0;
-      transition:border .2s, box-shadow .2s, background .2s;
     }
-
-    .ctrl:focus,
-    textarea:focus,
-    select:focus,
-    input[type="date"]:focus{
-      border-color:var(--q-accent);
-      box-shadow:0 0 0 3px rgba(31,182,173,.22);
-    }
-
-    textarea{ min-height:140px; resize:vertical; }
-    .ctrl::placeholder, textarea::placeholder{ color:#7c8aa0; }
-
-    .help{ color:var(--q-muted); font-size:.9rem; }
-    .help a{ color:inherit; text-decoration:underline; text-underline-offset:3px; }
+    textarea{min-height:140px;resize:vertical}
 
     .drop{
-      background:#0f141b;
-      border:2px dashed var(--q-border);
+      background:#f8fafc;
+      border:2px dashed var(--border);
       border-radius:14px;
-      padding:16px;
+      padding:14px;
       text-align:center;
-      transition:border .2s, background .2s;
       cursor:pointer;
+      transition:border .15s ease, background .15s ease;
       user-select:none;
     }
-    .drop.drag{ border-color:var(--q-accent); background:rgba(31,182,173,.10); }
-    .file-list{ color:var(--q-muted); font-size:.9rem; margin-top:8px; text-align:left; white-space:pre-line; }
+    .drop.drag{border-color:color-mix(in oklab, var(--primary) 55%, var(--border)); background:#eef2ff;}
+    .file-list{color:var(--muted);font-size:.9rem;margin-top:8px;text-align:left;white-space:pre-line}
 
-    .actions{ display:flex; gap:12px; align-items:center; margin-top:8px; flex-wrap:wrap; }
+    .actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:6px}
+    .actions .help a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 
-    /* Footer readable on dark background */
-    body.light .site-footer{
-      background:var(--q-bg);
-      border-top:1px solid var(--q-border);
-    }
-    body.light .site-footer a{ color:var(--q-ink); }
-    body.light .site-footer .micro{ color:var(--q-muted); }
+    .fineprint{margin-top:10px}
+    .fineprint a{color:inherit}
   </style>
 </head>
 
@@ -162,11 +112,15 @@
   </header>
 
   <main id="main">
-    <section class="section">
-      <div class="container">
+    <section class="page-hero">
+      <div class="container quote-shell">
         <h1>Get a Quote</h1>
-        <p class="lead">Tell us what you need hauled away. Add photos if you can—we’ll reply quickly with availability and next steps.</p>
+        <p class="lead">Fast estimates for Riverton &amp; Lander. Send details + photos and we’ll reply with price and availability.</p>
+      </div>
+    </section>
 
+    <section style="padding:0 0 56px">
+      <div class="container quote-shell">
         <form class="form-card" action="https://formspree.io/f/mqadaqdp" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
           <input type="hidden" name="_redirect" value="thanks.html" />
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
@@ -193,28 +147,29 @@
             </div>
           </div>
 
-          <div class="field" style="margin-bottom:16px;">
+          <div class="field" style="margin-bottom:14px;">
             <label class="label" for="q-details">What do you need removed?</label>
-            <textarea id="q-details" class="ctrl" name="details" placeholder="Describe items (e.g., couch + boxes), access (stairs? gate width?), parking, timing." required></textarea>
+            <textarea id="q-details" class="ctrl" name="details" placeholder="Items + approximate amount, access (stairs/gate/parking), and preferred timing." required></textarea>
+            <div class="help">Tip: “Text a photo + address + what you want removed” is the fastest way to price.</div>
           </div>
 
-          <div class="field" style="margin-bottom:16px;">
+          <div class="field" style="margin-bottom:14px;">
             <label class="label" for="q-photos">Photos <span class="help">(up to 5)</span></label>
             <label class="drop" id="drop">
               <input id="q-photos" name="photos" type="file" accept="image/*" multiple style="display:none">
               <div><strong>Drag &amp; drop</strong> or <u>click to upload</u></div>
-              <div class="help">Clear photos help us price accurately.</div>
+              <div class="help">Clear photos help us quote accurately.</div>
             </label>
             <div id="fileList" class="file-list" aria-live="polite"></div>
           </div>
 
           <div class="grid2">
             <div class="field">
-              <label class="label" for="q-date">Preferred date</label>
+              <label class="label" for="q-date">Preferred date <span class="help">(optional)</span></label>
               <input id="q-date" class="ctrl" name="date" type="date" />
             </div>
             <div class="field">
-              <label class="label" for="q-time">Preferred time</label>
+              <label class="label" for="q-time">Preferred time <span class="help">(optional)</span></label>
               <select id="q-time" class="ctrl" name="time">
                 <option>Anytime</option>
                 <option>Morning</option>
@@ -235,7 +190,7 @@
             <span class="help">Or call/text <a href="tel:+13073494694">307-349-4694</a></span>
           </div>
 
-          <p class="help" style="margin-top:6px;">Hazardous materials may require special handling &amp; additional fees—contact us with questions.</p>
+          <p class="help fineprint">Hazardous materials may require special handling &amp; additional fees — <a href="tel:+13073494694">call/text first</a>.</p>
         </form>
       </div>
     </section>
@@ -272,24 +227,20 @@
 
       function renderList(){
         const files = Array.from(input.files || []).slice(0,5);
-        if (!files.length) { list.textContent = ''; return; }
-        list.textContent = files.map(f => '• ' + f.name).join('\n');
+        list.textContent = files.length ? files.map(f => '• ' + f.name).join('\n') : '';
       }
 
       drop.addEventListener('click', () => input.click());
-
-      drop.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        drop.classList.add('drag');
-      });
-
+      drop.addEventListener('dragover', (e) => { e.preventDefault(); drop.classList.add('drag'); });
       drop.addEventListener('dragleave', () => drop.classList.remove('drag'));
-
       drop.addEventListener('drop', (e) => {
         e.preventDefault();
         drop.classList.remove('drag');
 
-        const incoming = Array.from(e.dataTransfer.files || []).filter(f => f.type.startsWith('image/')).slice(0,5);
+        const incoming = Array.from(e.dataTransfer.files || [])
+          .filter(f => f.type && f.type.startsWith('image/'))
+          .slice(0,5);
+
         const dt = new DataTransfer();
         incoming.forEach(f => dt.items.add(f));
         input.files = dt.files;
@@ -302,4 +253,5 @@
   </script>
 </body>
 </html>
+
 
