@@ -33,13 +33,13 @@ img{max-width:100%;height:auto;display:block}
   padding-inline:16px;
 }
 
-/* ✅ NEW: future-proof spacing class */
+/* future-proof spacing class */
 .section{padding:56px 0}
 @media (min-width:900px){
   .section{padding:80px 0}
 }
 
-/* ✅ TEMP COMPAT (so nothing breaks today): apply spacing to all sections except hero */
+/* TEMP COMPAT (apply spacing to all sections except hero) */
 section:not(.hero){padding:56px 0}
 @media (min-width:900px){
   section:not(.hero){padding:80px 0}
@@ -81,6 +81,7 @@ section:not(.hero){padding:56px 0}
   color:var(--text);
   box-shadow:0 1px 0 rgba(0,0,0,.03);
   transition:transform .12s ease, filter .12s ease;
+  text-decoration:none;
 }
 .btn:hover{transform:translateY(-1px)}
 .btn-primary{
@@ -96,7 +97,6 @@ section:not(.hero){padding:56px 0}
   padding-top:10px;
   padding-bottom:64px;
 }
-
 @media (min-width:900px){
   .hero{
     padding-top:8px;
@@ -111,9 +111,10 @@ section:not(.hero){padding:56px 0}
   align-items:start;
 }
 
+/* ✅ Make photo column bigger on desktop (and copy column slightly smaller) */
 @media (min-width:960px){
   .hero-grid{
-    grid-template-columns:1.05fr .95fr;
+    grid-template-columns:1fr 1.1fr; /* photo side bigger */
     gap:40px;
   }
 }
@@ -145,17 +146,19 @@ section:not(.hero){padding:56px 0}
 .sub{color:var(--muted);margin:0 0 18px}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap}
 
-/* ---------- HERO IMAGE: contain + cap height (no crop) */
+/* ✅ HERO IMAGE: NO BORDER LOOK, NO CROP, BIGGER */
 .hero-media img{
   border-radius:var(--radius);
-  box-shadow:var(--shadow);
+  box-shadow:none;              /* removes the ugly “border” vibe */
   width:100%;
-  max-height:420px;
-  object-fit:contain;
+  max-height:525px;             /* ~25% bigger than 420 */
+  object-fit:contain;           /* no crop */
+  background:transparent;       /* no frame */
 }
 
+/* Desktop: also ~25% bigger than your old 380 cap */
 @media (min-width:960px){
-  .hero-media img{max-height:380px}
+  .hero-media img{max-height:475px;}
 }
 
 /* ---------- Services */
@@ -180,6 +183,10 @@ section:not(.hero){padding:56px 0}
 
 .card h3{margin:0 0 6px;font-size:1.05rem}
 .card p{margin:0;color:var(--muted)}
+
+/* Make lists inside cards look clean (services.html uses <ul>) */
+.card ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+.card li{margin:6px 0}
 
 /* ---------- Notice */
 .notice{
@@ -219,6 +226,7 @@ section:not(.hero){padding:56px 0}
 /* ---------- Forms */
 input,select,textarea{
   font:inherit;
+  color:inherit;
   background:#fff;
   border:1px solid var(--border);
   border-radius:12px;
@@ -247,7 +255,6 @@ label{font-weight:600;margin:14px 0 6px;display:block}
   height:1px;
   overflow:hidden;
 }
-
 .skip-link:focus{
   left:16px;
   top:16px;
