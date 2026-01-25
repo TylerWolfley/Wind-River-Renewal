@@ -33,9 +33,16 @@ img{max-width:100%;height:auto;display:block}
   padding-inline:16px;
 }
 
-section{padding:56px 0}
+/* ✅ NEW: future-proof spacing class */
+.section{padding:56px 0}
 @media (min-width:900px){
-  section{padding:80px 0}
+  .section{padding:80px 0}
+}
+
+/* ✅ TEMP COMPAT (so nothing breaks today): apply spacing to all sections except hero */
+section:not(.hero){padding:56px 0}
+@media (min-width:900px){
+  section:not(.hero){padding:80px 0}
 }
 
 .micro{font-size:.9rem;color:var(--muted)}
@@ -111,7 +118,7 @@ section{padding:56px 0}
   }
 }
 
-/* Nudge copy upward for desktop alignment */
+/* Desktop alignment tweak */
 @media (min-width:960px){
   .hero-copy{transform:translateY(-16px)}
 }
@@ -138,9 +145,17 @@ section{padding:56px 0}
 .sub{color:var(--muted);margin:0 0 18px}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap}
 
+/* ---------- HERO IMAGE: contain + cap height (no crop) */
 .hero-media img{
   border-radius:var(--radius);
   box-shadow:var(--shadow);
+  width:100%;
+  max-height:420px;
+  object-fit:contain;
+}
+
+@media (min-width:960px){
+  .hero-media img{max-height:380px}
 }
 
 /* ---------- Services */
@@ -172,7 +187,6 @@ section{padding:56px 0}
   border-top:1px solid #fed7aa;
   border-bottom:1px solid #fed7aa;
 }
-
 .notice .container{max-width:980px}
 
 /* ---------- Footer */
@@ -213,9 +227,7 @@ input,select,textarea{
 }
 
 label{font-weight:600;margin:14px 0 6px;display:block}
-
 .form-row{display:grid;gap:12px}
-
 @media (min-width:760px){
   .form-row.two{grid-template-columns:1fr 1fr}
 }
