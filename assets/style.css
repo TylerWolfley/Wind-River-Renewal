@@ -69,8 +69,11 @@ section{padding:56px 0}
   padding:12px 18px; border-radius:14px; font-weight:600;
   border:1px solid var(--border); background:var(--surface); color:var(--text);
   box-shadow:0 1px 0 rgba(0,0,0,.03);
+  transition:transform .12s ease, filter .12s ease, box-shadow .12s ease;
+  will-change:transform;
 }
 .btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
 .btn-primary{
   background:var(--primary); color:var(--primary-ink);
   border-color:transparent; box-shadow:var(--shadow);
@@ -79,15 +82,35 @@ section{padding:56px 0}
 .btn-secondary{}
 
 /* ---------- Hero */
-.hero{background:linear-gradient(180deg,#ffffff 0%, #f7f7f8 100%)}
-.hero-grid{
-  display:grid; gap:28px; align-items:center;
-  grid-template-columns:1fr; 
+/* Tighten vertical space so headline lines up with photo (less "wasted" top area) */
+.hero{
+  background:linear-gradient(180deg,#ffffff 0%, #f7f7f8 100%);
+  padding-top:28px;
+  padding-bottom:56px;
 }
-@media (min-width:960px){
-  .hero-grid{grid-template-columns:1.05fr .95fr; gap:40px}
+@media (min-width:900px){
+  .hero{
+    padding-top:24px;
+    padding-bottom:72px;
+  }
 }
 
+/* Keep the hero content aligned with the image, but bias upward (not "centered low") */
+.hero-grid{
+  display:grid; gap:28px;
+  grid-template-columns:1fr;
+  align-items:start;
+}
+@media (min-width:960px){
+  .hero-grid{
+    grid-template-columns:1.05fr .95fr;
+    gap:40px;
+    align-items:start;
+  }
+}
+
+/* Remove any accidental top spacing inside the copy column */
+.hero-copy{margin-top:0}
 .hero-copy h1{
   font-size: clamp(1.9rem, 1.1rem + 2.6vw, 3rem);
   line-height:1.2; margin:0 0 10px;
@@ -154,7 +177,12 @@ label{font-weight:600; display:block; margin:14px 0 6px}
 }
 
 /* ---------- Focus & a11y */
-:focus-visible{outline:3px solid color-mix(in oklab, var(--primary) 70%, white); outline-offset:2px; border-radius:10px}
+:focus-visible{
+  outline:3px solid color-mix(in oklab, var(--primary) 70%, white);
+  outline-offset:2px;
+  border-radius:10px
+}
+
 /* --- Skip link (hide until focus) */
 .skip-link{
   position:absolute;
@@ -170,3 +198,11 @@ label{font-weight:600; display:block; margin:14px 0 6px}
   border-radius:10px; z-index:1000;
   box-shadow:0 2px 10px rgba(0,0,0,.2);
 }
+
+/* --- Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{scroll-behavior:auto !important}
+  .btn{transition:none}
+  .btn:hover{transform:none}
+}
+
