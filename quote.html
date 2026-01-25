@@ -6,6 +6,7 @@
 
   <title>Get a Quote | Wind River Renewal</title>
   <meta name="description" content="Request a fast junk removal estimate in Riverton & Lander, WY. Call/text 307-349-4694." />
+  <meta name="application-name" content="Wind River Renewal" />
 
   <link rel="canonical" href="https://windriverrenewal.com/quote.html" />
 
@@ -43,45 +44,49 @@
     gtag('config','G-038JRWGVWW');
   </script>
 
-  <!-- Page-specific styles (keeps your dark quote page, but fixes site-wide consistency) -->
+  <!-- Page-specific styles (dark quote page, but keeps structure consistent) -->
   <style>
     :root{
-      --panel:#0e1116;
-      --bg:#0b0d10;
-      --ink:#eaf1f9;
-      --muted:#a9b8c8;
-      --border:#1e2a38;
-      --accent:#1fb6ad;
+      --q-panel:#0e1116;
+      --q-bg:#0b0d10;
+      --q-ink:#eaf1f9;
+      --q-muted:#a9b8c8;
+      --q-border:#1e2a38;
+      --q-accent:#1fb6ad;
     }
 
-    body.light{ background:var(--bg); color:var(--ink); }
+    body.light{ background:var(--q-bg); color:var(--q-ink); }
+
     body.light .site-header{
-      background:#0b0d10 !important;
-      border-bottom:1px solid var(--border);
+      background:var(--q-bg) !important;
+      border-bottom:1px solid var(--q-border);
     }
     body.light .site-header .brand,
-    body.light .site-header .nav a{ color:#eaf1f9 !important; }
+    body.light .site-header .nav a{ color:var(--q-ink) !important; }
 
-    body.light .site-header .nav a.active{ color:var(--accent) !important; }
+    body.light .site-header .nav a.active{ color:var(--q-accent) !important; }
     body.light .site-header .nav a:hover{ color:#fff !important; }
 
-    .lead{ color:var(--muted); max-width:62ch }
+    /* keep hero spacing tight */
+    main .section{ padding:36px 0; }
+
+    .lead{ color:var(--q-muted); max-width:62ch }
 
     .form-card{
-      background:var(--panel);
-      border:1px solid var(--border);
+      background:var(--q-panel);
+      border:1px solid var(--q-border);
       border-radius:20px;
       padding:28px;
       box-shadow:0 10px 30px rgba(0,0,0,.25);
       max-width:960px;
-      margin:24px auto;
+      margin:18px auto 0;
     }
 
-    .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:18px; }
+    .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:16px; }
     @media (max-width:720px){ .grid2{ grid-template-columns:1fr; } }
 
     .field{ display:flex; flex-direction:column; gap:8px; }
-    .label{ font-size:.95rem; color:var(--muted); font-weight:600; letter-spacing:.02em; }
+    .label{ font-size:.95rem; color:var(--q-muted); font-weight:600; letter-spacing:.02em; }
 
     .ctrl,
     textarea,
@@ -89,9 +94,9 @@
     input[type="date"],
     input[type="file"]{
       width:100%;
-      color:var(--ink);
+      color:var(--q-ink);
       background:#0f141b;
-      border:1px solid var(--border);
+      border:1px solid var(--q-border);
       border-radius:12px;
       padding:12px 14px;
       outline:0;
@@ -102,45 +107,44 @@
     textarea:focus,
     select:focus,
     input[type="date"]:focus{
-      border-color:var(--accent);
+      border-color:var(--q-accent);
       box-shadow:0 0 0 3px rgba(31,182,173,.22);
     }
 
     textarea{ min-height:140px; resize:vertical; }
     .ctrl::placeholder, textarea::placeholder{ color:#7c8aa0; }
-    .help{ color:var(--muted); font-size:.9rem; }
+
+    .help{ color:var(--q-muted); font-size:.9rem; }
+    .help a{ color:inherit; text-decoration:underline; text-underline-offset:3px; }
 
     .drop{
       background:#0f141b;
-      border:2px dashed var(--border);
+      border:2px dashed var(--q-border);
       border-radius:14px;
       padding:16px;
       text-align:center;
       transition:border .2s, background .2s;
       cursor:pointer;
+      user-select:none;
     }
-    .drop.drag{ border-color:var(--accent); background:rgba(31,182,173,.10); }
-    .file-list{ color:var(--muted); font-size:.9rem; margin-top:8px; text-align:left; white-space:pre-line; }
-
-    .btn.btn-primary{ padding:12px 18px; font-weight:700; }
+    .drop.drag{ border-color:var(--q-accent); background:rgba(31,182,173,.10); }
+    .file-list{ color:var(--q-muted); font-size:.9rem; margin-top:8px; text-align:left; white-space:pre-line; }
 
     .actions{ display:flex; gap:12px; align-items:center; margin-top:8px; flex-wrap:wrap; }
-    .actions a{ color:inherit; }
 
-    /* Make the footer readable on dark background */
+    /* Footer readable on dark background */
     body.light .site-footer{
-      background:#0b0d10;
-      border-top:1px solid var(--border);
+      background:var(--q-bg);
+      border-top:1px solid var(--q-border);
     }
-    body.light .site-footer a{ color:var(--ink); }
-    body.light .site-footer .micro{ color:var(--muted); }
+    body.light .site-footer a{ color:var(--q-ink); }
+    body.light .site-footer .micro{ color:var(--q-muted); }
   </style>
 </head>
 
 <body class="light">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ✅ Standard header w/ logo -->
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="/" aria-label="Wind River Renewal home">
@@ -174,7 +178,7 @@
             </div>
             <div class="field">
               <label class="label" for="q-phone">Phone</label>
-              <input id="q-phone" class="ctrl" name="phone" required autocomplete="tel" />
+              <input id="q-phone" class="ctrl" name="phone" required autocomplete="tel" inputmode="tel" />
             </div>
           </div>
 
@@ -185,23 +189,23 @@
             </div>
             <div class="field">
               <label class="label" for="q-city">City</label>
-              <input id="q-city" class="ctrl" name="city" placeholder="Riverton / Lander" />
+              <input id="q-city" class="ctrl" name="city" placeholder="Riverton / Lander" autocomplete="address-level2" />
             </div>
           </div>
 
-          <div class="field" style="margin-bottom:18px;">
+          <div class="field" style="margin-bottom:16px;">
             <label class="label" for="q-details">What do you need removed?</label>
             <textarea id="q-details" class="ctrl" name="details" placeholder="Describe items (e.g., couch + boxes), access (stairs? gate width?), parking, timing." required></textarea>
           </div>
 
-          <div class="field" style="margin-bottom:18px;">
+          <div class="field" style="margin-bottom:16px;">
             <label class="label" for="q-photos">Photos <span class="help">(up to 5)</span></label>
             <label class="drop" id="drop">
               <input id="q-photos" name="photos" type="file" accept="image/*" multiple style="display:none">
               <div><strong>Drag &amp; drop</strong> or <u>click to upload</u></div>
               <div class="help">Clear photos help us price accurately.</div>
             </label>
-            <div id="fileList" class="file-list"></div>
+            <div id="fileList" class="file-list" aria-live="polite"></div>
           </div>
 
           <div class="grid2">
@@ -259,29 +263,43 @@
   </footer>
 
   <script src="assets/script.js" defer></script>
+
   <script>
     (function(){
-      const drop=document.getElementById('drop');
-      const input=document.getElementById('q-photos');
-      const list=document.getElementById('fileList');
+      const drop = document.getElementById('drop');
+      const input = document.getElementById('q-photos');
+      const list = document.getElementById('fileList');
 
-      drop.addEventListener('click',()=>input.click());
-      drop.addEventListener('dragover',e=>{e.preventDefault();drop.classList.add('drag');});
-      drop.addEventListener('dragleave',()=>drop.classList.remove('drag'));
-      drop.addEventListener('drop',e=>{
+      function renderList(){
+        const files = Array.from(input.files || []).slice(0,5);
+        if (!files.length) { list.textContent = ''; return; }
+        list.textContent = files.map(f => '• ' + f.name).join('\n');
+      }
+
+      drop.addEventListener('click', () => input.click());
+
+      drop.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        drop.classList.add('drag');
+      });
+
+      drop.addEventListener('dragleave', () => drop.classList.remove('drag'));
+
+      drop.addEventListener('drop', (e) => {
         e.preventDefault();
         drop.classList.remove('drag');
-        input.files=e.dataTransfer.files;
+
+        const incoming = Array.from(e.dataTransfer.files || []).filter(f => f.type.startsWith('image/')).slice(0,5);
+        const dt = new DataTransfer();
+        incoming.forEach(f => dt.items.add(f));
+        input.files = dt.files;
+
         renderList();
       });
 
-      input.addEventListener('change',renderList);
-
-      function renderList(){
-        const names = Array.from(input.files||[]).slice(0,5).map(f=>'• '+f.name);
-        list.textContent = names.join('\n');
-      }
+      input.addEventListener('change', renderList);
     })();
   </script>
 </body>
 </html>
+
