@@ -65,24 +65,97 @@
     gtag('js', new Date());
     gtag('config', 'G-038JRWGVWW');
   </script>
+
+  <!-- About page polish (keeps your global CSS intact) -->
+  <style>
+    .lead{color:var(--muted);max-width:72ch}
+    .about-grid{
+      display:grid;
+      gap:22px;
+      align-items:start;
+      margin-top:18px;
+      grid-template-columns:1fr;
+    }
+    @media (min-width:960px){
+      .about-grid{
+        grid-template-columns:.9fr 1.1fr;
+        gap:34px;
+        align-items:center;
+      }
+    }
+    .about-photo{
+      width:100%;
+      max-width:420px;
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      border:1px solid var(--border);
+      background:var(--surface);
+      display:block;
+    }
+    .about-photo-wrap{
+      display:flex;
+      justify-content:center;
+    }
+
+    /* Keep lists clean + consistent */
+    .about-list{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+    .about-list li{margin:6px 0}
+
+    /* Trust block as cards instead of big empty space */
+    .trust-grid{
+      display:grid;
+      gap:12px;
+      grid-template-columns:1fr;
+      margin-top:14px;
+    }
+    @media (min-width:760px){
+      .trust-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    .trust-card{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:14px 16px;
+      box-shadow:0 1px 0 rgba(0,0,0,.03);
+    }
+    .trust-card h3{
+      margin:0 0 6px;
+      font-size:1.02rem;
+    }
+    .trust-card p{margin:0;color:var(--muted)}
+  </style>
 </head>
 
 <body class="light">
-
 <a class="skip-link" href="#main">Skip to content</a>
 
+<!-- HEADER (match index/services: single-line mobile header + hamburger hook) -->
 <header class="site-header">
   <div class="container header-row">
     <a class="brand" href="/" aria-label="Wind River Renewal home">
       <img src="assets/logo-256.png" alt="Wind River Renewal logo" width="36" height="36" />
-      Wind River Renewal
+      <span class="brand-text">Wind River Renewal</span>
     </a>
-    <nav class="nav" aria-label="Primary">
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-controls="site-nav"
+      aria-expanded="false">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
+
+    <nav class="nav" id="site-nav" aria-label="Primary">
       <a href="services.html">Services</a>
       <a href="gallery.html">Gallery</a>
       <a class="active" aria-current="page" href="about.html">About</a>
       <a href="quote.html" class="btn btn-primary js-keep-utm">Get a Quote</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" id="call-link">Contact</a>
     </nav>
   </div>
 </header>
@@ -95,17 +168,15 @@
       <h1>About Wind River Renewal</h1>
       <p class="lead">Local, hands-on, and reliable property cleanup—junk removal, cleanouts, and light demolition done right.</p>
 
-      <div class="about-grid" style="display:grid;gap:28px;align-items:start;margin-top:26px;grid-template-columns:1fr">
-        <div style="display:flex;justify-content:center">
+      <div class="about-grid">
+        <div class="about-photo-wrap">
           <img
+            class="about-photo"
             src="assets/images/tyler-wolfley-wind-river-renewal.jpg"
             alt="Tyler Wolfley, owner of Wind River Renewal"
-            style="
-              border-radius:16px;
-              box-shadow:var(--shadow);
-              width:100%;
-              max-width:420px;
-            "
+            width="840"
+            height="980"
+            loading="lazy"
           />
         </div>
 
@@ -118,7 +189,7 @@
 
           <h3>What we do</h3>
 
-          <ul>
+          <ul class="about-list">
             <li>Junk removal and full property cleanouts</li>
             <li>Estate, foreclosure, and rental cleanups</li>
             <li>Fire-damaged debris removal (non-structural)</li>
@@ -127,7 +198,12 @@
             <li>Sale-ready property prep and maintenance</li>
           </ul>
 
-          <p><strong>Licensed & insured</strong> — and we leave a clean, professional finish.</p>
+          <p><strong>Licensed &amp; insured</strong> — and we leave a clean, professional finish.</p>
+
+          <div class="cta-row" style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn btn-primary js-keep-utm" href="quote.html">Get My Quote</a>
+            <a class="btn" href="tel:+13073494694">Call or Text 307-349-4694</a>
+          </div>
         </div>
       </div>
     </div>
@@ -136,17 +212,40 @@
   <!-- TRUST BLOCK -->
   <section class="section">
     <div class="container">
-      <h2>Trusted by Banks, Asset Managers & Real Estate Pros</h2>
+      <h2>Trusted by Banks, Asset Managers &amp; Real Estate Pros</h2>
 
-      <p>Wind River Renewal works with homeowners, landlords, real estate agents, and property managers.</p>
+      <p class="micro">We work with homeowners, landlords, real estate agents, and property managers across Fremont County.</p>
 
-      <ul>
-        <li>Foreclosure & estate cleanouts</li>
-        <li>Clear communication</li>
-        <li>Photo documentation</li>
-        <li>Licensed & insured</li>
-        <li>Local Fremont County operator</li>
-      </ul>
+      <div class="trust-grid" aria-label="Trust signals">
+        <div class="trust-card">
+          <h3>Foreclosure &amp; estate cleanouts</h3>
+          <p>Sale-ready, photo-documented, and on schedule.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Clear communication</h3>
+          <p>Fast quotes, clean timelines, no confusion.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Photo documentation</h3>
+          <p>Before/after proof so you can close the file.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Local + owner-operated</h3>
+          <p>You deal directly with the person doing the job.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Licensed &amp; insured</h3>
+          <p>Professional work with the coverage you expect.</p>
+        </div>
+        <div class="trust-card">
+          <h3>Clean finish</h3>
+          <p>Haul-away + sweep-clean results that show well.</p>
+        </div>
+      </div>
+
+      <div class="center mt-l">
+        <a class="btn btn-primary js-keep-utm" href="quote.html">Get a Quote</a>
+      </div>
     </div>
   </section>
 
@@ -160,14 +259,14 @@
         <a href="tel:+13073494694">307-349-4694</a> ·
         <a href="mailto:windriverrenewal@gmail.com">windriverrenewal@gmail.com</a>
       </p>
-      <p class="micro">Licensed & Insured · Fremont County</p>
+      <p class="micro">Licensed &amp; Insured · Fremont County</p>
     </div>
 
     <nav aria-label="Footer">
       <a href="services.html">Services</a>
       <a href="gallery.html">Gallery</a>
       <a href="about.html" aria-current="page" class="active">About</a>
-      <a href="quote.html">Get a Quote</a>
+      <a href="quote.html" class="js-keep-utm">Get a Quote</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
@@ -176,6 +275,29 @@
 </footer>
 
 <script src="assets/script.js" defer></script>
+
+<!-- Tiny menu toggle (safe even if script.js already has one) -->
+<script>
+  (function () {
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('site-nav');
+    if (!btn || !nav) return;
+
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      document.body.classList.toggle('nav-open', !open);
+    });
+
+    // Close after tap on mobile
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-open');
+      });
+    });
+  })();
+</script>
 
 </body>
 </html>
