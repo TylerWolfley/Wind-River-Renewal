@@ -1,5 +1,13 @@
+/* =========================================================
+   Wind River Renewal — CSS polish pass (SAFE + COMPAT)
+   - Keeps existing selectors / class names
+   - Adds fallbacks for color-mix / oklab
+   - Removes nested/duplicated mobile @media blocks
+   ========================================================= */
+
 /* ---------- Base */
 :root{
+  /* Core palette */
   --bg:#f7f7f8;
   --surface:#ffffff;
   --text:#0f172a;
@@ -7,18 +15,48 @@
   --border:#e5e7eb;
   --primary:#2563eb;
   --primary-ink:#ffffff;
+
+  /* Radius + shadows */
   --radius:16px;
+  --radius-sm:12px;
+  --radius-md:14px;
+  --radius-lg:16px;
+
   --shadow:0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06);
+  --shadow-sm:0 1px 0 rgba(0,0,0,.03);
+  --shadow-md:0 10px 30px rgba(2,6,23,.08);
+
+  /* Layout */
+  --container:1100px;
+  --container-hero:1240px;
+
+  /* Spacing scale */
+  --s-1:8px;
+  --s-2:12px;
+  --s-3:16px;
+  --s-4:24px;
+  --s-5:32px;
+  --s-6:48px;
+  --s-7:64px;
+
+  /* Type */
+  --fz:16px;
+  --lh:1.65;
+
+  /* Focus ring fallback */
+  --ring:rgba(37,99,235,.55);
+  --ring-soft:rgba(37,99,235,.18);
 }
 
 *{box-sizing:border-box}
 html,body{height:100%}
+html{font-size:var(--fz)}
 body{
   margin:0;
   font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   color:var(--text);
   background:var(--bg);
-  line-height:1.65;
+  line-height:var(--lh);
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
 }
@@ -28,7 +66,7 @@ img{max-width:100%;height:auto;display:block}
 /* ---------- Layout */
 .container{
   width:100%;
-  max-width:1100px;
+  max-width:var(--container);
   margin-inline:auto;
   padding-inline:16px;
 }
@@ -45,67 +83,108 @@ section:not(.hero){padding:56px 0}
   section:not(.hero){padding:80px 0}
 }
 
-.micro{font-size:.9rem;color:var(--muted)}
+.micro{font-size:.95rem;color:var(--muted)}
 .center{text-align:center}
 .mt-l{margin-top:32px}
 
 /* ---------- Header */
 .site-header{
   position:sticky; top:0; z-index:50;
-  background:var(--surface);
+  background:rgba(255,255,255,.92);
   border-bottom:1px solid var(--border);
+  backdrop-filter:saturate(160%) blur(10px);
 }
+
 .header-row{
   display:flex; align-items:center; justify-content:space-between;
   gap:16px; padding:14px 0;
 }
+
 .brand{
   display:flex; align-items:center; gap:10px;
-  font-weight:700; color:var(--text); text-decoration:none;
+  font-weight:800;
+  letter-spacing:-.01em;
+  color:var(--text);
+  text-decoration:none;
 }
+
 .nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+
 .nav a{
-  color:var(--text); text-decoration:none; padding:8px 10px; border-radius:10px;
+  color:var(--text);
+  text-decoration:none;
+  padding:8px 10px;
+  border-radius:12px;
+  transition:background .12s ease, transform .12s ease, color .12s ease;
 }
-.nav a:hover{background:#f1f5f9}
-.nav a.active{background:#eef2ff;color:#1e40af}
+
+.nav a:hover{
+  background:#f1f5f9; /* fallback */
+}
+
+.nav a.active{
+  background:#eef2ff; /* fallback */
+  color:#1e40af;      /* fallback */
+}
 
 /* ---------- Buttons */
 .btn{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
   padding:12px 18px;
   border-radius:14px;
-  font-weight:600;
+  font-weight:700;
+  letter-spacing:-.01em;
+
   border:1px solid var(--border);
   background:var(--surface);
   color:var(--text);
-  box-shadow:0 1px 0 rgba(0,0,0,.03);
-  transition:transform .12s ease, filter .12s ease;
+
+  box-shadow:var(--shadow-sm);
+  transition:transform .12s ease, filter .12s ease, box-shadow .12s ease, background .12s ease;
   text-decoration:none;
+  user-select:none;
 }
-.btn:hover{transform:translateY(-1px)}
+
+.btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 1px 0 rgba(0,0,0,.03), 0 12px 28px rgba(2,6,23,.08);
+}
+
+.btn:active{transform:translateY(0px)}
+
 .btn-primary{
-  background:var(--primary);
+  background:linear-gradient(180deg,#2f6ff0 0%, #1f56cc 100%);
   color:var(--primary-ink);
   border-color:transparent;
   box-shadow:var(--shadow);
 }
 
-/* ---------- HERO (tight + aligned) */
+.btn-primary:hover{filter:saturate(1.05) brightness(1.02)}
+
+/* ---------- Global Focus (single source of truth) */
+:focus-visible{
+  outline:3px solid var(--ring);
+  outline-offset:2px;
+  border-radius:10px;
+}
+
+/* ---------- HERO */
 .hero{
   background:linear-gradient(180deg,#ffffff 0%,#f7f7f8 100%);
   padding-top:10px;
   padding-bottom:64px;
+  overflow:hidden;
 }
 @media (min-width:900px){
-  .hero{
-    padding-top:8px;
-    padding-bottom:80px;
-  }
+  .hero{padding-top:8px;padding-bottom:80px}
 }
 
-/* IMPORTANT: make ONLY the hero container wider */
-.hero .container{max-width:1240px}
+/* Only hero container wider */
+.hero .container{max-width:var(--container-hero)}
 
 .hero-grid{
   display:grid;
@@ -113,33 +192,35 @@ section:not(.hero){padding:56px 0}
   grid-template-columns:1fr;
   align-items:start;
 }
-
 @media (min-width:960px){
-  .hero-grid{
-    grid-template-columns:.95fr 1.15fr;
-    gap:44px;
-  }
-}
-
-@media (min-width:960px){
+  .hero-grid{grid-template-columns:.95fr 1.15fr; gap:44px}
   .hero-copy{transform:translateY(-16px)}
 }
 
 .hero-copy,
 .hero-media{margin-top:0; padding-top:0}
-
 .hero-copy > *:first-child,
 .hero-media > *:first-child{margin-top:0}
 
 .hero-copy h1{
-  font-size:clamp(1.9rem,1.1rem + 2.6vw,3rem);
-  line-height:1.2;
+  font-size:clamp(2rem,1.15rem + 2.7vw,3.05rem);
+  line-height:1.12;
   margin:0 0 10px;
+  letter-spacing:-.02em;
+}
+
+.tagline{
+  font-weight:800;
+  margin:0 0 6px;
   letter-spacing:-.01em;
 }
 
-.tagline{font-weight:600;margin:0 0 6px}
-.sub{color:var(--muted);margin:0 0 18px}
+.sub{
+  color:var(--muted);
+  margin:0 0 18px;
+  max-width:60ch;
+}
+
 .cta-row{display:flex;gap:12px;flex-wrap:wrap}
 
 .hero-media{
@@ -155,10 +236,9 @@ section:not(.hero){padding:56px 0}
   padding:0 !important;
   box-shadow:none !important;
 }
-
 .hero-media img{
   border-radius:var(--radius);
-  box-shadow:none;
+  box-shadow:0 0 0 1px rgba(15,23,42,.06);
   background:transparent;
   width:100%;
   height:auto;
@@ -166,13 +246,14 @@ section:not(.hero){padding:56px 0}
   object-fit:contain;
 }
 @media (min-width:960px){
-  .hero-media img{max-height:540px;}
+  .hero-media img{max-height:540px}
 }
 
 /* ---------- Services */
 .services h2,.coverage h2{
-  font-size:clamp(1.4rem,.9rem + 1.6vw,2rem);
+  font-size:clamp(1.55rem,1rem + 1.6vw,2.05rem);
   margin:0 0 18px;
+  letter-spacing:-.01em;
 }
 
 .cards{
@@ -183,20 +264,31 @@ section:not(.hero){padding:56px 0}
 
 .card{
   background:var(--surface);
-  border:1px solid var(--border);
+  border:1px solid #d8dee8; /* slightly stronger than --border for “pro” edge */
   padding:18px;
   border-radius:14px;
-  box-shadow:0 1px 0 rgba(0,0,0,.03);
+  box-shadow:var(--shadow-sm);
+  transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;
 }
 
-.card h3{margin:0 0 6px;font-size:1.05rem}
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-md);
+  border-color:#c7d2fe; /* soft primary tint */
+}
+
+.card h3{
+  margin:0 0 6px;
+  font-size:1.08rem;
+  letter-spacing:-.01em;
+}
 .card p{margin:0;color:var(--muted)}
 .card ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
 .card li{margin:6px 0}
 
 /* ---------- Notice */
 .notice{
-  background:#fff7ed;
+  background:linear-gradient(180deg,#fff7ed 0%, #fff4e6 100%);
   border-top:1px solid #fed7aa;
   border-bottom:1px solid #fed7aa;
 }
@@ -224,7 +316,12 @@ section:not(.hero){padding:56px 0}
   flex-wrap:wrap;
   justify-content:flex-end;
 }
-.site-footer nav a{color:var(--text);text-decoration:none}
+.site-footer nav a{
+  color:var(--text);
+  text-decoration:none;
+  padding:6px 8px;
+  border-radius:10px;
+}
 .site-footer nav a:hover{text-decoration:underline}
 
 /* ---------- Forms */
@@ -236,19 +333,19 @@ input,select,textarea{
   border-radius:12px;
   padding:12px 14px;
   width:100%;
+  transition:border-color .12s ease, box-shadow .12s ease;
 }
 
-label{font-weight:600;margin:14px 0 6px;display:block}
+input:focus,select:focus,textarea:focus{
+  outline:none;
+  border-color:#93c5fd;
+  box-shadow:0 0 0 4px var(--ring-soft);
+}
+
+label{font-weight:700;margin:14px 0 6px;display:block}
 .form-row{display:grid;gap:12px}
 @media (min-width:760px){
   .form-row.two{grid-template-columns:1fr 1fr}
-}
-
-/* ---------- Focus & a11y */
-:focus-visible{
-  outline:3px solid color-mix(in oklab,var(--primary) 70%,white);
-  outline-offset:2px;
-  border-radius:10px;
 }
 
 /* --- Skip link */
@@ -274,144 +371,13 @@ label{font-weight:600;margin:14px 0 6px;display:block}
 
 /* --- Reduced motion */
 @media (prefers-reduced-motion:reduce){
-  .btn{transition:none}
-  .btn:hover{transform:none}
-}
-
-/* =========================================================
-   Mobile header: force single-row, slim height
-   ========================================================= */
-
-@media (max-width: 760px){
-
-  /* Slim the header container */
-  .header-row{
-    padding:8px 0;
-    gap:10px;
-    align-items:center;
-    flex-wrap:nowrap;
-  }
-
-  /* Keep brand on one line */
-  .brand{
-    white-space:nowrap;
-    font-size:1rem;
-    line-height:1.1;
-    gap:8px;
-  }
-
-  .brand img{
-    width:30px;
-    height:30px;
-    flex-shrink:0;
-  }
-
-  /* Prevent nav from wrapping into second row */
-  .nav{
-    flex-wrap:nowrap;
-    gap:8px;
-  }
-
-  /* Hide normal links on mobile */
-  .nav a{
-    display:none;
-  }
-
-  /* Show only primary CTA + contact */
-  .nav a.btn-primary,
-  .nav a#call-link{
-    display:inline-flex;
-    align-items:center;
-    padding:9px 12px;
-    font-size:.9rem;
-    border-radius:12px;
-  }
-
-  /* Make Contact look lighter than main CTA */
-  .nav a#call-link{
-    background:#eef2ff;
-    color:#1e40af;
-  }
-
-/* =========================================================
-   Mobile header: force TRUE single-row (fix brand stacking)
-   ========================================================= */
-
-@media (max-width: 760px){
-
-  /* One row, no wrap */
-  .header-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    flex-wrap:nowrap;
-    gap:10px;
-    padding:8px 0;
-  }
-
-  /* Brand: icon + SINGLE LINE text */
-  .brand{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    min-width:0;              /* allows flex truncation */
-    flex:1 1 auto;
-    white-space:nowrap;       /* prevent Wind/River/Renewal stacking */
-    overflow:hidden;
-  }
-
-  .brand img{
-    width:30px;
-    height:30px;
-    flex:0 0 auto;
-  }
-
-  /* If brand text is a plain text node, this still works via overflow on .brand.
-     If you already have <span class="brand-text">, this makes it perfect. */
-  .brand-text{
-    display:inline-block;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;   /* worst case: shortens instead of stacking */
-    max-width:100%;
-  }
-
-  /* Nav area stays on one row */
-  .nav{
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    flex-wrap:nowrap;
-    gap:8px;
-    flex:0 0 auto;
-  }
-
-  /* Hide all nav links by default on mobile */
-  .nav a{ display:none; }
-
-  /* Show ONLY the two you want */
-  .nav a.btn-primary,
-  .nav a#call-link{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:9px 12px;
-    font-size:.9rem;
-    border-radius:12px;
-    white-space:nowrap;
-  }
-
-  .nav a#call-link{
-    background:#eef2ff;
-    color:#1e40af;
-    border:1px solid #dbeafe;
-  }
-}
-
+  .btn, .card{transition:none}
+  .btn:hover, .card:hover{transform:none}
 }
 
 /* =========================================================
    Mobile hamburger header (single-row + dropdown menu)
+   Requires: a .nav-toggle button AND JS that toggles body.nav-open
    ========================================================= */
 
 .header-actions{
@@ -420,9 +386,7 @@ label{font-weight:600;margin:14px 0 6px;display:block}
   gap:10px;
 }
 
-.brand-text{
-  display:inline-block;
-}
+.brand-text{display:inline-block}
 
 /* Hamburger button */
 .nav-toggle{
@@ -435,6 +399,12 @@ label{font-weight:600;margin:14px 0 6px;display:block}
   border:1px solid var(--border);
   background:var(--surface);
   cursor:pointer;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+
+.nav-toggle:hover{
+  transform:translateY(-1px);
+  box-shadow:var(--shadow-sm);
 }
 
 .nav-toggle-bars{
@@ -443,7 +413,9 @@ label{font-weight:600;margin:14px 0 6px;display:block}
   background:var(--text);
   position:relative;
   display:block;
+  border-radius:2px;
 }
+
 .nav-toggle-bars::before,
 .nav-toggle-bars::after{
   content:"";
@@ -452,23 +424,22 @@ label{font-weight:600;margin:14px 0 6px;display:block}
   width:18px;
   height:2px;
   background:var(--text);
+  border-radius:2px;
+  transition:transform .12s ease, top .12s ease, background .12s ease;
 }
-.nav-toggle-bars::before{ top:-6px; }
-.nav-toggle-bars::after{ top:6px; }
+.nav-toggle-bars::before{ top:-6px }
+.nav-toggle-bars::after{ top:6px }
 
-/* Mobile behavior */
 @media (max-width: 760px){
 
-  /* Keep header slim + one row */
   .header-row{
     padding:8px 0;
     gap:10px;
     align-items:center;
     flex-wrap:nowrap;
-    position:relative; /* anchors dropdown */
+    position:relative;
   }
 
-  /* Prevent brand stacking */
   .brand{
     white-space:nowrap;
     overflow:hidden;
@@ -489,35 +460,36 @@ label{font-weight:600;margin:14px 0 6px;display:block}
     text-overflow:ellipsis;
   }
 
-  /* Show hamburger */
   .nav-toggle{ display:inline-flex; }
 
-  /* Make the always-visible CTA smaller on phones */
+  /* If you have an always-visible CTA with class .header-cta */
   .header-cta{
     padding:10px 12px;
-    font-size:.9rem;
+    font-size:.92rem;
     border-radius:12px;
     white-space:nowrap;
   }
 
-  /* Dropdown menu hidden by default */
+  /* Dropdown */
   .nav{
     display:none;
     position:absolute;
     left:16px;
     right:16px;
     top:calc(100% + 10px);
+
     background:var(--surface);
     border:1px solid var(--border);
     border-radius:16px;
     padding:10px;
+
     box-shadow:var(--shadow);
     z-index:100;
+
     flex-direction:column;
     gap:6px;
   }
 
-  /* Menu links become full-width rows */
   .nav a{
     display:flex;
     align-items:center;
@@ -527,16 +499,15 @@ label{font-weight:600;margin:14px 0 6px;display:block}
     text-decoration:none;
   }
 
-  /* Make the "Get a Quote" inside dropdown full width */
+  .nav a:hover{background:#f1f5f9}
+
   .nav a.btn{
     justify-content:center;
     width:100%;
   }
 
-  /* Open state */
   body.nav-open .nav{ display:flex; }
 
-  /* Animate hamburger into an X when open */
   body.nav-open .nav-toggle-bars{ background:transparent; }
   body.nav-open .nav-toggle-bars::before{
     top:0;
@@ -546,7 +517,4 @@ label{font-weight:600;margin:14px 0 6px;display:block}
     top:0;
     transform:rotate(-45deg);
   }
-
-  /* Optional: hide duplicate Get a Quote inside dropdown on mobile if you want only one CTA */
-  /* body:not(.nav-open) .nav a.btn-primary{ display:none; } */
 }
