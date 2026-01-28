@@ -42,19 +42,6 @@
     gtag('config','G-038JRWGVWW');
   </script>
 
-  <!-- Page-scoped styles (minimal + consistent, no breaking your global CSS) -->
-  <style>
-    .page-hero{padding:36px 0 10px}
-    .lead{max-width:72ch}
-    .contact-grid{display:grid; gap:18px; grid-template-columns:1fr; margin-top:18px}
-    @media (min-width: 960px){ .contact-grid{grid-template-columns: 1.1fr .9fr} }
-    .panel{background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:0 1px 0 rgba(0,0,0,.03)}
-    .contact-cards{list-style:none; padding:0; margin:0; display:grid; gap:12px}
-    .contact-cards li{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:14px}
-    .contact-cards h3{margin:0 0 6px; font-size:1.05rem}
-    .micro{color:var(--muted)}
-  </style>
-
   <!-- Structured data: ContactPage + ContactPoint -->
   <script type="application/ld+json">
   {
@@ -79,7 +66,6 @@
 <body class="light">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ✅ Standard header w/ logo -->
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="/" aria-label="Wind River Renewal home">
@@ -98,21 +84,50 @@
 
   <main id="main">
 
-    <section class="section">
+    <!-- Contact hero (more “filled out” + clear next steps) -->
+    <section class="page-hero">
       <div class="container">
-        <div class="page-hero">
-          <h1>Contact</h1>
-          <p class="lead micro">We reply fast — daily 9–5, with same-day or ASAP when available. Fremont County (Riverton • Lander).</p>
-          <div class="cta-row" style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
-            <a class="btn btn-primary js-keep-utm" href="quote.html">Get My Quote</a>
-            <a class="btn" id="call-contact" href="tel:+13073494694" aria-label="Call or text Wind River Renewal at 307-349-4694">Call or Text 307-349-4694</a>
+        <div class="page-hero-inner">
+          <div class="page-hero-copy">
+            <h1>Contact Wind River Renewal</h1>
+            <p class="lead micro">
+              We reply fast — daily 9–5, with same-day or ASAP when available.
+              Serving Fremont County (Riverton • Lander).
+            </p>
+
+            <div class="page-hero-actions">
+              <a class="btn btn-primary" href="tel:+13073494694" aria-label="Call Wind River Renewal at 307-349-4694">Call 307-349-4694</a>
+              <a class="btn" href="sms:+13073494694" aria-label="Text Wind River Renewal at 307-349-4694">Text a photo for a fast quote</a>
+              <a class="btn js-keep-utm" href="quote.html">Get My Quote</a>
+            </div>
+
+            <p class="micro" style="margin-top:10px">
+              Fastest quote: text a photo + your address + what you want removed.
+            </p>
+          </div>
+
+          <div class="page-hero-note">
+            <div class="panel panel-soft">
+              <p class="micro" style="margin:0">
+                If you’re dealing with a tight timeline (move-out, listing, foreclosure, fire damage),
+                put that in your message — we’ll prioritize it when we can.
+              </p>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <section class="contact-grid" aria-label="Contact options">
+    <!-- Main content -->
+    <section class="section">
+      <div class="container">
+
+        <div class="contact-grid" aria-label="Contact options">
+
           <!-- Contact form -->
           <div class="panel">
-            <h2>Send a Message</h2>
+            <h2 class="panel-title">Send a Message</h2>
+            <p class="micro panel-sub">Tell us what you’ve got. Photos help us quote faster.</p>
 
             <form id="contact-form" action="https://formspree.io/f/mqadaqdp" method="POST" accept-charset="UTF-8">
               <input type="hidden" name="_subject" value="New contact from windriverrenewal.com">
@@ -148,7 +163,7 @@
               <div class="form-row">
                 <div>
                   <label for="help">How can we help?</label>
-                  <textarea id="help" name="message" placeholder="Tell us what needs to go (items, access, timing)."></textarea>
+                  <textarea id="help" name="message" rows="6" placeholder="What needs to go? (items, access, timing, any heavy stuff, stairs, etc.)" required></textarea>
                 </div>
               </div>
 
@@ -166,21 +181,30 @@
               <input type="hidden" name="utm_term" id="utm_term">
               <input type="hidden" name="utm_content" id="utm_content">
 
-              <div class="cta-row" style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+              <div class="form-actions">
                 <button class="btn btn-primary" type="submit">Send Message</button>
                 <a class="btn" href="tel:+13073494694">Or call now</a>
               </div>
 
-              <p class="micro" style="margin-top:8px">By sending, you agree we may contact you at the phone or email provided about your service request.</p>
+              <p class="micro" style="margin-top:10px">
+                By sending, you agree we may contact you at the phone or email provided about your service request.
+              </p>
             </form>
           </div>
 
-          <!-- Quick contacts / hours -->
-          <div class="panel">
-            <h2>Quick Contacts</h2>
+          <!-- Sidebar -->
+          <aside class="panel">
+            <h2 class="panel-title">Quick Contacts</h2>
+            <p class="micro panel-sub">Call, text, or email — whatever’s easiest.</p>
+
+            <div class="contact-quick-actions">
+              <a class="btn btn-primary" href="tel:+13073494694">Call</a>
+              <a class="btn" href="sms:+13073494694">Text</a>
+            </div>
+
             <ul class="contact-cards">
               <li>
-                <h3>Call/Text</h3>
+                <h3>Phone</h3>
                 <p><a href="tel:+13073494694">307-349-4694</a></p>
               </li>
               <li>
@@ -191,21 +215,43 @@
                 <h3>Hours</h3>
                 <p>Every day 9–5 (same-day or ASAP when available)</p>
               </li>
-              <li>
-                <h3>Google</h3>
-                <p><a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">View our profile</a></p>
-              </li>
-              <li>
-                <h3>Facebook</h3>
-                <p><a href="https://www.facebook.com/WindRiverRenewal" target="_blank" rel="noopener">Follow us</a></p>
-              </li>
             </ul>
-          </div>
-        </section>
+
+            <div class="panel-divider"></div>
+
+            <h3 class="mini-title">For the fastest quote, include:</h3>
+            <ul class="checklist">
+              <li>Photos (or a quick video)</li>
+              <li>Address or general location</li>
+              <li>Any heavy items (pianos, safes, appliances)</li>
+              <li>Access notes (stairs, tight driveway, gate codes)</li>
+              <li>Preferred timing</li>
+            </ul>
+
+            <div class="panel-divider"></div>
+
+            <h3 class="mini-title">Service Area</h3>
+            <p class="micro" style="margin-top:6px">
+              Based in Fremont County, WY — Riverton, Lander, Hudson, Shoshoni, Pavillion, and nearby communities.
+            </p>
+
+            <div class="panel-divider"></div>
+
+            <ul class="contact-links">
+              <li><a class="js-keep-utm" href="quote.html">Get a Quote</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="gallery.html">Before &amp; After</a></li>
+              <li><a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">Google Business Profile</a></li>
+              <li><a href="https://www.facebook.com/WindRiverRenewal" target="_blank" rel="noopener">Facebook</a></li>
+            </ul>
+          </aside>
+
+        </div>
 
         <div class="center mt-l">
           <a class="btn btn-primary js-keep-utm" href="quote.html">Get a Quote</a>
         </div>
+
       </div>
     </section>
 
@@ -234,7 +280,7 @@
     <p class="micro center">© 2025 Wind River Renewal</p>
   </footer>
 
-  <!-- Keep UTM params on quote link + fill hidden UTM fields (works even if script.js changes later) -->
+  <!-- Keep UTM params on quote link + fill hidden UTM fields -->
   <script>
     (function () {
       function keepUTM(el, search) {
