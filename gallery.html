@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -97,14 +98,24 @@
 <body class="light">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ✅ Standardized header w/ logo (same as index/services) -->
+  <!-- HEADER (match index/services: single-line mobile header + hamburger hook) -->
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="/" aria-label="Wind River Renewal home">
         <img src="assets/logo-256.png" alt="Wind River Renewal logo" width="36" height="36" />
-        Wind River Renewal
+        <span class="brand-text">Wind River Renewal</span>
       </a>
-      <nav class="nav" aria-label="Primary">
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="site-nav"
+        aria-expanded="false">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="services.html">Services</a>
         <a class="active" aria-current="page" href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
@@ -118,7 +129,7 @@
     <!-- Page intro -->
     <section class="section gallery-head">
       <div class="container">
-        <h1>Before & After</h1>
+        <h1>Before &amp; After</h1>
         <p class="sub">Cleanouts, removals, and demo jobs in Riverton, Lander, and all of Fremont County.</p>
       </div>
     </section>
@@ -134,7 +145,7 @@
             <div class="swiper-slide">
               <figure>
                 <img src="assets/images/debris-removal-riverton-wy-foreclosure-before-after.jpg" alt="Debris removal foreclosure cleanout before and after in Riverton, Wyoming" loading="lazy">
-                <figcaption>Debris removal — foreclosure cleanout (before & after) · Riverton, WY</figcaption>
+                <figcaption>Debris removal — foreclosure cleanout (before &amp; after) · Riverton, WY</figcaption>
               </figure>
             </div>
 
@@ -155,7 +166,7 @@
             <div class="swiper-slide">
               <figure>
                 <img src="assets/images/fence-cleanup-riverton-wy-apartment-cleanup-before-after.jpg" alt="Apartment fence cleanup before and after in Riverton, Wyoming" loading="lazy">
-                <figcaption>Fence cleanup — apartment (before & after) · Riverton, WY</figcaption>
+                <figcaption>Fence cleanup — apartment (before &amp; after) · Riverton, WY</figcaption>
               </figure>
             </div>
 
@@ -176,7 +187,7 @@
             <div class="swiper-slide">
               <figure>
                 <img src="assets/images/garage-cleanout-riverton-wy-foreclosure-before-after.jpg" alt="Garage cleanout foreclosure before and after in Riverton, Wyoming" loading="lazy">
-                <figcaption>Garage cleanout — foreclosure (before & after) · Riverton, WY</figcaption>
+                <figcaption>Garage cleanout — foreclosure (before &amp; after) · Riverton, WY</figcaption>
               </figure>
             </div>
 
@@ -197,28 +208,28 @@
             <div class="swiper-slide">
               <figure>
                 <img src="assets/images/junk-removal-riverton-wy-estate-cleanout-before-after.jpg" alt="Estate cleanout junk removal before and after in Riverton, Wyoming" loading="lazy">
-                <figcaption>Estate cleanout — before & after · Riverton, WY</figcaption>
+                <figcaption>Estate cleanout — before &amp; after · Riverton, WY</figcaption>
               </figure>
             </div>
 
             <div class="swiper-slide">
               <figure>
                 <img src="assets/images/light-demo-lander-wy-estate-cleanout-before-after.jpg" alt="Light demolition estate cleanout before and after in Lander, Wyoming" loading="lazy">
-                <figcaption>Light demo — estate cleanout (before & after) · Lander, WY</figcaption>
+                <figcaption>Light demo — estate cleanout (before &amp; after) · Lander, WY</figcaption>
               </figure>
             </div>
 
             <div class="swiper-slide">
               <figure>
                 <img src="assets/images/light-demo-lander-wy-estate-cleanout-before-after-2.jpg" alt="Light demolition estate cleanout before and after in Lander, Wyoming (set 2)" loading="lazy">
-                <figcaption>Light demo — estate cleanout (before & after) · Lander, WY (2)</figcaption>
+                <figcaption>Light demo — estate cleanout (before &amp; after) · Lander, WY (2)</figcaption>
               </figure>
             </div>
 
             <div class="swiper-slide">
               <figure>
                 <img src="assets/images/light-demo-riverton-wy-garage-cleanout-before-after.jpg" alt="Light demolition garage cleanout before and after in Riverton, Wyoming" loading="lazy">
-                <figcaption>Light demo — garage cleanout (before & after) · Riverton, WY</figcaption>
+                <figcaption>Light demo — garage cleanout (before &amp; after) · Riverton, WY</figcaption>
               </figure>
             </div>
 
@@ -232,7 +243,7 @@
             <div class="swiper-slide">
               <figure>
                 <img src="assets/images/tree-trimming-riverton-wy-estate-cleanup-before-after.jpg" alt="Tree trimming and estate cleanup before and after in Riverton, Wyoming" loading="lazy">
-                <figcaption>Tree trimming — estate cleanup (before & after) · Riverton, WY</figcaption>
+                <figcaption>Tree trimming — estate cleanup (before &amp; after) · Riverton, WY</figcaption>
               </figure>
             </div>
 
@@ -250,12 +261,12 @@
     <div class="container footer-grid">
       <div>
         <h4>Wind River Renewal</h4>
-        <p class="micro">Riverton, WY · Serving Riverton, Lander & Fremont County</p>
+        <p class="micro">Riverton, WY · Serving Riverton, Lander &amp; Fremont County</p>
         <p>
           <a href="tel:+13073494694">307-349-4694</a> ·
           <a href="mailto:windriverrenewal@gmail.com">windriverrenewal@gmail.com</a>
         </p>
-        <p class="micro">Licensed & Insured · Every day 9–5</p>
+        <p class="micro">Licensed &amp; Insured · Every day 9–5</p>
       </div>
       <nav aria-label="Footer">
         <a href="services.html">Services</a>
