@@ -43,11 +43,14 @@
     gtag('config','G-038JRWGVWW');
   </script>
 
-  <!-- Quote page: clean + white to match site -->
+  <!-- Quote page polish (keeps global CSS intact) -->
   <style>
-    .page-hero{padding:40px 0 10px}
     .lead{max-width:70ch;color:var(--muted);margin:8px 0 0}
     .quote-shell{max-width:980px;margin:0 auto}
+
+    /* Use .section spacing so it matches the rest of the site */
+    .quote-hero{padding-top:0}
+
     .form-card{
       margin-top:16px;
       background:var(--surface);
@@ -65,10 +68,8 @@
     .label{font-weight:700;font-size:.95rem}
     .help{color:var(--muted);font-size:.9rem}
 
-    /* Use your global inputs, just tighten spacing and make it feel nicer */
-    .ctrl, textarea, select, input[type="date"]{
-      width:100%;
-    }
+    /* Keep consistent with your global input styling */
+    .ctrl{width:100%}
     textarea{min-height:140px;resize:vertical}
 
     .drop{
@@ -81,8 +82,17 @@
       transition:border .15s ease, background .15s ease;
       user-select:none;
     }
-    .drop.drag{border-color:color-mix(in oklab, var(--primary) 55%, var(--border)); background:#eef2ff;}
-    .file-list{color:var(--muted);font-size:.9rem;margin-top:8px;text-align:left;white-space:pre-line}
+    .drop.drag{
+      border-color:color-mix(in oklab, var(--primary) 55%, var(--border));
+      background:#eef2ff;
+    }
+    .file-list{
+      color:var(--muted);
+      font-size:.9rem;
+      margin-top:8px;
+      text-align:left;
+      white-space:pre-line
+    }
 
     .actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:6px}
     .actions .help a{color:inherit;text-decoration:underline;text-underline-offset:3px}
@@ -95,32 +105,39 @@
 <body class="light">
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- HEADER (match index: single-line mobile + toggle hook) -->
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="/" aria-label="Wind River Renewal home">
         <img src="assets/logo-256.png" alt="Wind River Renewal logo" width="36" height="36" />
-        Wind River Renewal
+        <span class="brand-text">Wind River Renewal</span>
       </a>
-      <nav class="nav" aria-label="Primary">
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="site-nav"
+        aria-expanded="false">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="services.html">Services</a>
         <a href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
-        <a class="active" aria-current="page" href="quote.html">Get a Quote</a>
+        <a class="active btn btn-primary js-keep-utm" aria-current="page" href="quote.html">Get a Quote</a>
         <a href="contact.html" id="call-link">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="page-hero">
+    <section class="section quote-hero">
       <div class="container quote-shell">
         <h1>Get a Quote</h1>
         <p class="lead">Fast estimates for Riverton &amp; Lander. Send details + photos and we’ll reply with price and availability.</p>
-      </div>
-    </section>
 
-    <section style="padding:0 0 56px">
-      <div class="container quote-shell">
         <form class="form-card" action="https://formspree.io/f/mqadaqdp" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
           <input type="hidden" name="_redirect" value="thanks.html" />
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
@@ -219,6 +236,28 @@
 
   <script src="assets/script.js" defer></script>
 
+  <!-- Tiny menu toggle (safe even if script.js already has one) -->
+  <script>
+    (function () {
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('site-nav');
+      if (!btn || !nav) return;
+
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        document.body.classList.toggle('nav-open', !open);
+      });
+
+      nav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          btn.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('nav-open');
+        });
+      });
+    })();
+  </script>
+
   <script>
     (function(){
       const drop = document.getElementById('drop');
@@ -253,5 +292,3 @@
   </script>
 </body>
 </html>
-
-
