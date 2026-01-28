@@ -184,6 +184,77 @@ section:not(.hero){padding:56px 0}
   .hero-media img{max-height:540px;}
 }
 
+/* ---------- Trust signals (directly under hero) */
+.trust{
+  padding-top:28px;
+  padding-bottom:28px;
+}
+.trust-grid{
+  display:grid;
+  gap:12px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+.trust-item{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px 16px;
+  box-shadow:0 1px 0 rgba(0,0,0,.03);
+}
+.trust-title{
+  display:block;
+  font-weight:700;
+  line-height:1.2;
+}
+.trust-sub{
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-size:.92rem;
+}
+
+/* ---------- Sticky mobile contact bar (Call/Text) */
+.sticky-bar{
+  position:fixed;
+  left:16px;
+  right:16px;
+  bottom:16px;
+  z-index:9999;
+
+  display:none;
+  gap:10px;
+
+  background:rgba(255,255,255,.92);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:10px;
+  box-shadow:var(--shadow);
+  backdrop-filter:saturate(140%) blur(8px);
+}
+
+.sticky-btn{
+  flex:1;
+  text-align:center;
+  padding:12px 14px;
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;
+
+  background:var(--surface);
+  color:var(--text);
+  border:1px solid var(--border);
+}
+
+.sticky-btn-primary{
+  background:var(--primary);
+  color:var(--primary-ink);
+  border-color:transparent;
+}
+
+@media (max-width:900px){
+  .sticky-bar{display:flex;}
+}
+
 /* ---------- Services */
 .services h2,.coverage h2{
   font-size:clamp(1.4rem,.9rem + 1.6vw,2rem);
@@ -296,4 +367,3 @@ label{font-weight:600;margin:14px 0 6px;display:block}
   .btn{transition:none}
   .btn:hover{transform:none}
 }
-
