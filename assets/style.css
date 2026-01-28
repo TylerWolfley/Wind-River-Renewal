@@ -33,15 +33,13 @@ img{max-width:100%;height:auto;display:block}
   padding-inline:16px;
 }
 
-/* future-proof spacing class
-   SAFETY FIX: only apply .section padding when it's NOT a <section>.
-   (Because your site already pads all <section> elements globally.) */
-.section:not(section){padding:56px 0}
+/* future-proof spacing class */
+.section{padding:56px 0}
 @media (min-width:900px){
-  .section:not(section){padding:80px 0}
+  .section{padding:80px 0}
 }
 
-/* TEMP COMPAT (apply spacing to all sections except hero) — keep your original behavior */
+/* TEMP COMPAT (apply spacing to all sections except hero) */
 section:not(.hero){padding:56px 0}
 @media (min-width:900px){
   section:not(.hero){padding:80px 0}
@@ -106,10 +104,8 @@ section:not(.hero){padding:56px 0}
   }
 }
 
-/* ✅ IMPORTANT: make ONLY the hero container wider so the image can actually grow */
-.hero .container{
-  max-width:1240px;
-}
+/* IMPORTANT: make ONLY the hero container wider */
+.hero .container{max-width:1240px}
 
 .hero-grid{
   display:grid;
@@ -118,7 +114,6 @@ section:not(.hero){padding:56px 0}
   align-items:start;
 }
 
-/* ✅ Give the image column more width on desktop */
 @media (min-width:960px){
   .hero-grid{
     grid-template-columns:.95fr 1.15fr;
@@ -126,21 +121,15 @@ section:not(.hero){padding:56px 0}
   }
 }
 
-/* Desktop alignment tweak */
 @media (min-width:960px){
   .hero-copy{transform:translateY(-16px)}
 }
 
 .hero-copy,
-.hero-media{
-  margin-top:0;
-  padding-top:0;
-}
+.hero-media{margin-top:0; padding-top:0}
 
 .hero-copy > *:first-child,
-.hero-media > *:first-child{
-  margin-top:0;
-}
+.hero-media > *:first-child{margin-top:0}
 
 .hero-copy h1{
   font-size:clamp(1.9rem,1.1rem + 2.6vw,3rem);
@@ -153,7 +142,6 @@ section:not(.hero){padding:56px 0}
 .sub{color:var(--muted);margin:0 0 18px}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap}
 
-/* ✅ REMOVE any “frame” effects from wrappers too (not just the img) */
 .hero-media{
   background:transparent !important;
   border:0 !important;
@@ -168,7 +156,6 @@ section:not(.hero){padding:56px 0}
   box-shadow:none !important;
 }
 
-/* ✅ HERO IMAGE: NO CROP, NO SHADOW, BIGGER */
 .hero-media img{
   border-radius:var(--radius);
   box-shadow:none;
@@ -289,138 +276,4 @@ label{font-weight:600;margin:14px 0 6px;display:block}
 @media (prefers-reduced-motion:reduce){
   .btn{transition:none}
   .btn:hover{transform:none}
-}
-
-/* =========================================================
-   Contact page (scoped, clean, no giant dead space)
-   Requires: <body class="light contact-page"> and hero wrapper <div class="contact-hero">
-   ========================================================= */
-
-.contact-page .lead{max-width:72ch}
-
-.contact-page .contact-hero{
-  padding:28px 0 18px;
-  background:linear-gradient(180deg,#ffffff 0%,#f7f7f8 100%);
-  border-bottom:1px solid var(--border);
-}
-.contact-page .contact-hero-inner{
-  display:grid;
-  gap:16px;
-  grid-template-columns:1fr;
-  align-items:start;
-}
-@media (min-width:960px){
-  .contact-page .contact-hero-inner{
-    grid-template-columns:1.15fr .85fr;
-    align-items:stretch;
-  }
-}
-
-.contact-page h1{
-  margin:0 0 8px;
-  font-size:clamp(1.9rem,1.2rem + 2.2vw,2.6rem);
-  line-height:1.15;
-  letter-spacing:-.01em;
-}
-
-.contact-page .contact-hero-actions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:12px;
-}
-
-.contact-page .panel{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:18px;
-  box-shadow:0 1px 0 rgba(0,0,0,.03);
-}
-.contact-page .panel-soft{
-  background:color-mix(in oklab, var(--surface) 82%, #eef2ff);
-}
-.contact-page .panel-title{margin:0}
-.contact-page .panel-sub{margin:6px 0 0}
-.contact-page .panel-divider{
-  height:1px;
-  background:var(--border);
-  margin:14px 0;
-}
-
-.contact-page .contact-grid{
-  display:grid;
-  gap:18px;
-  grid-template-columns:1fr;
-}
-@media (min-width:960px){
-  .contact-page .contact-grid{grid-template-columns:1.1fr .9fr}
-}
-
-.contact-page .form-actions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:12px;
-}
-
-.contact-page .contact-quick-actions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:12px;
-  margin-bottom:12px;
-}
-
-.contact-page .contact-mini-cards{
-  display:grid;
-  gap:10px;
-  margin-top:6px;
-}
-.contact-page .mini-card{
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:12px 14px;
-  background:var(--surface);
-}
-.contact-page .mini-kicker{
-  font-size:.85rem;
-  color:var(--muted);
-  margin-bottom:6px;
-}
-.contact-page .mini-link{
-  color:var(--text);
-  text-decoration:none;
-  font-weight:700;
-}
-.contact-page .mini-link:hover{text-decoration:underline}
-.contact-page .mini-text{color:var(--text)}
-
-.contact-page .mini-title{
-  margin:0;
-  font-size:1rem;
-}
-.contact-page .checklist{
-  margin:10px 0 0;
-  padding-left:18px;
-  color:var(--muted);
-}
-.contact-page .checklist li{margin:7px 0}
-
-.contact-page .contact-links{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:8px;
-}
-.contact-page .contact-links a{
-  color:var(--text);
-  text-decoration:none;
-}
-.contact-page .contact-links a:hover{text-decoration:underline}
-
-.contact-page textarea{
-  resize:vertical;
-  min-height:140px;
 }
