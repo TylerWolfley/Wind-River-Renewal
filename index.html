@@ -94,13 +94,22 @@
     ]
   }
   </script>
-</head>
 
+  <!-- Skip link visual fix -->
+  <style>
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{position:static;width:auto;height:auto;padding:.5rem 1rem;background:#fff;border:2px solid #000;z-index:1000}
+
+    /* IMPORTANT: fix "hamburger shows but won't click" (overlay/stacking issue) */
+    .site-header{position:sticky; top:0; z-index:9999;}
+    .header-row{position:relative; z-index:10000;}
+    .nav-toggle{position:relative; z-index:10001; pointer-events:auto;}
+  </style>
+</head>
 <body class="light">
   <!-- Skip link for accessibility -->
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- HEADER (mobile: single-line + hamburger hook) -->
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="/" aria-label="Wind River Renewal home">
@@ -108,7 +117,7 @@
         <span class="brand-text">Wind River Renewal</span>
       </a>
 
-      <!-- Hamburger (CSS/JS will control show/hide + drawer) -->
+      <!-- Mobile hamburger -->
       <button
         class="nav-toggle"
         type="button"
@@ -133,9 +142,9 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <h1>Junk Removal &amp; Light Demolition in Riverton and Lander, WY</h1>
+          <h1>Junk Removal & Light Demolition in Riverton and Lander, WY</h1>
           <p class="tagline">Property maintenance done right.</p>
-          <p class="micro">Fremont County's Go-To for Property Cleanouts, Junk Removal &amp; Fire Damage</p>
+          <p class="micro">Fremont County's Go-To for Property Cleanouts, Junk Removal & Fire Damage</p>
           <p class="sub">
             Fremont County, WY (Riverton • Lander)<br/>
             Every day 9–5 · Same-day when available
@@ -160,24 +169,24 @@
         </div>
       </div>
     </section>
-
+    
     <!-- SERVICES -->
     <section class="section services">
       <div class="container">
         <h2>Core Junk Removal Services</h2>
         <p class="micro">Most jobs price by volume + dump fees. Text photos for a fast estimate.</p>
         <div class="cards">
-          <article class="card"><h3>Residential &amp; Estates</h3><p>Garages, basements, storage units, rentals.</p></article>
-          <article class="card"><h3>Appliance &amp; Furniture</h3><p>Fridges, mattresses, couches, sets—haul-away.</p></article>
+          <article class="card"><h3>Residential & Estates</h3><p>Garages, basements, storage units, rentals.</p></article>
+          <article class="card"><h3>Appliance & Furniture</h3><p>Fridges, mattresses, couches, sets—haul-away.</p></article>
           <article class="card"><h3>Construction Debris</h3><p>Lumber, drywall, fixtures, carpet/tile, flooring.</p></article>
-          <article class="card"><h3>Yard &amp; Outdoor</h3><p>Brush/branches, fencing, shed contents, green waste.</p></article>
-          <article class="card"><h3>Light Demolition</h3><p>Sheds, decks, hot tubs, playsets (remove &amp; haul).</p></article>
+          <article class="card"><h3>Yard & Outdoor</h3><p>Brush/branches, fencing, shed contents, green waste.</p></article>
+          <article class="card"><h3>Light Demolition</h3><p>Sheds, decks, hot tubs, playsets (remove & haul).</p></article>
           <article class="card"><h3>Property Management</h3><p>Tenant turnovers, illegal dumping, cleanouts.</p></article>
         </div>
 
         <div class="center mt-l">
           <a class="btn btn-primary js-keep-utm" href="services.html">All Services</a>
-          <a class="btn" href="gallery.html">Before &amp; After</a>
+          <a class="btn" href="gallery.html">Before & After</a>
         </div>
       </div>
     </section>
@@ -208,8 +217,8 @@
           <a href="tel:+13073494694" id="footer-call">307-349-4694</a> ·
           <a href="mailto:windriverrenewal@gmail.com">windriverrenewal@gmail.com</a>
         </p>
-        <p class="micro">Licensed &amp; Insured</p>
-        <p class="micro">Owner-operated in Fremont County • Riverton &amp; Lander</p>
+        <p class="micro">Licensed & Insured</p>
+        <p class="micro">Owner-operated in Fremont County • Riverton & Lander</p>
       </div>
       <nav aria-label="Footer">
         <a href="services.html">Services</a>
@@ -229,6 +238,28 @@
     <a class="sticky-btn" href="tel:+13073494694" aria-label="Call Wind River Renewal">Call</a>
     <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694" aria-label="Text Wind River Renewal">Text</a>
   </div>
+
+  <!-- Hamburger toggle (works even if script.js has other stuff) -->
+  <script>
+    (function () {
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('site-nav');
+      if (!btn || !nav) return;
+
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        document.body.classList.toggle('nav-open', !open);
+      });
+
+      nav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          btn.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('nav-open');
+        });
+      });
+    })();
+  </script>
 
   <script src="assets/script.js" defer></script>
 </body>
