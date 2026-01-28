@@ -277,3 +277,60 @@ label{font-weight:600;margin:14px 0 6px;display:block}
   .btn{transition:none}
   .btn:hover{transform:none}
 }
+
+/* =========================================================
+   Mobile header: force single-row, slim height
+   ========================================================= */
+
+@media (max-width: 760px){
+
+  /* Slim the header container */
+  .header-row{
+    padding:8px 0;
+    gap:10px;
+    align-items:center;
+    flex-wrap:nowrap;
+  }
+
+  /* Keep brand on one line */
+  .brand{
+    white-space:nowrap;
+    font-size:1rem;
+    line-height:1.1;
+    gap:8px;
+  }
+
+  .brand img{
+    width:30px;
+    height:30px;
+    flex-shrink:0;
+  }
+
+  /* Prevent nav from wrapping into second row */
+  .nav{
+    flex-wrap:nowrap;
+    gap:8px;
+  }
+
+  /* Hide normal links on mobile */
+  .nav a{
+    display:none;
+  }
+
+  /* Show only primary CTA + contact */
+  .nav a.btn-primary,
+  .nav a#call-link{
+    display:inline-flex;
+    align-items:center;
+    padding:9px 12px;
+    font-size:.9rem;
+    border-radius:12px;
+  }
+
+  /* Make Contact look lighter than main CTA */
+  .nav a#call-link{
+    background:#eef2ff;
+    color:#1e40af;
+  }
+
+}
