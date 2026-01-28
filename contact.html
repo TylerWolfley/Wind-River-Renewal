@@ -60,13 +60,24 @@
 <body class="light contact-page">
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- HEADER (match index/quote: single-line mobile + toggle hook) -->
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="/" aria-label="Wind River Renewal home">
         <img src="assets/logo-256.png" alt="Wind River Renewal logo" width="36" height="36" />
-        Wind River Renewal
+        <span class="brand-text">Wind River Renewal</span>
       </a>
-      <nav class="nav" aria-label="Primary">
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="site-nav"
+        aria-expanded="false">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="services.html">Services</a>
         <a href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
@@ -78,7 +89,7 @@
 
   <main id="main">
 
-    <!-- DIV (NOT section) so your global section padding can't create huge dead space -->
+    <!-- DIV (NOT section) so global section padding can't create huge dead space -->
     <div class="contact-hero">
       <div class="container">
         <div class="contact-hero-inner">
@@ -270,6 +281,7 @@
     <p class="micro center">© 2025 Wind River Renewal</p>
   </footer>
 
+  <!-- Keep UTM params on quote links + fill hidden UTM fields -->
   <script>
     (function () {
       function keepUTM(el, search) {
@@ -294,6 +306,28 @@
         fillFormUTM(search);
       }
       document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
+    })();
+  </script>
+
+  <!-- Tiny menu toggle (safe even if script.js already has one) -->
+  <script>
+    (function () {
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.getElementById('site-nav');
+      if (!btn || !nav) return;
+
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        document.body.classList.toggle('nav-open', !open);
+      });
+
+      nav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          btn.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('nav-open');
+        });
+      });
     })();
   </script>
 
