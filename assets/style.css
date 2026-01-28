@@ -333,4 +333,79 @@ label{font-weight:600;margin:14px 0 6px;display:block}
     color:#1e40af;
   }
 
+/* =========================================================
+   Mobile header: force TRUE single-row (fix brand stacking)
+   ========================================================= */
+
+@media (max-width: 760px){
+
+  /* One row, no wrap */
+  .header-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:nowrap;
+    gap:10px;
+    padding:8px 0;
+  }
+
+  /* Brand: icon + SINGLE LINE text */
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    min-width:0;              /* allows flex truncation */
+    flex:1 1 auto;
+    white-space:nowrap;       /* prevent Wind/River/Renewal stacking */
+    overflow:hidden;
+  }
+
+  .brand img{
+    width:30px;
+    height:30px;
+    flex:0 0 auto;
+  }
+
+  /* If brand text is a plain text node, this still works via overflow on .brand.
+     If you already have <span class="brand-text">, this makes it perfect. */
+  .brand-text{
+    display:inline-block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;   /* worst case: shortens instead of stacking */
+    max-width:100%;
+  }
+
+  /* Nav area stays on one row */
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    flex-wrap:nowrap;
+    gap:8px;
+    flex:0 0 auto;
+  }
+
+  /* Hide all nav links by default on mobile */
+  .nav a{ display:none; }
+
+  /* Show ONLY the two you want */
+  .nav a.btn-primary,
+  .nav a#call-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:9px 12px;
+    font-size:.9rem;
+    border-radius:12px;
+    white-space:nowrap;
+  }
+
+  .nav a#call-link{
+    background:#eef2ff;
+    color:#1e40af;
+    border:1px solid #dbeafe;
+  }
+}
+
 }
