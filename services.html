@@ -76,17 +76,28 @@
   }
   </script>
 </head>
+
 <body class="light">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ✅ Standardized header w/ logo (same as index) -->
+  <!-- HEADER (match index: single-line mobile header + hamburger hook) -->
   <header class="site-header">
     <div class="container header-row">
       <a class="brand" href="/" aria-label="Wind River Renewal home">
         <img src="assets/logo-256.png" alt="Wind River Renewal logo" width="36" height="36" />
-        Wind River Renewal
+        <span class="brand-text">Wind River Renewal</span>
       </a>
-      <nav class="nav" aria-label="Primary">
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="site-nav"
+        aria-expanded="false">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="services.html" aria-current="page" class="active">Services</a>
         <a href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
@@ -96,13 +107,12 @@
     </div>
   </header>
 
-  <!-- ✅ Match index structure: main contains sections; container sits inside sections -->
   <main id="main">
     <!-- Page intro -->
     <section class="section page-hero">
       <div class="container">
         <h1>What We Do</h1>
-        <p class="lead">Total property pros—junk removal & light demo with a clean finish. Daily 9–5. Same-day or ASAP when available across Fremont County (Riverton • Lander).</p>
+        <p class="lead">Total property pros—junk removal &amp; light demo with a clean finish. Daily 9–5. Same-day or ASAP when available across Fremont County (Riverton • Lander).</p>
         <div class="cta-row" style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
           <a class="btn btn-primary js-keep-utm" href="quote.html">Get My Quote</a>
           <a class="btn" href="tel:+13073494694">Call or Text 307-349-4694</a>
@@ -124,12 +134,12 @@
             <p>Transparent pricing based on volume, access, weight, and labor. No surprises.</p>
           </div>
           <div class="step">
-            <h3>3) Load & sweep</h3>
+            <h3>3) Load &amp; sweep</h3>
             <p>We remove the junk, load safely, and leave the area broom-clean.</p>
           </div>
           <div class="step">
             <h3>4) Easy payment</h3>
-            <p>Cash, check, Venmo, or Cash App. We’re licensed & insured.</p>
+            <p>Cash, check, Venmo, or Cash App. We’re licensed &amp; insured.</p>
           </div>
         </div>
       </div>
@@ -151,16 +161,16 @@
           <article class="card">
             <h3>Tenant Turnover (PM)</h3>
             <ul>
-              <li>Evictions & move-outs</li>
-              <li>Illegal dumping & unit cleanups</li>
+              <li>Evictions &amp; move-outs</li>
+              <li>Illegal dumping &amp; unit cleanups</li>
               <li>Ready-to-show results</li>
             </ul>
           </article>
           <article class="card">
-            <h3>Appliance & Furniture</h3>
+            <h3>Appliance &amp; Furniture</h3>
             <ul>
               <li>Fridges, mattresses, couches, sets</li>
-              <li>Office furniture & fixtures</li>
+              <li>Office furniture &amp; fixtures</li>
               <li>Donation when possible</li>
             </ul>
           </article>
@@ -168,15 +178,15 @@
             <h3>Construction Debris</h3>
             <ul>
               <li>Lumber, drywall, fixtures</li>
-              <li>Renovation & jobsite debris</li>
+              <li>Renovation &amp; jobsite debris</li>
               <li>Jobsite sweep</li>
             </ul>
           </article>
           <article class="card">
-            <h3>Carpet & Tile Removal</h3>
+            <h3>Carpet &amp; Tile Removal</h3>
             <ul>
               <li>Careful tear-out</li>
-              <li>Haul-away & disposal</li>
+              <li>Haul-away &amp; disposal</li>
               <li>Clean substrate</li>
             </ul>
           </article>
@@ -184,22 +194,22 @@
             <h3>Light Demolition</h3>
             <ul>
               <li>Sheds, decks, hot tubs</li>
-              <li>Playsets & small outbuildings</li>
+              <li>Playsets &amp; small outbuildings</li>
               <li>Debris removal</li>
             </ul>
           </article>
           <article class="card">
-            <h3>Yard & Exterior Debris</h3>
+            <h3>Yard &amp; Exterior Debris</h3>
             <ul>
-              <li>Brush & branches</li>
+              <li>Brush &amp; branches</li>
               <li>Fence panels</li>
               <li>Green waste</li>
             </ul>
           </article>
           <article class="card">
-            <h3>Commercial & Backrooms</h3>
+            <h3>Commercial &amp; Backrooms</h3>
             <ul>
-              <li>Backrooms & storage</li>
+              <li>Backrooms &amp; storage</li>
               <li>Illegal dumping</li>
               <li>Turnkey clean</li>
             </ul>
@@ -273,7 +283,7 @@
           <a href="tel:+13073494694">307-349-4694</a> ·
           <a href="mailto:windriverrenewal@gmail.com">windriverrenewal@gmail.com</a>
         </p>
-        <p class="micro">Licensed & Insured</p>
+        <p class="micro">Licensed &amp; Insured</p>
       </div>
       <nav aria-label="Footer">
         <a href="services.html" aria-current="page" class="active">Services</a>
@@ -289,4 +299,3 @@
   <script src="assets/script.js" defer></script>
 </body>
 </html>
-```
