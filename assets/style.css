@@ -409,3 +409,144 @@ label{font-weight:600;margin:14px 0 6px;display:block}
 }
 
 }
+
+/* =========================================================
+   Mobile hamburger header (single-row + dropdown menu)
+   ========================================================= */
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand-text{
+  display:inline-block;
+}
+
+/* Hamburger button */
+.nav-toggle{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:40px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  cursor:pointer;
+}
+
+.nav-toggle-bars{
+  width:18px;
+  height:2px;
+  background:var(--text);
+  position:relative;
+  display:block;
+}
+.nav-toggle-bars::before,
+.nav-toggle-bars::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:18px;
+  height:2px;
+  background:var(--text);
+}
+.nav-toggle-bars::before{ top:-6px; }
+.nav-toggle-bars::after{ top:6px; }
+
+/* Mobile behavior */
+@media (max-width: 760px){
+
+  /* Keep header slim + one row */
+  .header-row{
+    padding:8px 0;
+    gap:10px;
+    align-items:center;
+    flex-wrap:nowrap;
+    position:relative; /* anchors dropdown */
+  }
+
+  /* Prevent brand stacking */
+  .brand{
+    white-space:nowrap;
+    overflow:hidden;
+    min-width:0;
+    flex:1 1 auto;
+    gap:8px;
+  }
+
+  .brand img{
+    width:30px;
+    height:30px;
+    flex:0 0 auto;
+  }
+
+  .brand-text{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  /* Show hamburger */
+  .nav-toggle{ display:inline-flex; }
+
+  /* Make the always-visible CTA smaller on phones */
+  .header-cta{
+    padding:10px 12px;
+    font-size:.9rem;
+    border-radius:12px;
+    white-space:nowrap;
+  }
+
+  /* Dropdown menu hidden by default */
+  .nav{
+    display:none;
+    position:absolute;
+    left:16px;
+    right:16px;
+    top:calc(100% + 10px);
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:10px;
+    box-shadow:var(--shadow);
+    z-index:100;
+    flex-direction:column;
+    gap:6px;
+  }
+
+  /* Menu links become full-width rows */
+  .nav a{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    padding:10px 12px;
+    border-radius:12px;
+    text-decoration:none;
+  }
+
+  /* Make the "Get a Quote" inside dropdown full width */
+  .nav a.btn{
+    justify-content:center;
+    width:100%;
+  }
+
+  /* Open state */
+  body.nav-open .nav{ display:flex; }
+
+  /* Animate hamburger into an X when open */
+  body.nav-open .nav-toggle-bars{ background:transparent; }
+  body.nav-open .nav-toggle-bars::before{
+    top:0;
+    transform:rotate(45deg);
+  }
+  body.nav-open .nav-toggle-bars::after{
+    top:0;
+    transform:rotate(-45deg);
+  }
+
+  /* Optional: hide duplicate Get a Quote inside dropdown on mobile if you want only one CTA */
+  /* body:not(.nav-open) .nav a.btn-primary{ display:none; } */
+}
