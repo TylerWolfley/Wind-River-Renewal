@@ -33,17 +33,18 @@ img{max-width:100%;height:auto;display:block}
   padding-inline:16px;
 }
 
-/* future-proof spacing class */
-.section{padding:56px 0}
+/* future-proof spacing class
+   SAFETY FIX: only apply .section padding when it's NOT a <section>.
+   (Because your site already pads all <section> elements globally.) */
+.section:not(section){padding:56px 0}
 @media (min-width:900px){
-  .section{padding:80px 0}
+  .section:not(section){padding:80px 0}
 }
 
-/* TEMP COMPAT (ONLY sections that do NOT already use .section)
-   Fixes double-padding + weird gaps across the site */
-section:not(.hero):not(.section){padding:56px 0}
+/* TEMP COMPAT (apply spacing to all sections except hero) — keep your original behavior */
+section:not(.hero){padding:56px 0}
 @media (min-width:900px){
-  section:not(.hero):not(.section){padding:80px 0}
+  section:not(.hero){padding:80px 0}
 }
 
 .micro{font-size:.9rem;color:var(--muted)}
@@ -107,7 +108,7 @@ section:not(.hero):not(.section){padding:56px 0}
 
 /* ✅ IMPORTANT: make ONLY the hero container wider so the image can actually grow */
 .hero .container{
-  max-width:1240px; /* was 1100 — this is the “real” reason it didn’t feel bigger */
+  max-width:1240px;
 }
 
 .hero-grid{
@@ -120,7 +121,7 @@ section:not(.hero):not(.section){padding:56px 0}
 /* ✅ Give the image column more width on desktop */
 @media (min-width:960px){
   .hero-grid{
-    grid-template-columns: .95fr 1.15fr; /* image side bigger */
+    grid-template-columns:.95fr 1.15fr;
     gap:44px;
   }
 }
@@ -170,17 +171,13 @@ section:not(.hero):not(.section){padding:56px 0}
 /* ✅ HERO IMAGE: NO CROP, NO SHADOW, BIGGER */
 .hero-media img{
   border-radius:var(--radius);
-  box-shadow:none;              /* kills the “border/frame” vibe */
-  background:transparent;       /* no frame */
+  box-shadow:none;
+  background:transparent;
   width:100%;
   height:auto;
-
-  /* Let width drive size; keep a generous safety cap */
-  max-height:560px;             /* bigger than your current */
-  object-fit:contain;           /* no crop */
+  max-height:560px;
+  object-fit:contain;
 }
-
-/* Desktop: bigger cap */
 @media (min-width:960px){
   .hero-media img{max-height:540px;}
 }
@@ -207,8 +204,6 @@ section:not(.hero):not(.section){padding:56px 0}
 
 .card h3{margin:0 0 6px;font-size:1.05rem}
 .card p{margin:0;color:var(--muted)}
-
-/* Make lists inside cards look clean (services.html uses <ul>) */
 .card ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
 .card li{margin:6px 0}
 
@@ -232,7 +227,6 @@ section:not(.hero):not(.section){padding:56px 0}
   gap:16px;
   grid-template-columns:1fr;
 }
-
 @media (min-width:760px){
   .footer-grid{grid-template-columns:1fr 1fr}
 }
@@ -243,7 +237,6 @@ section:not(.hero):not(.section){padding:56px 0}
   flex-wrap:wrap;
   justify-content:flex-end;
 }
-
 .site-footer nav a{color:var(--text);text-decoration:none}
 .site-footer nav a:hover{text-decoration:underline}
 
@@ -300,11 +293,11 @@ label{font-weight:600;margin:14px 0 6px;display:block}
 
 /* =========================================================
    Contact page (scoped, clean, no giant dead space)
+   Requires: <body class="light contact-page"> and hero wrapper <div class="contact-hero">
    ========================================================= */
 
 .contact-page .lead{max-width:72ch}
 
-/* Contact hero is a DIV so it won't get the global section padding */
 .contact-page .contact-hero{
   padding:28px 0 18px;
   background:linear-gradient(180deg,#ffffff 0%,#f7f7f8 100%);
@@ -337,7 +330,6 @@ label{font-weight:600;margin:14px 0 6px;display:block}
   margin-top:12px;
 }
 
-/* Panels (SCOPED so it doesn't affect other pages) */
 .contact-page .panel{
   background:var(--surface);
   border:1px solid var(--border);
@@ -356,7 +348,6 @@ label{font-weight:600;margin:14px 0 6px;display:block}
   margin:14px 0;
 }
 
-/* Main layout */
 .contact-page .contact-grid{
   display:grid;
   gap:18px;
@@ -366,7 +357,6 @@ label{font-weight:600;margin:14px 0 6px;display:block}
   .contact-page .contact-grid{grid-template-columns:1.1fr .9fr}
 }
 
-/* Buttons area under form */
 .contact-page .form-actions{
   display:flex;
   gap:10px;
@@ -374,7 +364,6 @@ label{font-weight:600;margin:14px 0 6px;display:block}
   margin-top:12px;
 }
 
-/* Quick buttons in sidebar */
 .contact-page .contact-quick-actions{
   display:flex;
   gap:10px;
@@ -383,7 +372,6 @@ label{font-weight:600;margin:14px 0 6px;display:block}
   margin-bottom:12px;
 }
 
-/* Sidebar mini cards */
 .contact-page .contact-mini-cards{
   display:grid;
   gap:10px;
@@ -408,7 +396,6 @@ label{font-weight:600;margin:14px 0 6px;display:block}
 .contact-page .mini-link:hover{text-decoration:underline}
 .contact-page .mini-text{color:var(--text)}
 
-/* Checklist */
 .contact-page .mini-title{
   margin:0;
   font-size:1rem;
@@ -420,7 +407,6 @@ label{font-weight:600;margin:14px 0 6px;display:block}
 }
 .contact-page .checklist li{margin:7px 0}
 
-/* Clean links list */
 .contact-page .contact-links{
   list-style:none;
   padding:0;
@@ -434,7 +420,6 @@ label{font-weight:600;margin:14px 0 6px;display:block}
 }
 .contact-page .contact-links a:hover{text-decoration:underline}
 
-/* Extra polish: form fields feel less “default browser” */
 .contact-page textarea{
   resize:vertical;
   min-height:140px;
