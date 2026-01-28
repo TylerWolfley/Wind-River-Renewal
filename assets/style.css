@@ -1,145 +1,133 @@
-/* ---------- Base */
-:root{
-  --bg:#f7f7f8;
-  --surface:#ffffff;
-  --text:#0f172a;
-  --muted:#64748b;
-  --border:#e5e7eb;
-  --primary:#2563eb;
-  --primary-ink:#ffffff;
-  --radius:16px;
-  --shadow:0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06);
-}
+/* =========================================================
+   Contact page OVERRIDES (paste LAST, do not delete anything)
+   ========================================================= */
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  color:var(--text);
-  background:var(--bg);
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-}
+.contact-page .lead{max-width:72ch}
 
-img{max-width:100%;height:auto;display:block}
-
-/* ---------- Layout */
-.container{
-  width:100%;
-  max-width:1100px;
-  margin-inline:auto;
-  padding-inline:16px;
-}
-
-/* future-proof spacing class */
-.section{padding:56px 0}
-@media (min-width:900px){
-  .section{padding:80px 0}
-}
-
-/* TEMP COMPAT (ONLY sections that do NOT already use .section) */
-section:not(.hero):not(.section){padding:56px 0}
-@media (min-width:900px){
-  section:not(.hero):not(.section){padding:80px 0}
-}
-
-.micro{font-size:.9rem;color:var(--muted)}
-.center{text-align:center}
-.mt-l{margin-top:32px}
-
-/* ---------- Header */
-.site-header{
-  position:sticky; top:0; z-index:50;
-  background:var(--surface);
+/* Kill the giant empty space: hero is a DIV, and we define tight padding here */
+.contact-hero{
+  padding:28px 0 18px;
+  background:linear-gradient(180deg,#ffffff 0%,#f7f7f8 100%);
   border-bottom:1px solid var(--border);
 }
-.header-row{
-  display:flex; align-items:center; justify-content:space-between;
-  gap:16px; padding:14px 0;
-}
-.brand{
-  display:flex; align-items:center; gap:10px;
-  font-weight:700; color:var(--text); text-decoration:none;
-}
-.nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
-.nav a{
-  color:var(--text); text-decoration:none; padding:8px 10px; border-radius:10px;
-}
-.nav a:hover{background:#f1f5f9}
-.nav a.active{background:#eef2ff;color:#1e40af}
-
-/* ---------- Buttons */
-.btn{
-  display:inline-block;
-  padding:12px 18px;
-  border-radius:14px;
-  font-weight:600;
-  border:1px solid var(--border);
-  background:var(--surface);
-  color:var(--text);
-  box-shadow:0 1px 0 rgba(0,0,0,.03);
-  transition:transform .12s ease, filter .12s ease;
-  text-decoration:none;
-}
-.btn:hover{transform:translateY(-1px)}
-.btn-primary{
-  background:var(--primary);
-  color:var(--primary-ink);
-  border-color:transparent;
-  box-shadow:var(--shadow);
-}
-
-/* ---------- HERO (tight + aligned) */
-.hero{
-  background:linear-gradient(180deg,#ffffff 0%,#f7f7f8 100%);
-  padding-top:10px;
-  padding-bottom:64px;
-}
-@media (min-width:900px){
-  .hero{
-    padding-top:8px;
-    padding-bottom:80px;
-  }
-}
-
-/* ✅ IMPORTANT: make ONLY the hero container wider so the image can actually grow */
-.hero .container{
-  max-width:1240px;
-}
-
-.hero-grid{
+.contact-hero-inner{
   display:grid;
-  gap:28px;
   grid-template-columns:1fr;
+  gap:16px;
   align-items:start;
 }
-
-/* ✅ Give the image column more width on desktop */
 @media (min-width:960px){
-  .hero-grid{
-    grid-template-columns: .95fr 1.15fr;
-    gap:44px;
+  .contact-hero-inner{
+    grid-template-columns:1.15fr .85fr;
+    align-items:stretch;
   }
 }
+.contact-page h1{
+  margin:0 0 8px;
+  font-size:clamp(1.9rem,1.2rem + 2.2vw,2.6rem);
+  line-height:1.15;
+  letter-spacing:-.01em;
+}
+.contact-hero-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
 
-/* Desktop alignment tweak */
+/* Panels (force consistent look even if earlier panel rules exist) */
+.contact-page .panel{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 1px 0 rgba(0,0,0,.03);
+}
+.contact-page .panel-soft{
+  background:color-mix(in oklab, var(--surface) 82%, #eef2ff);
+}
+.contact-page .panel-title{margin:0}
+.contact-page .panel-sub{margin:6px 0 0}
+.contact-page .panel-divider{
+  height:1px;
+  background:var(--border);
+  margin:14px 0;
+}
+
+/* Grid */
+.contact-page .contact-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
 @media (min-width:960px){
-  .hero-copy{transform:translateY(-16px)}
+  .contact-page .contact-grid{grid-template-columns:1.1fr .9fr}
 }
 
-.hero-copy,
-.hero-media{
-  margin-top:0;
-  padding-top:0;
+/* Fix form/button spacing */
+.contact-page .form-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+.contact-page .contact-quick-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:12px;
+  margin-bottom:12px;
 }
 
-.hero-copy > *:first-child,
-.hero-media > *:first-child{
-  margin-top:0;
+/* Replace ugly bullets with mini cards */
+.contact-page .contact-mini-cards{
+  display:grid;
+  gap:10px;
+  margin-top:6px;
 }
+.contact-page .mini-card{
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:12px 14px;
+  background:var(--surface);
+}
+.contact-page .mini-kicker{
+  font-size:.85rem;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+.contact-page .mini-link{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:700;
+}
+.contact-page .mini-link:hover{text-decoration:underline}
+.contact-page .mini-text{color:var(--text)}
 
-.hero-copy h1{
-  font-size:clamp(1.9rem,1.1
+/* Checklist */
+.contact-page .mini-title{
+  margin:0;
+  font-size:1rem;
+}
+.contact-page .checklist{
+  margin:10px 0 0;
+  padding-left:18px;
+  color:var(--muted);
+}
+.contact-page .checklist li{margin:7px 0}
+
+/* Sidebar links: NO bullets, clean spacing */
+.contact-page .contact-links{
+  list-style:none !important;
+  padding:0 !important;
+  margin:0 !important;
+  display:grid;
+  gap:8px;
+}
+.contact-page .contact-links a{
+  color:var(--text);
+  text-decoration:none;
+}
+.contact-page .contact-links a:hover{text-decoration:underline}
+
 
