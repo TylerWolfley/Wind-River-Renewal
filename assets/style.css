@@ -1,41 +1,343 @@
+/* ---------- Base */
+:root{
+  --bg:#f7f7f8;
+  --surface:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --border:#e5e7eb;
+  --primary:#2563eb;
+  --primary-ink:#ffffff;
+  --radius:16px;
+  --shadow:0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+img{max-width:100%;height:auto;display:block}
+
+/* ---------- Layout */
+.container{
+  width:100%;
+  max-width:1100px;
+  margin-inline:auto;
+  padding-inline:16px;
+}
+
+/* future-proof spacing class */
+.section{padding:56px 0}
+@media (min-width:900px){
+  .section{padding:80px 0}
+}
+
+/* TEMP COMPAT (ONLY sections that do NOT already use .section)
+   Fixes double-padding + weird gaps across the site */
+section:not(.hero):not(.section){padding:56px 0}
+@media (min-width:900px){
+  section:not(.hero):not(.section){padding:80px 0}
+}
+
+.micro{font-size:.9rem;color:var(--muted)}
+.center{text-align:center}
+.mt-l{margin-top:32px}
+
+/* ---------- Header */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+}
+.header-row{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding:14px 0;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:700; color:var(--text); text-decoration:none;
+}
+.nav{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+.nav a{
+  color:var(--text); text-decoration:none; padding:8px 10px; border-radius:10px;
+}
+.nav a:hover{background:#f1f5f9}
+.nav a.active{background:#eef2ff;color:#1e40af}
+
+/* ---------- Buttons */
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:14px;
+  font-weight:600;
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
+  box-shadow:0 1px 0 rgba(0,0,0,.03);
+  transition:transform .12s ease, filter .12s ease;
+  text-decoration:none;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{
+  background:var(--primary);
+  color:var(--primary-ink);
+  border-color:transparent;
+  box-shadow:var(--shadow);
+}
+
+/* ---------- HERO (tight + aligned) */
+.hero{
+  background:linear-gradient(180deg,#ffffff 0%,#f7f7f8 100%);
+  padding-top:10px;
+  padding-bottom:64px;
+}
+@media (min-width:900px){
+  .hero{
+    padding-top:8px;
+    padding-bottom:80px;
+  }
+}
+
+/* ✅ IMPORTANT: make ONLY the hero container wider so the image can actually grow */
+.hero .container{
+  max-width:1240px; /* was 1100 — this is the “real” reason it didn’t feel bigger */
+}
+
+.hero-grid{
+  display:grid;
+  gap:28px;
+  grid-template-columns:1fr;
+  align-items:start;
+}
+
+/* ✅ Give the image column more width on desktop */
+@media (min-width:960px){
+  .hero-grid{
+    grid-template-columns: .95fr 1.15fr; /* image side bigger */
+    gap:44px;
+  }
+}
+
+/* Desktop alignment tweak */
+@media (min-width:960px){
+  .hero-copy{transform:translateY(-16px)}
+}
+
+.hero-copy,
+.hero-media{
+  margin-top:0;
+  padding-top:0;
+}
+
+.hero-copy > *:first-child,
+.hero-media > *:first-child{
+  margin-top:0;
+}
+
+.hero-copy h1{
+  font-size:clamp(1.9rem,1.1rem + 2.6vw,3rem);
+  line-height:1.2;
+  margin:0 0 10px;
+  letter-spacing:-.01em;
+}
+
+.tagline{font-weight:600;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ✅ REMOVE any “frame” effects from wrappers too (not just the img) */
+.hero-media{
+  background:transparent !important;
+  border:0 !important;
+  padding:0 !important;
+  box-shadow:none !important;
+}
+.hero-media picture{
+  display:block;
+  background:transparent !important;
+  border:0 !important;
+  padding:0 !important;
+  box-shadow:none !important;
+}
+
+/* ✅ HERO IMAGE: NO CROP, NO SHADOW, BIGGER */
+.hero-media img{
+  border-radius:var(--radius);
+  box-shadow:none;              /* kills the “border/frame” vibe */
+  background:transparent;       /* no frame */
+  width:100%;
+  height:auto;
+
+  /* Let width drive size; keep a generous safety cap */
+  max-height:560px;             /* bigger than your current */
+  object-fit:contain;           /* no crop */
+}
+
+/* Desktop: bigger cap */
+@media (min-width:960px){
+  .hero-media img{max-height:540px;}
+}
+
+/* ---------- Services */
+.services h2,.coverage h2{
+  font-size:clamp(1.4rem,.9rem + 1.6vw,2rem);
+  margin:0 0 18px;
+}
+
+.cards{
+  display:grid;
+  gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:18px;
+  border-radius:14px;
+  box-shadow:0 1px 0 rgba(0,0,0,.03);
+}
+
+.card h3{margin:0 0 6px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted)}
+
+/* Make lists inside cards look clean (services.html uses <ul>) */
+.card ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+.card li{margin:6px 0}
+
+/* ---------- Notice */
+.notice{
+  background:#fff7ed;
+  border-top:1px solid #fed7aa;
+  border-bottom:1px solid #fed7aa;
+}
+.notice .container{max-width:980px}
+
+/* ---------- Footer */
+.site-footer{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  padding:28px 0;
+}
+
+.footer-grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns:1fr;
+}
+
+@media (min-width:760px){
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+
+.site-footer nav{
+  display:flex;
+  gap:10px 14px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.site-footer nav a{color:var(--text);text-decoration:none}
+.site-footer nav a:hover{text-decoration:underline}
+
+/* ---------- Forms */
+input,select,textarea{
+  font:inherit;
+  color:inherit;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px 14px;
+  width:100%;
+}
+
+label{font-weight:600;margin:14px 0 6px;display:block}
+.form-row{display:grid;gap:12px}
+@media (min-width:760px){
+  .form-row.two{grid-template-columns:1fr 1fr}
+}
+
+/* ---------- Focus & a11y */
+:focus-visible{
+  outline:3px solid color-mix(in oklab,var(--primary) 70%,white);
+  outline-offset:2px;
+  border-radius:10px;
+}
+
+/* --- Skip link */
+.skip-link{
+  position:absolute;
+  left:-9999px;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  left:16px;
+  top:16px;
+  width:auto;
+  height:auto;
+  padding:10px 14px;
+  background:#0f172a;
+  color:#fff;
+  border-radius:10px;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+
+/* --- Reduced motion */
+@media (prefers-reduced-motion:reduce){
+  .btn{transition:none}
+  .btn:hover{transform:none}
+}
+
 /* =========================================================
-   Contact page OVERRIDES (paste LAST, do not delete anything)
+   Contact page (scoped, clean, no giant dead space)
    ========================================================= */
 
 .contact-page .lead{max-width:72ch}
 
-/* Kill the giant empty space: hero is a DIV, and we define tight padding here */
-.contact-hero{
+/* Contact hero is a DIV so it won't get the global section padding */
+.contact-page .contact-hero{
   padding:28px 0 18px;
   background:linear-gradient(180deg,#ffffff 0%,#f7f7f8 100%);
   border-bottom:1px solid var(--border);
 }
-.contact-hero-inner{
+.contact-page .contact-hero-inner{
   display:grid;
-  grid-template-columns:1fr;
   gap:16px;
+  grid-template-columns:1fr;
   align-items:start;
 }
 @media (min-width:960px){
-  .contact-hero-inner{
+  .contact-page .contact-hero-inner{
     grid-template-columns:1.15fr .85fr;
     align-items:stretch;
   }
 }
+
 .contact-page h1{
   margin:0 0 8px;
   font-size:clamp(1.9rem,1.2rem + 2.2vw,2.6rem);
   line-height:1.15;
   letter-spacing:-.01em;
 }
-.contact-hero-actions{
+
+.contact-page .contact-hero-actions{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
   margin-top:12px;
 }
 
-/* Panels (force consistent look even if earlier panel rules exist) */
+/* Panels (SCOPED so it doesn't affect other pages) */
 .contact-page .panel{
   background:var(--surface);
   border:1px solid var(--border);
@@ -54,23 +356,25 @@
   margin:14px 0;
 }
 
-/* Grid */
+/* Main layout */
 .contact-page .contact-grid{
   display:grid;
-  grid-template-columns:1fr;
   gap:18px;
+  grid-template-columns:1fr;
 }
 @media (min-width:960px){
   .contact-page .contact-grid{grid-template-columns:1.1fr .9fr}
 }
 
-/* Fix form/button spacing */
+/* Buttons area under form */
 .contact-page .form-actions{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
   margin-top:12px;
 }
+
+/* Quick buttons in sidebar */
 .contact-page .contact-quick-actions{
   display:flex;
   gap:10px;
@@ -79,7 +383,7 @@
   margin-bottom:12px;
 }
 
-/* Replace ugly bullets with mini cards */
+/* Sidebar mini cards */
 .contact-page .contact-mini-cards{
   display:grid;
   gap:10px;
@@ -116,11 +420,11 @@
 }
 .contact-page .checklist li{margin:7px 0}
 
-/* Sidebar links: NO bullets, clean spacing */
+/* Clean links list */
 .contact-page .contact-links{
-  list-style:none !important;
-  padding:0 !important;
-  margin:0 !important;
+  list-style:none;
+  padding:0;
+  margin:0;
   display:grid;
   gap:8px;
 }
@@ -130,4 +434,8 @@
 }
 .contact-page .contact-links a:hover{text-decoration:underline}
 
-
+/* Extra polish: form fields feel less “default browser” */
+.contact-page textarea{
+  resize:vertical;
+  min-height:140px;
+}
