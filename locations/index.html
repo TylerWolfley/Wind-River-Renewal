@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Service Areas in Wyoming | Wind River Renewal</title>
-  <meta name="description" content="Wind River Renewal service areas across Wyoming. Find your city or county. Junk removal, cleanouts, and light demolition. Call/text 307-349-4694." />
+  <title>Wyoming Service Areas | Wind River Renewal</title>
+  <meta name="description" content="Wind River Renewal service areas across Wyoming. Junk removal, cleanouts, haul-away, and light demolition. Fremont County + Natrona County. Call/text 307-349-4694." />
   <meta name="application-name" content="Wind River Renewal" />
 
   <!-- Canonical -->
@@ -25,16 +25,16 @@
   <!-- Open Graph -->
   <meta property="og:site_name" content="Wind River Renewal" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Service Areas in Wyoming | Wind River Renewal" />
-  <meta property="og:description" content="Find your city or county. Call or text 307-349-4694." />
+  <meta property="og:title" content="Wyoming Service Areas | Wind River Renewal" />
+  <meta property="og:description" content="Fremont County + Natrona County. Call or text 307-349-4694." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://windriverrenewal.com/locations/" />
   <meta property="og:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Service Areas in Wyoming | Wind River Renewal" />
-  <meta name="twitter:description" content="Find your city or county. Call or text 307-349-4694." />
+  <meta name="twitter:title" content="Wyoming Service Areas | Wind River Renewal" />
+  <meta name="twitter:description" content="Fremont County + Natrona County. Call or text 307-349-4694." />
   <meta name="twitter:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
 
   <!-- GA4 -->
@@ -52,7 +52,7 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": "https://windriverrenewal.com/locations/#webpage",
-    "name": "Service Areas in Wyoming | Wind River Renewal",
+    "name": "Wyoming Service Areas | Wind River Renewal",
     "url": "https://windriverrenewal.com/locations/",
     "description": "Service areas and city pages for Wind River Renewal across Wyoming."
   }
@@ -67,53 +67,48 @@
     .header-row{position:relative; z-index:10000;}
     .nav-toggle{position:relative; z-index:10001; pointer-events:auto;}
 
-    /* Coverage grid */
-    .coverage-grid{display:grid; gap:14px; margin-top:14px}
-    @media (min-width: 900px){.coverage-grid{grid-template-columns:1.1fr .9fr}}
+    .service-areas-intro{max-width:72ch}
 
-    .coverage-card h3{margin:0 0 8px}
-    .coverage-badges{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 0}
-    .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:var(--surface);
-      font-weight:700;
-      box-shadow:var(--shadow-sm);
-      font-size:.95rem;
-    }
-    .badge .dot{width:10px;height:10px;border-radius:999px;display:inline-block}
-    .dot-green{background:#16a34a}
-    .dot-blue{background:#2563eb}
-    .dot-amber{background:#f59e0b}
-
-    /* Directory */
-    .directory{display:grid; gap:14px; margin-top:14px}
-    @media (min-width: 900px){.directory{grid-template-columns:1fr 1fr}}
-
-    .dir-list{margin:0; padding-left:18px}
-    .dir-list li{margin:6px 0}
-    .dir-list a{font-weight:800; text-decoration:none}
-    .dir-list a:hover{text-decoration:underline}
-
-    /* Search */
-    .search-row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px}
-    .search-row input{
-      max-width:420px;
-    }
-    .muted{opacity:.85}
-
-    /* Tighten hero a touch */
-    .hero .sub{max-width:70ch}
-
-    /* Small “jump links” */
     .jump-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
     .jump-row a{font-weight:800; text-decoration:none}
     .jump-row a:hover{text-decoration:underline}
 
-    /* Hide non-matching directory items */
-    .is-hidden{display:none !important}
+    .areas-grid{display:grid; gap:14px; margin-top:14px}
+    @media (min-width: 960px){.areas-grid{grid-template-columns:1fr 1fr}}
+
+    .area-card h3{margin:0 0 8px}
+    .area-list{margin:0; padding-left:18px}
+    .area-list li{margin:6px 0}
+    .area-list a{font-weight:900; text-decoration:none}
+    .area-list a:hover{text-decoration:underline}
+
+    .area-badge-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .area-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:var(--surface);
+      box-shadow:var(--shadow-sm);
+      font-weight:800;
+      font-size:.95rem;
+    }
+
+    .dot{width:10px;height:10px;border-radius:999px;display:inline-block}
+    .dot-green{background:#16a34a}
+    .dot-blue{background:#2563eb}
+
+    .notice-tight .container{max-width:980px}
+    .muted{opacity:.85}
+
+    .cards article.card h3{margin:0 0 6px}
+    .cards article.card p{margin:0}
+
+    /* Optional: “big city buttons” */
+    .city-buttons{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .city-buttons a{font-weight:900}
   </style>
 </head>
 
@@ -153,197 +148,129 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <h1>Service Areas in Wyoming</h1>
-          <p class="tagline">Find your city. Get a fast quote. We show up.</p>
+          <p class="tagline">We serve Fremont County and Natrona County.</p>
 
-          <p class="sub">
-            We’re owner-operated in Fremont County and expanding into Natrona County.
-            If the job makes sense, we travel statewide.
+          <p class="sub service-areas-intro">
+            Wind River Renewal handles junk removal, cleanouts, haul-away, and light demolition.
+            We’re owner-operated in Wyoming and we show up ready to work — Riverton, Lander, Casper, and the surrounding towns.
           </p>
 
-          <div class="coverage-badges" aria-label="Coverage status">
-            <span class="badge"><span class="dot dot-green" aria-hidden="true"></span>Primary Coverage</span>
-            <span class="badge"><span class="dot dot-blue" aria-hidden="true"></span>Expanding Coverage</span>
-            <span class="badge"><span class="dot dot-amber" aria-hidden="true"></span>Travel Jobs (Case-by-case)</span>
+          <div class="area-badge-row" aria-label="Coverage badges">
+            <span class="area-badge"><span class="dot dot-green" aria-hidden="true"></span>Fremont County</span>
+            <span class="area-badge"><span class="dot dot-blue" aria-hidden="true"></span>Natrona County</span>
+          </div>
+
+          <div class="city-buttons" aria-label="Popular city pages">
+            <a class="btn btn-primary js-keep-utm" href="/junk-removal-riverton.html">Riverton</a>
+            <a class="btn btn-primary js-keep-utm" href="/junk-removal-lander.html">Lander</a>
+            <a class="btn btn-primary js-keep-utm" href="/locations/casper.html">Casper</a>
           </div>
 
           <div class="jump-row">
-            <a href="#where-we-serve">Where we serve</a>
-            <a href="#cities">Cities & counties</a>
-            <a class="js-keep-utm" href="#quote">Quick estimate</a>
+            <a href="#counties">Counties & cities</a>
+            <a href="#what-we-do">What we do</a>
           </div>
 
           <div class="cta-row" style="margin-top:14px">
             <a class="btn btn-primary" href="tel:+13073494694" aria-label="Call Wind River Renewal at 307-349-4694">Call or Text 307-349-4694</a>
-            <a class="btn btn-secondary js-keep-utm" href="#quote">Get My Quote</a>
+            <a class="btn" href="sms:+13073494694">Text Photos</a>
           </div>
 
           <p class="micro">Fastest quote: text a photo + your address + what you want removed.</p>
         </div>
 
-        <!-- Quick Estimate -->
-        <div class="card" id="quote">
-          <h3 style="margin:0 0 8px">Quick Estimate</h3>
-          <p class="micro muted" style="margin:0 0 10px">Tell us what you’ve got and what city you’re in. We’ll reply fast.</p>
+        <!-- Right-side “confidence card” instead of a form -->
+        <div class="card" aria-label="Service area summary">
+          <h3 style="margin:0 0 8px">Where We Actually Run Jobs</h3>
+          <p class="micro muted" style="margin:0 0 10px">No guessing. Here’s the straight answer.</p>
 
-          <form action="https://formspree.io/f/mqadaqdp" method="POST" accept-charset="UTF-8">
-            <input type="hidden" name="_redirect" value="https://windriverrenewal.com/thanks.html" />
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="cards" style="grid-template-columns:1fr; gap:10px">
+            <article class="card" style="padding:14px">
+              <h3>Fremont County</h3>
+              <p class="micro">Riverton • Lander • Hudson • Shoshoni • Pavillion • Dubois • Fort Washakie • Ethete</p>
+            </article>
+            <article class="card" style="padding:14px">
+              <h3>Natrona County</h3>
+              <p class="micro">Casper • Mills • Evansville • Bar Nunn</p>
+            </article>
+          </div>
 
-            <label>What needs removed?
-              <textarea name="project" placeholder="e.g., garage cleanout, old couch, renovation debris" required></textarea>
-            </label>
-
-            <div class="grid2">
-              <label>City / Area
-                <input name="city" placeholder="e.g., Casper, Riverton, Lander" required />
-              </label>
-              <label>Preferred date
-                <input name="date" type="date" />
-              </label>
-            </div>
-
-            <div class="grid2">
-              <label>Name
-                <input name="name" required />
-              </label>
-              <label>Phone
-                <input name="phone" required />
-              </label>
-            </div>
-
-            <!-- UTM capture -->
-            <input type="hidden" name="utm_source" id="utm_source">
-            <input type="hidden" name="utm_medium" id="utm_medium">
-            <input type="hidden" name="utm_campaign" id="utm_campaign">
-            <input type="hidden" name="utm_term" id="utm_term">
-            <input type="hidden" name="utm_content" id="utm_content">
-
-            <button class="btn btn-primary" type="submit">Request Estimate</button>
-            <p class="micro">Or call/text <a class="js-keep-utm" href="tel:+13073494694">307-349-4694</a></p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHERE WE SERVE (make this the star) -->
-    <section class="section" id="where-we-serve">
-      <div class="container">
-        <h2>Where We Serve</h2>
-        <p class="micro">Here’s the honest breakdown — what we cover regularly, what we’re building, and where we’ll travel if the job makes sense.</p>
-
-        <div class="coverage-grid">
-          <article class="card coverage-card">
-            <h3><span class="dot dot-green" aria-hidden="true" style="display:inline-block;margin-right:8px;vertical-align:middle"></span>Primary Coverage (Regular Routes)</h3>
-            <p class="micro muted">Fast scheduling, most consistent availability.</p>
-            <ul class="dir-list">
-              <li><a class="js-keep-utm" href="/junk-removal-riverton.html">Riverton</a> (Fremont County)</li>
-              <li><a class="js-keep-utm" href="/junk-removal-lander.html">Lander</a> (Fremont County)</li>
-              <li>Hudson</li>
-              <li>Shoshoni</li>
-              <li>Pavillion</li>
-              <li>Fort Washakie</li>
-              <li>Ethete</li>
-              <li>Dubois</li>
-            </ul>
-          </article>
-
-          <article class="card coverage-card">
-            <h3><span class="dot dot-blue" aria-hidden="true" style="display:inline-block;margin-right:8px;vertical-align:middle"></span>Expanding Coverage</h3>
-            <p class="micro muted">We’re actively building routes and volume here.</p>
-            <ul class="dir-list">
-              <li><a class="js-keep-utm" href="/locations/casper.html">Casper</a> (Natrona County)</li>
-              <li>Mills</li>
-              <li>Evansville</li>
-              <li>Bar Nunn</li>
-            </ul>
-            <p class="micro muted" style="margin:10px 0 0">Text photos for the fastest quote and scheduling.</p>
-          </article>
-        </div>
-
-        <div class="card" style="margin-top:14px">
-          <h3><span class="dot dot-amber" aria-hidden="true" style="display:inline-block;margin-right:8px;vertical-align:middle"></span>Travel Jobs (Case-by-case)</h3>
-          <p style="margin:0 0 8px">
-            If the job is large enough or the schedule lines up, we’ll travel statewide.
-          </p>
-          <p class="micro muted" style="margin:0">
-            Best way to check: text photos + address to <a class="js-keep-utm" href="sms:+13073494694">307-349-4694</a>.
+          <p class="micro" style="margin:12px 0 0">
+            Don’t see your town? Call/text anyway — if the job makes sense, we’ll make it happen.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- DIRECTORY (with search filter) -->
-    <section class="section" id="cities">
+    <!-- COUNTIES & CITIES DIRECTORY -->
+    <section class="section" id="counties">
       <div class="container">
-        <h2>Cities & Counties Directory</h2>
-        <p class="micro">Use the search to find your town. If you don’t see it, call/text anyway — we still might cover it.</p>
+        <h2>Counties & Cities We Serve</h2>
+        <p class="micro">Click your city page for details. If you’re nearby, you’re good.</p>
 
-        <div class="search-row" role="search" aria-label="Search service areas">
-          <label style="margin:0; font-weight:800">Search:</label>
-          <input id="areaSearch" type="text" placeholder="Type a city or county (ex: Riverton, Casper, Fremont)" aria-label="Search cities and counties">
-          <span class="micro muted" id="searchCount" aria-live="polite"></span>
-        </div>
-
-        <div class="directory" id="areaDirectory" style="margin-top:14px">
-          <article class="card area-card" data-area="Fremont County Riverton Lander Hudson Shoshoni Pavillion Fort Washakie Ethete Dubois">
+        <div class="areas-grid">
+          <article class="card area-card">
             <h3>Fremont County</h3>
-            <ul class="dir-list">
+            <ul class="area-list">
               <li><a class="js-keep-utm" href="/junk-removal-riverton.html">Riverton</a></li>
               <li><a class="js-keep-utm" href="/junk-removal-lander.html">Lander</a></li>
               <li>Hudson</li>
               <li>Shoshoni</li>
               <li>Pavillion</li>
+              <li>Dubois</li>
               <li>Fort Washakie</li>
               <li>Ethete</li>
-              <li>Dubois</li>
             </ul>
+            <p class="micro muted" style="margin:10px 0 0">Owner-operated in Fremont County. Same-day when available.</p>
           </article>
 
-          <article class="card area-card" data-area="Natrona County Casper Mills Evansville Bar Nunn">
+          <article class="card area-card">
             <h3>Natrona County</h3>
-            <ul class="dir-list">
+            <ul class="area-list">
               <li><a class="js-keep-utm" href="/locations/casper.html">Casper</a></li>
               <li>Mills</li>
               <li>Evansville</li>
               <li>Bar Nunn</li>
             </ul>
+            <p class="micro muted" style="margin:10px 0 0">Casper jobs welcomed. Ready to haul and demo.</p>
           </article>
-
-          <!-- Add more county cards here as you expand -->
-          <!-- Example:
-          <article class="card area-card" data-area="Sweetwater County Rock Springs Green River">
-            <h3>Sweetwater County</h3>
-            <ul class="dir-list">
-              <li>Rock Springs</li>
-              <li>Green River</li>
-            </ul>
-          </article>
-          -->
         </div>
 
         <div class="center mt-l">
-          <a class="btn btn-primary js-keep-utm" href="#quote">Request Estimate</a>
-          <a class="btn" href="tel:+13073494694">Call 307-349-4694</a>
+          <a class="btn btn-primary" href="tel:+13073494694">Call or Text 307-349-4694</a>
+          <a class="btn js-keep-utm" href="/quote.html">Get a Quote</a>
         </div>
       </div>
     </section>
 
-    <!-- Simple clarity section (short, not fluff) -->
-    <section class="section services">
+    <!-- WHAT WE DO (short + confident) -->
+    <section class="section services" id="what-we-do">
       <div class="container">
         <h2>What We Do In These Areas</h2>
         <p class="micro">Junk removal, cleanouts, haul-away, and light demolition — left sweep-clean.</p>
+
         <div class="cards">
           <article class="card"><h3>Cleanouts</h3><p>Garages, basements, rentals, estates.</p></article>
           <article class="card"><h3>Furniture & Appliances</h3><p>Couches, mattresses, fridges, washers/dryers.</p></article>
           <article class="card"><h3>Construction Debris</h3><p>Drywall, lumber, flooring, fixtures, carpet/tile.</p></article>
           <article class="card"><h3>Light Demolition</h3><p>Sheds, decks, hot tubs, playsets (remove & haul).</p></article>
+          <article class="card"><h3>Yard / Exterior Debris</h3><p>Brush, fencing, junk piles, storm cleanup.</p></article>
+          <article class="card"><h3>Property Turnovers</h3><p>Tenant cleanouts, foreclosure cleanups, sale-ready resets.</p></article>
         </div>
 
         <div class="center mt-l">
           <a class="btn btn-primary js-keep-utm" href="/services.html">All Services</a>
           <a class="btn" href="/gallery.html">Before & After</a>
         </div>
+      </div>
+    </section>
+
+    <!-- OUTSIDE AREAS NOTE (still confident) -->
+    <section class="section notice notice-tight">
+      <div class="container">
+        <h3>Outside These Counties?</h3>
+        <p>If you’re in Wyoming and you’ve got a job that needs handled, call or text. If it makes sense, we’ll take it.</p>
+        <p class="micro">Call/text: <a class="js-keep-utm" href="tel:+13073494694">307-349-4694</a></p>
       </div>
     </section>
   </main>
@@ -357,7 +284,7 @@
           <a href="mailto:windriverrenewal@gmail.com">windriverrenewal@gmail.com</a>
         </p>
         <p class="micro">Licensed & Insured</p>
-        <p class="micro">Owner-operated in Wyoming • Fremont County + expanding statewide</p>
+        <p class="micro">Owner-operated in Wyoming • Fremont County + Natrona County</p>
       </div>
       <nav aria-label="Footer">
         <a href="/services.html">Services</a>
@@ -397,35 +324,6 @@
           document.body.classList.remove('nav-open');
         });
       });
-    })();
-  </script>
-
-  <!-- Directory search filter -->
-  <script>
-    (function(){
-      const input = document.getElementById('areaSearch');
-      const cards = Array.from(document.querySelectorAll('#areaDirectory .area-card'));
-      const count = document.getElementById('searchCount');
-      if (!input || !cards.length) return;
-
-      function update(){
-        const q = (input.value || '').trim().toLowerCase();
-        let shown = 0;
-
-        cards.forEach(card => {
-          const hay = (card.getAttribute('data-area') || '').toLowerCase();
-          const match = !q || hay.includes(q);
-          card.classList.toggle('is-hidden', !match);
-          if (match) shown++;
-        });
-
-        if (count){
-          count.textContent = q ? `${shown} result${shown === 1 ? '' : 's'}` : '';
-        }
-      }
-
-      input.addEventListener('input', update);
-      update();
     })();
   </script>
 
