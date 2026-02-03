@@ -94,7 +94,7 @@
   }
   </script>
 
-  <!-- Skip link visual fix + hamburger stacking fix -->
+  <!-- Skip link visual fix + hamburger stacking fix + Casper page layout polish -->
   <style>
     .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{position:static;width:auto;height:auto;padding:.5rem 1rem;background:#fff;border:2px solid #000;z-index:1000}
@@ -102,6 +102,30 @@
     .site-header{position:sticky; top:0; z-index:9999;}
     .header-row{position:relative; z-index:10000;}
     .nav-toggle{position:relative; z-index:10001; pointer-events:auto;}
+
+    /* Page-specific polish */
+    .hero .micro {opacity:.9}
+    .hero .sub {margin-top:14px}
+    .jump-row {display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .jump-row a {font-weight:600; text-decoration:none}
+
+    .take-list {margin:12px 0 0; padding:0; list-style:none; display:grid; gap:10px}
+    .take-list li {display:flex; gap:10px; align-items:flex-start}
+    .take-dot {width:10px; height:10px; border-radius:999px; margin-top:6px; background: currentColor; opacity:.25; flex:0 0 auto}
+
+    .quote-grid {display:grid; grid-template-columns: 1.05fr .95fr; gap:22px; align-items:start}
+    @media (max-width: 900px){
+      .quote-grid {grid-template-columns:1fr}
+    }
+    .quote-steps {margin:10px 0 0; padding-left:18px}
+    .quote-steps li {margin:6px 0}
+
+    /* Make the hero right card feel less “floating” */
+    .hero .card h3 {margin:0 0 8px}
+    .hero .card .micro {margin-top:10px}
+
+    /* Add a little breathing room between major sections on this page */
+    .section {scroll-margin-top: 90px;}
   </style>
 </head>
 
@@ -145,23 +169,73 @@
           <h1>Junk Removal & Light Demolition in Casper, WY</h1>
           <p class="tagline">Property maintenance done right.</p>
           <p class="micro">Casper & Natrona County — Cleanouts, Haul-Away, and Light Demo</p>
+
           <p class="sub">
             Casper, WY (Natrona County)<br/>
             Every day 9–5 · Same-day when available
           </p>
+
           <div class="cta-row">
             <a class="btn btn-primary" href="tel:+13073494694" aria-label="Call Wind River Renewal at 307-349-4694">Call or Text 307-349-4694</a>
             <a class="btn btn-secondary js-keep-utm" href="#quote">Get My Quote</a>
           </div>
+
+          <div class="jump-row">
+            <a href="#quote" class="js-keep-utm">Quick Estimate</a>
+            <a href="#what-we-take">What We Take</a>
+            <a href="#service-area">Service Area</a>
+            <a href="#faq">FAQ</a>
+          </div>
+
           <p class="micro">Fastest quote: text a photo + your address + what you want removed.</p>
         </div>
 
+        <!-- SWAPPED: What We Take summary card goes here (replaces Quick Estimate in hero) -->
+        <div class="card" aria-label="What we take in Casper">
+          <h3>What We Take</h3>
+          <p class="micro" style="margin:0 0 10px">Common jobs around Casper & Natrona County:</p>
+
+          <ul class="take-list">
+            <li><span class="take-dot" aria-hidden="true"></span><div><strong>Cleanouts</strong><br/><span class="micro">Garages, basements, storage units, rentals, estates.</span></div></li>
+            <li><span class="take-dot" aria-hidden="true"></span><div><strong>Furniture & Appliances</strong><br/><span class="micro">Couches, mattresses, fridges, washers/dryers.</span></div></li>
+            <li><span class="take-dot" aria-hidden="true"></span><div><strong>Construction Debris</strong><br/><span class="micro">Drywall, lumber, flooring, fixtures, carpet/tile.</span></div></li>
+            <li><span class="take-dot" aria-hidden="true"></span><div><strong>Light Demolition</strong><br/><span class="micro">Sheds, decks, hot tubs, playsets (remove & haul).</span></div></li>
+          </ul>
+
+          <p class="micro">Most jobs price by volume + dump fees. Text photos for a fast estimate.</p>
+
+          <div class="cta-row" style="margin-top:12px">
+            <a class="btn btn-primary js-keep-utm" href="#quote">Request Estimate</a>
+            <a class="btn" href="#what-we-take">Full List</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK ESTIMATE (moved into its own organized section) -->
+    <section class="section" id="quote">
+      <div class="container quote-grid">
+        <div>
+          <h2>Quick Estimate</h2>
+          <p>Send the basics and we’ll get you a clean price fast. If it’s urgent, call/text and we’ll try for same-day.</p>
+
+          <ul class="quote-steps">
+            <li><strong>Tell us what needs removed</strong> (or paste a list).</li>
+            <li><strong>Include your address</strong> (Casper / Natrona County).</li>
+            <li><strong>Add photos</strong> if you want the fastest and most accurate quote.</li>
+          </ul>
+
+          <p class="micro">Prefer texting? <a class="js-keep-utm" href="sms:+13073494694">307-349-4694</a></p>
+        </div>
+
         <!-- Quote card -->
-        <div class="card" id="quote">
-          <h3 style="margin:0 0 8px">Quick Estimate</h3>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Request Estimate</h3>
+
           <form action="https://formspree.io/f/mqadaqdp" method="POST" accept-charset="UTF-8">
             <input type="hidden" name="_redirect" value="https://windriverrenewal.com/thanks.html" />
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
             <label>What needs removed?
               <textarea name="project" placeholder="e.g., garage cleanout, old sofa, construction debris" required></textarea>
             </label>
@@ -198,11 +272,12 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="section services">
+    <!-- WHAT WE TAKE (full list) -->
+    <section class="section services" id="what-we-take">
       <div class="container">
         <h2>What We Take</h2>
-        <p class="micro">Most jobs price by volume + dump fees. Text photos for a fast estimate.</p>
+        <p class="micro">Cleanouts, haul-away, and light demo. Most jobs price by volume + disposal fees.</p>
+
         <div class="cards">
           <article class="card"><h3>Residential & Estates</h3><p>Garages, basements, storage units, rentals.</p></article>
           <article class="card"><h3>Appliance & Furniture</h3><p>Fridges, mattresses, couches, sets—haul-away.</p></article>
@@ -220,7 +295,7 @@
     </section>
 
     <!-- HAZMAT NOTE -->
-    <section class="section notice">
+    <section class="section notice" id="hazmat">
       <div class="container">
         <h3>Hazardous Materials</h3>
         <p>Some items require special handling—please <a href="tel:+13073494694">contact us</a> first. Additional fees may apply.</p>
@@ -229,7 +304,7 @@
     </section>
 
     <!-- SERVICE AREA -->
-    <section class="section coverage">
+    <section class="section coverage" id="service-area">
       <div class="container">
         <h2>Service Area</h2>
         <p>Serving Casper & Natrona County, WY — including Mills, Evansville, Bar Nunn, and nearby communities.</p>
@@ -237,7 +312,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="section">
+    <section class="section" id="faq">
       <div class="container">
         <h2>FAQ</h2>
         <dl class="faq">
@@ -245,6 +320,11 @@
           <dt>Do you take hazardous materials?</dt><dd>Some items need special handling. Please contact us first—extra fees may apply.</dd>
           <dt>How fast can you get here?</dt><dd>Same-day when available. Otherwise, we’ll get you on the schedule ASAP.</dd>
         </dl>
+
+        <div class="center mt-l">
+          <a class="btn btn-primary js-keep-utm" href="#quote">Request Estimate</a>
+          <a class="btn" href="tel:+13073494694">Call 307-349-4694</a>
+        </div>
       </div>
     </section>
   </main>
@@ -304,3 +384,4 @@
   <script src="/assets/script.js" defer></script>
 </body>
 </html>
+
