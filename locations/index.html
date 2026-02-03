@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Service Areas | Wind River Renewal (Wyoming)</title>
-  <meta name="description" content="Service areas for Wind River Renewal. Junk removal, cleanouts, and light demolition across Wyoming. Find your city or county and request a quote." />
+  <title>Service Areas in Wyoming | Wind River Renewal</title>
+  <meta name="description" content="Service areas for Wind River Renewal across Wyoming. Junk removal, cleanouts, and light demolition. Find your city or county and get a fast quote." />
   <meta name="application-name" content="Wind River Renewal" />
 
   <!-- Canonical -->
@@ -25,15 +25,15 @@
   <!-- Open Graph -->
   <meta property="og:site_name" content="Wind River Renewal" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Service Areas | Wind River Renewal" />
+  <meta property="og:title" content="Service Areas in Wyoming | Wind River Renewal" />
   <meta property="og:description" content="Find your city or county. Call or text 307-349-4694." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://windriverrenewal.com/locations/" />
   <meta property="og:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
 
-  <!-- Twitter Cards -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Service Areas | Wind River Renewal" />
+  <meta name="twitter:title" content="Service Areas in Wyoming | Wind River Renewal" />
   <meta name="twitter:description" content="Find your city or county. Call or text 307-349-4694." />
   <meta name="twitter:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
 
@@ -46,19 +46,19 @@
     gtag('config','G-038JRWGVWW');
   </script>
 
-  <!-- Schema (basic for directory page) -->
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": "https://windriverrenewal.com/locations/#webpage",
-    "name": "Service Areas | Wind River Renewal",
+    "name": "Service Areas in Wyoming | Wind River Renewal",
     "url": "https://windriverrenewal.com/locations/",
-    "description": "Service areas for Wind River Renewal across Wyoming."
+    "description": "Service areas and city pages for Wind River Renewal across Wyoming."
   }
   </script>
 
-  <!-- Skip link visual fix + hamburger stacking fix -->
+  <!-- Skip link + hamburger stacking fix + small page helpers -->
   <style>
     .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{position:static;width:auto;height:auto;padding:.5rem 1rem;background:#fff;border:2px solid #000;z-index:1000}
@@ -67,17 +67,25 @@
     .header-row{position:relative; z-index:10000;}
     .nav-toggle{position:relative; z-index:10001; pointer-events:auto;}
 
-    /* Small helper so the directory feels clean without needing new CSS files */
     .area-grid{display:grid;gap:14px}
     @media (min-width: 860px){.area-grid{grid-template-columns:1fr 1fr}}
     .area-card h3{margin:0 0 8px}
     .area-list{margin:0;padding-left:18px}
     .area-list li{margin:6px 0}
+
+    .pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0;padding:0;list-style:none}
+    .pill-row li{display:inline-block}
+
+    .mini-faq dt{font-weight:700;margin-top:14px}
+    .mini-faq dd{margin:6px 0 0}
+
+    .cards article.card h3{margin:0 0 6px}
+    .cards article.card p{margin:0}
+    .muted{opacity:.85}
   </style>
 </head>
 
 <body class="light">
-  <!-- Skip link for accessibility -->
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -87,7 +95,6 @@
         <span class="brand-text">Wind River Renewal</span>
       </a>
 
-      <!-- Mobile hamburger -->
       <button
         class="nav-toggle"
         type="button"
@@ -109,35 +116,131 @@
   </header>
 
   <main id="main">
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <h1>Service Areas</h1>
-          <p class="tagline">Find your city or county.</p>
+          <h1>Service Areas in Wyoming</h1>
+          <p class="tagline">Find your city. Get a fast quote. We show up.</p>
+
           <p class="sub">
-            We handle junk removal, cleanouts, and light demolition across Wyoming.
-            Click your area below, or call/text if you don’t see your town listed.
+            Wind River Renewal handles junk removal, cleanouts, and light demolition across Wyoming.
+            We’re based in Fremont County and expanding into Natrona County.
           </p>
-          <div class="cta-row">
+
+          <ul class="pill-row">
+            <li class="card">Licensed & insured</li>
+            <li class="card">Sweep-clean finish</li>
+            <li class="card">Same-day or ASAP when available</li>
+          </ul>
+
+          <div class="cta-row" style="margin-top:14px">
             <a class="btn btn-primary" href="tel:+13073494694" aria-label="Call Wind River Renewal at 307-349-4694">Call or Text 307-349-4694</a>
-            <a class="btn btn-secondary js-keep-utm" href="/quote.html">Get My Quote</a>
+            <a class="btn btn-secondary js-keep-utm" href="#quote">Get My Quote</a>
           </div>
+
           <p class="micro">Fastest quote: text a photo + your address + what you want removed.</p>
         </div>
 
-        <!-- Simple visual card instead of an image (keeps it fast + clean) -->
-        <div class="card">
-          <h3 style="margin:0 0 8px">Current Coverage</h3>
-          <p class="micro" style="margin:0">Fremont County and expanding into Natrona County.</p>
-          <p class="micro" style="margin:8px 0 0">If you’re outside these areas, call/text to confirm availability.</p>
+        <!-- Quick Estimate -->
+        <div class="card" id="quote">
+          <h3 style="margin:0 0 8px">Quick Estimate</h3>
+          <p class="micro muted" style="margin:0 0 10px">Tell us what you’ve got and what city you’re in. We’ll reply fast.</p>
+
+          <form action="https://formspree.io/f/mqadaqdp" method="POST" accept-charset="UTF-8">
+            <input type="hidden" name="_redirect" value="https://windriverrenewal.com/thanks.html" />
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <label>What needs removed?
+              <textarea name="project" placeholder="e.g., garage cleanout, old couch, renovation debris" required></textarea>
+            </label>
+
+            <div class="grid2">
+              <label>City / Area
+                <input name="city" placeholder="e.g., Casper, Riverton, Lander" required />
+              </label>
+              <label>Preferred date
+                <input name="date" type="date" />
+              </label>
+            </div>
+
+            <div class="grid2">
+              <label>Name
+                <input name="name" required />
+              </label>
+              <label>Phone
+                <input name="phone" required />
+              </label>
+            </div>
+
+            <!-- UTM capture -->
+            <input type="hidden" name="utm_source" id="utm_source">
+            <input type="hidden" name="utm_medium" id="utm_medium">
+            <input type="hidden" name="utm_campaign" id="utm_campaign">
+            <input type="hidden" name="utm_term" id="utm_term">
+            <input type="hidden" name="utm_content" id="utm_content">
+
+            <button class="btn btn-primary" type="submit">Request Estimate</button>
+            <p class="micro">Or call/text <a class="js-keep-utm" href="tel:+13073494694">307-349-4694</a></p>
+          </form>
         </div>
       </div>
     </section>
 
+    <!-- HOW PRICING WORKS (adds substance without fluff) -->
+    <section class="section">
+      <div class="container">
+        <h2>How Pricing Works</h2>
+        <p class="micro">Most jobs price by volume + dump fees. If you text photos, we can usually ballpark it fast.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Volume-Based</h3>
+            <p class="micro">More space in the truck/trailer = higher cost. Small pickups start low.</p>
+          </article>
+          <article class="card">
+            <h3>Access Matters</h3>
+            <p class="micro">Tight stairwells, long carries, and heavy items affect labor time.</p>
+          </article>
+          <article class="card">
+            <h3>Disposal Fees</h3>
+            <p class="micro">Some loads cost more to dump (mattresses, appliances, construction debris).</p>
+          </article>
+        </div>
+        <div class="center mt-l">
+          <a class="btn btn-primary js-keep-utm" href="/quote.html">Get a Quote</a>
+          <a class="btn" href="sms:+13073494694">Text Photos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- POPULAR JOBS (makes it feel like a real hub page) -->
+    <section class="section services">
+      <div class="container">
+        <h2>Popular Jobs We Handle</h2>
+        <p class="micro">Cleanouts, haul-away, and light demolition — done right and left sweep-clean.</p>
+        <div class="cards">
+          <article class="card"><h3>Garage & Basement Cleanouts</h3><p>Fast haul-away, organized loadout, clean finish.</p></article>
+          <article class="card"><h3>Estate & Rental Turnovers</h3><p>Get the place sale-ready or rent-ready.</p></article>
+          <article class="card"><h3>Construction Debris</h3><p>Drywall, lumber, flooring, fixtures and more.</p></article>
+          <article class="card"><h3>Appliances & Furniture</h3><p>Fridges, couches, mattresses, sets — gone.</p></article>
+          <article class="card"><h3>Yard / Exterior Debris</h3><p>Brush, fencing, junk piles, storm cleanup.</p></article>
+          <article class="card"><h3>Light Demolition</h3><p>Sheds, decks, hot tubs, playsets (remove & haul).</p></article>
+        </div>
+
+        <div class="center mt-l">
+          <a class="btn btn-primary js-keep-utm" href="/services.html">All Services</a>
+          <a class="btn" href="/gallery.html">Before & After</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE AREAS DIRECTORY -->
     <section class="section">
       <div class="container">
         <h2>Counties & Cities</h2>
-        <p class="micro">We keep this page updated as we expand statewide.</p>
+        <p class="micro">
+          Click your city to see details and request a quote. Don’t see your town listed? Call/text anyway.
+        </p>
 
         <div class="area-grid">
           <article class="card area-card">
@@ -148,6 +251,9 @@
               <li>Evansville</li>
               <li>Bar Nunn</li>
             </ul>
+            <p class="micro muted" style="margin:10px 0 0">
+              Building coverage here now. Text photos for a fast estimate.
+            </p>
           </article>
 
           <article class="card area-card">
@@ -159,21 +265,45 @@
               <li>Shoshoni</li>
               <li>Pavillion</li>
             </ul>
+            <p class="micro muted" style="margin:10px 0 0">
+              Owner-operated in Fremont County. Same-day when available.
+            </p>
           </article>
-        </div>
-
-        <div class="center mt-l">
-          <a class="btn btn-primary js-keep-utm" href="/quote.html">Request a Quote</a>
-          <a class="btn" href="/contact.html">Contact</a>
         </div>
       </div>
     </section>
 
+    <!-- TRAVEL NOTE (statewide signal) -->
     <section class="section notice">
       <div class="container">
-        <h3>Don’t see your town listed?</h3>
-        <p>We often travel outside these areas depending on the job size and schedule. Call or text and we’ll tell you straight.</p>
-        <p class="micro">Call/text: <a class="js-keep-utm" href="tel:+13073494694">307-349-4694</a></p>
+        <h3>Outside These Areas?</h3>
+        <p>
+          If the job makes sense, we’ll travel. The fastest way to find out is to text photos + your address.
+        </p>
+        <p class="micro">
+          Call/text: <a class="js-keep-utm" href="tel:+13073494694">307-349-4694</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- MINI FAQ (adds trust + completeness) -->
+    <section class="section">
+      <div class="container">
+        <h2>Quick Questions</h2>
+        <dl class="mini-faq">
+          <dt>Do you do same-day?</dt>
+          <dd>When available, yes. If not, we’ll get you scheduled ASAP.</dd>
+
+          <dt>Do you handle heavy stuff?</dt>
+          <dd>Yes — appliances, bulky furniture, and construction debris are common jobs.</dd>
+
+          <dt>Do you take hazardous materials?</dt>
+          <dd>Some items require special handling. Call/text first. Additional fees may apply.</dd>
+        </dl>
+        <div class="center mt-l">
+          <a class="btn btn-primary js-keep-utm" href="/quote.html">Request Estimate</a>
+          <a class="btn" href="/contact.html">Contact</a>
+        </div>
       </div>
     </section>
   </main>
@@ -233,4 +363,3 @@
   <script src="/assets/script.js" defer></script>
 </body>
 </html>
-
