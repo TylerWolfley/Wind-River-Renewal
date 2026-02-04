@@ -1,7 +1,7 @@
 /* =========================================================
    Wind River Renewal — CSS polish pass (FINAL)
-   - Duplicate section padding removed
-   - Casper / location layout tightened
+   - Single source of truth for spacing
+   - Casper / locations ready
    - SAFE: no class or selector changes
    ========================================================= */
 
@@ -40,6 +40,10 @@
 
   --ring:rgba(37,99,235,.55);
   --ring-soft:rgba(37,99,235,.18);
+
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --t-fast:120ms var(--ease);
+  --t-med:180ms var(--ease);
 }
 
 *{box-sizing:border-box}
@@ -52,6 +56,7 @@ body{
   background:var(--bg);
   line-height:var(--lh);
   -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 
 img{max-width:100%;height:auto;display:block}
@@ -79,9 +84,47 @@ img{max-width:100%;height:auto;display:block}
   position:sticky;
   top:0;
   z-index:50;
+  position:sticky;
   background:rgba(255,255,255,.92);
   border-bottom:1px solid var(--border);
   backdrop-filter:saturate(160%) blur(10px);
+  -webkit-backdrop-filter:saturate(160%) blur(10px);
+  /* Anchor mobile dropdown nav positioning */
+  position:sticky;
+}
+.site-header{position:sticky;}
+
+/* ensure the header is a positioning context for mobile nav */
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+/* actual anchoring */
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+.site-header{position:sticky;}
+
+/* (real line) */
+.site-header{position:sticky;}
+
+/* Backdrop fallback */
+@supports not ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))){
+  .site-header{background:#ffffff}
 }
 
 .header-row{
@@ -90,6 +133,7 @@ img{max-width:100%;height:auto;display:block}
   justify-content:space-between;
   gap:16px;
   padding:14px 0;
+  position:relative;
 }
 
 .brand{
@@ -113,6 +157,7 @@ img{max-width:100%;height:auto;display:block}
   text-decoration:none;
   padding:8px 10px;
   border-radius:12px;
+  transition:background var(--t-fast), color var(--t-fast);
 }
 
 .nav a:hover{background:#f1f5f9}
@@ -131,11 +176,18 @@ img{max-width:100%;height:auto;display:block}
   color:var(--text);
   box-shadow:var(--shadow-sm);
   text-decoration:none;
+  transition:transform var(--t-med), box-shadow var(--t-med), background var(--t-fast), border-color var(--t-fast);
 }
 
 .btn:hover{
   transform:translateY(-1px);
   box-shadow:var(--shadow-md);
+}
+
+.btn:focus-visible{
+  outline:none;
+  box-shadow:0 0 0 4px var(--ring-soft), var(--shadow);
+  border-color:#93c5fd;
 }
 
 .btn-primary{
@@ -202,10 +254,11 @@ img{max-width:100%;height:auto;display:block}
 
 .card{
   background:var(--surface);
-  border:1px solid #d8dee8;
+  border:1px solid var(--border);
   padding:18px;
   border-radius:14px;
   box-shadow:var(--shadow-sm);
+  transition:transform var(--t-med), box-shadow var(--t-med), border-color var(--t-fast);
 }
 
 .card:hover{
@@ -238,6 +291,8 @@ input,textarea{
   padding:12px 14px;
   border-radius:12px;
   border:1px solid var(--border);
+  background:#fff;
+  transition:border-color var(--t-fast), box-shadow var(--t-fast);
 }
 
 textarea{
@@ -246,6 +301,12 @@ textarea{
 }
 
 input:focus,textarea:focus{
+  outline:none;
+  border-color:#93c5fd;
+  box-shadow:0 0 0 4px var(--ring-soft);
+}
+
+input:focus-visible,textarea:focus-visible{
   outline:none;
   border-color:#93c5fd;
   box-shadow:0 0 0 4px var(--ring-soft);
@@ -273,6 +334,16 @@ input:focus,textarea:focus{
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 
+.site-footer nav a{
+  color:var(--text);
+  text-decoration:none;
+  display:inline-block;
+  padding:6px 8px;
+  border-radius:10px;
+  transition:background var(--t-fast);
+}
+.site-footer nav a:hover{background:#f1f5f9}
+
 /* ---------- Mobile Nav */
 .nav-toggle{
   display:none;
@@ -281,6 +352,13 @@ input:focus,textarea:focus{
   border-radius:12px;
   border:1px solid var(--border);
   background:#fff;
+  transition:transform var(--t-med), box-shadow var(--t-med);
+}
+
+.nav-toggle:focus-visible{
+  outline:none;
+  box-shadow:0 0 0 4px var(--ring-soft), var(--shadow);
+  border-color:#93c5fd;
 }
 
 @media (max-width:760px){
@@ -316,6 +394,6 @@ input:focus,textarea:focus{
 
 /* ---------- Reduced Motion */
 @media (prefers-reduced-motion:reduce){
-  *{transition:none !important}
+  *{transition:none !important; scroll-behavior:auto !important}
+  .btn:hover,.card:hover{transform:none}
 }
-
