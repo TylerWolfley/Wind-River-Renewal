@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Get a Quote | Wind River Renewal</title>
-  <meta name="description" content="Request a fast junk removal estimate in Riverton & Lander, WY. Call/text 307-349-4694." />
+  <meta name="description" content="Request a fast junk removal estimate in Fremont County & Natrona County. Riverton, Lander, Casper. Call/text 307-349-4694." />
   <meta name="application-name" content="Wind River Renewal" />
 
   <link rel="canonical" href="https://windriverrenewal.com/quote.html" />
@@ -25,13 +25,13 @@
   <meta property="og:site_name" content="Wind River Renewal" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Get a Quote | Wind River Renewal" />
-  <meta property="og:description" content="Send details and optional photos—get a quick estimate and availability." />
+  <meta property="og:description" content="Send details and optional photos. Get a quick estimate and availability." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://windriverrenewal.com/quote.html" />
   <meta property="og:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Get a Quote | Wind River Renewal" />
-  <meta name="twitter:description" content="Send details and optional photos—get a quick estimate and availability." />
+  <meta name="twitter:description" content="Send details and optional photos. Get a quick estimate and availability." />
   <meta name="twitter:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
 
   <!-- GA4 -->
@@ -124,6 +124,7 @@
 
       <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="services.html">Services</a>
+        <a href="/locations/">Service Areas</a>
         <a href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
         <a class="active btn btn-primary js-keep-utm" aria-current="page" href="quote.html">Get a Quote</a>
@@ -136,7 +137,7 @@
     <section class="section quote-hero">
       <div class="container quote-shell">
         <h1>Get a Quote</h1>
-        <p class="lead">Fast estimates for Riverton &amp; Lander. Send details + photos and we’ll reply with price and availability.</p>
+        <p class="lead">Fast estimates in Fremont County and Natrona County. Send details and photos and we will reply with price and availability.</p>
 
         <form class="form-card" action="https://formspree.io/f/mqadaqdp" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
           <input type="hidden" name="_redirect" value="thanks.html" />
@@ -160,21 +161,21 @@
             </div>
             <div class="field">
               <label class="label" for="q-city">City</label>
-              <input id="q-city" class="ctrl" name="city" placeholder="Riverton / Lander" autocomplete="address-level2" />
+              <input id="q-city" class="ctrl" name="city" placeholder="Riverton / Lander / Casper / Mills / Evans / Shoshoni" autocomplete="address-level2" />
             </div>
           </div>
 
           <div class="field" style="margin-bottom:14px;">
             <label class="label" for="q-details">What do you need removed?</label>
-            <textarea id="q-details" class="ctrl" name="details" placeholder="Items + approximate amount, access (stairs/gate/parking), and preferred timing." required></textarea>
-            <div class="help">Tip: “Text a photo + address + what you want removed” is the fastest way to price.</div>
+            <textarea id="q-details" class="ctrl" name="details" placeholder="What it is, about how much, access (stairs/gate/parking), and your timing." required></textarea>
+            <div class="help">Fastest way to price is a text with a photo, address, and what you want removed.</div>
           </div>
 
           <div class="field" style="margin-bottom:14px;">
             <label class="label" for="q-photos">Photos <span class="help">(up to 5)</span></label>
             <label class="drop" id="drop">
               <input id="q-photos" name="photos" type="file" accept="image/*" multiple style="display:none">
-              <div><strong>Drag &amp; drop</strong> or <u>click to upload</u></div>
+              <div><strong>Drag and drop</strong> or <u>click to upload</u></div>
               <div class="help">Clear photos help us quote accurately.</div>
             </label>
             <div id="fileList" class="file-list" aria-live="polite"></div>
@@ -204,10 +205,10 @@
 
           <div class="actions">
             <button class="btn btn-primary" type="submit">Request Quote</button>
-            <span class="help">Or call/text <a href="tel:+13073494694">307-349-4694</a></span>
+            <span class="help">Or call or text <a href="tel:+13073494694">307-349-4694</a></span>
           </div>
 
-          <p class="help fineprint">Hazardous materials may require special handling &amp; additional fees — <a href="tel:+13073494694">call/text first</a>.</p>
+          <p class="help fineprint">Hazardous materials may require special handling and additional fees. <a href="tel:+13073494694">Call or text first</a>.</p>
         </form>
       </div>
     </section>
@@ -217,14 +218,16 @@
     <div class="container footer-grid">
       <div>
         <h4>Wind River Renewal</h4>
+        <p>Payment methods: cash, check, Venmo, Cash App</p>
         <p>
           <a href="tel:+13073494694">307-349-4694</a> ·
           <a href="mailto:windriverrenewal@gmail.com">windriverrenewal@gmail.com</a>
         </p>
-        <p class="micro">Licensed &amp; Insured · Fremont County</p>
+        <p class="micro">Licensed &amp; Insured · Fremont County &amp; Natrona County</p>
       </div>
       <nav aria-label="Footer">
         <a href="services.html">Services</a>
+        <a href="/locations/">Service Areas</a>
         <a href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
         <a href="quote.html" aria-current="page" class="active">Get a Quote</a>
@@ -235,28 +238,6 @@
   </footer>
 
   <script src="assets/script.js" defer></script>
-
-  <!-- Tiny menu toggle (safe even if script.js already has one) -->
-  <script>
-    (function () {
-      const btn = document.querySelector('.nav-toggle');
-      const nav = document.getElementById('site-nav');
-      if (!btn || !nav) return;
-
-      btn.addEventListener('click', () => {
-        const open = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!open));
-        document.body.classList.toggle('nav-open', !open);
-      });
-
-      nav.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-          btn.setAttribute('aria-expanded', 'false');
-          document.body.classList.remove('nav-open');
-        });
-      });
-    })();
-  </script>
 
   <script>
     (function(){
