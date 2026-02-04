@@ -1,20 +1,24 @@
-// Preserve UTMs, fill forms, and track events (WRR site-wide)
+// Wind River Renewal — site-wide script.js
+// - Preserves UTMs on .js-keep-utm links
+// - Fills hidden UTM fields in forms
+// - Tracks click-to-call + lead submits (GA4)
+// - Mobile nav toggle (single source of truth): .nav-toggle + #site-nav
+
 (() => {
   "use strict";
 
+  // -------------------- Query params / UTM --------------------
   const params = new URLSearchParams(window.location.search);
-
-  // ---- UTM helpers ---------------------------------------------------------
   const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+
+  function hasAnyUTM() {
+    return UTM_KEYS.some((k) => params.has(k));
+  }
 
   function getUTMs() {
     const utm = {};
     for (const k of UTM_KEYS) utm[k] = params.get(k) || "";
     return utm;
-  }
-
-  function hasAnyUTM() {
-    return UTM_KEYS.some((k) => params.has(k));
   }
 
   function applyUTMToUrl(href) {
@@ -25,19 +29,27 @@
     return url.toString();
   }
 
-  // Preserve UTMs on links marked with .js-keep-utm
   function preserveUTMLinks() {
     if (!hasAnyUTM()) return;
+
     document.querySelectorAll("a.js-keep-utm[href]").forEach((a) => {
       const href = a.getAttribute("href");
-      if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return;
+      if (!href) return;
+
+      const lower = href.toLowerCase();
+      if (
+        href.startsWith("#") ||
+        lower.startsWith("mailto:") ||
+        lower.startsWith("tel:") ||
+        lower.startsWith("sms:")
+      ) return;
+
       try {
         a.setAttribute("href", applyUTMToUrl(href));
       } catch (_) {}
     });
   }
 
-  // Fill hidden UTM inputs (supports either name="utm_*" or id="utm_*")
   function fillUTMInputs() {
     const utm = getUTMs();
     document.querySelectorAll("form").forEach((form) => {
@@ -50,7 +62,7 @@
     });
   }
 
-  // ---- GA helpers ----------------------------------------------------------
+  // -------------------- GA helpers --------------------
   function safeGtag(eventName, payload) {
     if (typeof window.gtag !== "function") return;
     try {
@@ -58,7 +70,6 @@
     } catch (_) {}
   }
 
-  // Use GA4 recommended phone conversion event name
   function trackTelClicks() {
     document.addEventListener(
       "click",
@@ -81,23 +92,20 @@
     );
   }
 
-  // Prevent double-submit + track leads
   function trackForms() {
     document.querySelectorAll("form").forEach((form) => {
       form.addEventListener("submit", () => {
-        // Disable all submit buttons (some forms have multiple)
+        // Prevent repeat submits
         const btns = form.querySelectorAll("button[type='submit'], input[type='submit']");
         btns.forEach((btn) => {
-          // prevent repeated submits
           if (btn.disabled) return;
           btn.disabled = true;
-
-          // keep the layout stable
-          if (btn.tagName === "BUTTON") btn.textContent = btn.getAttribute("data-sending-text") || "Sending…";
           btn.setAttribute("aria-disabled", "true");
+          if (btn.tagName === "BUTTON") {
+            btn.textContent = btn.getAttribute("data-sending-text") || "Sending…";
+          }
         });
 
-        // GA4 lead event
         const label =
           form.getAttribute("data-track-label") ||
           form.id ||
@@ -112,60 +120,68 @@
     });
   }
 
-  // ---- Init ---------------------------------------------------------------
+  // -------------------- Mobile nav toggle --------------------
+  function initMobileNav() {
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("site-nav"); // matches your HTML
+
+    if (!toggle || !nav) return;
+
+    // Ensure consistent a11y defaults
+    if (!toggle.hasAttribute("aria-expanded")) toggle.setAttribute("aria-expanded", "false");
+    if (!toggle.hasAttribute("aria-label")) toggle.setAttribute("aria-label", "Open menu");
+
+    function closeMenu() {
+      document.body.classList.remove("nav-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+    }
+
+    function openMenu() {
+      document.body.classList.add("nav-open");
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close menu");
+    }
+
+    function isOpen() {
+      return document.body.classList.contains("nav-open");
+    }
+
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      isOpen() ? closeMenu() : openMenu();
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!isOpen()) return;
+      if (nav.contains(e.target) || toggle.contains(e.target)) return;
+      closeMenu();
+    });
+
+    // Close on Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    // Close after tapping any link in the nav
+    nav.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", closeMenu);
+    });
+  }
+
+  // -------------------- Init --------------------
   function init() {
     preserveUTMLinks();
     fillUTMInputs();
     trackTelClicks();
     trackForms();
+    initMobileNav();
   }
 
-  // Run when DOM is ready
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
   }
-})();
-
-// Mobile nav toggle (hamburger)
-(function () {
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.getElementById('primary-nav');
-  if (!toggle || !nav) return;
-
-  function closeMenu() {
-    document.body.classList.remove('nav-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open menu');
-  }
-
-  function openMenu() {
-    document.body.classList.add('nav-open');
-    toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', 'Close menu');
-  }
-
-  toggle.addEventListener('click', function (e) {
-    e.stopPropagation();
-    const isOpen = document.body.classList.contains('nav-open');
-    isOpen ? closeMenu() : openMenu();
-  });
-
-  // Close when clicking outside
-  document.addEventListener('click', function (e) {
-    if (!document.body.classList.contains('nav-open')) return;
-    if (nav.contains(e.target) || toggle.contains(e.target)) return;
-    closeMenu();
-  });
-
-  // Close on Escape
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeMenu();
-  });
-
-  // Close after clicking a nav link
-  nav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', closeMenu);
-  });
 })();
