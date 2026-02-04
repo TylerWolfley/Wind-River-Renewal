@@ -1,7 +1,7 @@
 /* =========================================================
    Wind River Renewal — CSS polish pass (FINAL)
-   - Single source of truth for spacing
-   - Casper / locations ready
+   - Single source of truth for section spacing
+   - Casper / location layout tightened
    - SAFE: no class or selector changes
    ========================================================= */
 
@@ -84,43 +84,11 @@ img{max-width:100%;height:auto;display:block}
   position:sticky;
   top:0;
   z-index:50;
-  position:sticky;
   background:rgba(255,255,255,.92);
   border-bottom:1px solid var(--border);
   backdrop-filter:saturate(160%) blur(10px);
   -webkit-backdrop-filter:saturate(160%) blur(10px);
-  /* Anchor mobile dropdown nav positioning */
-  position:sticky;
 }
-.site-header{position:sticky;}
-
-/* ensure the header is a positioning context for mobile nav */
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-/* actual anchoring */
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-.site-header{position:sticky;}
-
-/* (real line) */
-.site-header{position:sticky;}
 
 /* Backdrop fallback */
 @supports not ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))){
@@ -133,7 +101,7 @@ img{max-width:100%;height:auto;display:block}
   justify-content:space-between;
   gap:16px;
   padding:14px 0;
-  position:relative;
+  position:relative; /* anchor for mobile dropdown nav */
 }
 
 .brand{
