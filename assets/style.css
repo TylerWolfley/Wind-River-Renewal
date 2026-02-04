@@ -365,3 +365,35 @@ input:focus-visible,textarea:focus-visible{
   *{transition:none !important; scroll-behavior:auto !important}
   .btn:hover,.card:hover{transform:none}
 }
+
+/* =========================================================
+   Tighten compact sections (no fluff)
+   - Hazardous Materials
+   - Service Area
+   SAFE: scoped overrides only
+   ========================================================= */
+
+/* Hazardous Materials: fit to content */
+.section.notice{
+  padding-top:28px;
+  padding-bottom:28px;
+}
+
+.section.notice h3{
+  margin-top:0;
+}
+
+.section.notice p{
+  margin-bottom:0;
+}
+
+/* Service Area: compact, not airy */
+.section.coverage{
+  padding-top:32px;
+  padding-bottom:32px;
+}
+
+.section.coverage p{
+  margin-bottom:0;
+}
+
