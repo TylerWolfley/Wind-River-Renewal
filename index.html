@@ -15,8 +15,12 @@
 
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
   <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
   <link rel="stylesheet" href="assets/style.css" />
+
+  <!-- Swiper (homepage photo slider) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <meta property="og:site_name" content="Wind River Renewal" />
   <meta property="og:locale" content="en_US" />
@@ -96,6 +100,18 @@
     .header-row{position:relative; z-index:10000;}
     .nav-toggle{position:relative; z-index:10001; pointer-events:auto;}
     .tagline{font-size:1.15rem; font-weight:700; margin:8px 0 4px}
+
+    /* Homepage photo slider */
+    .hero-swiper{border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.07),0 8px 24px rgba(0,0,0,.1)}
+    .hero-swiper .swiper-slide{background:#0e1117}
+    .hero-swiper figure{margin:0;width:100%}
+    .hero-swiper img{width:100%;height:300px;object-fit:cover;display:block}
+    @media (min-width:640px){.hero-swiper img{height:360px}}
+    @media (min-width:960px){.hero-swiper img{height:400px}}
+    .hero-swiper figcaption{padding:7px 13px;font-size:.85rem;color:#64748b;background:#fff;border-top:1px solid #e5e7eb;text-align:center}
+    .hero-swiper .swiper-button-prev,.hero-swiper .swiper-button-next{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.55)}
+    .hero-swiper .swiper-button-prev:after,.hero-swiper .swiper-button-next:after{font-size:1.2rem;font-weight:900}
+    .hero-swiper .swiper-pagination-bullet-active{background:#2563eb}
   </style>
 </head>
 
@@ -150,7 +166,57 @@
         </div>
 
         <div class="hero-media">
-          <img src="assets/images/main.jpg" alt="Junk removal and property cleanup in Wyoming" width="960" height="640" loading="eager" fetchpriority="high" />
+          <div class="swiper hero-swiper" aria-label="Job photos from Wind River Renewal">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <figure>
+                  <img src="assets/images/junk-removal-riverton-wy-estate-cleanout-before-after.jpg" alt="Estate cleanout before and after in Riverton, Wyoming" loading="eager" fetchpriority="high">
+                  <figcaption>Estate cleanout, before &amp; after &middot; Riverton, WY</figcaption>
+                </figure>
+              </div>
+
+              <div class="swiper-slide">
+                <figure>
+                  <img src="assets/images/garage-cleanout-riverton-wy-foreclosure-before-after.jpg" alt="Garage cleanout foreclosure before and after in Riverton, Wyoming" loading="lazy">
+                  <figcaption>Garage cleanout, foreclosure &middot; Riverton, WY</figcaption>
+                </figure>
+              </div>
+
+              <div class="swiper-slide">
+                <figure>
+                  <img src="assets/images/light-demo-lander-wy-estate-cleanout-before-after.jpg" alt="Light demolition and estate cleanout before and after in Lander, Wyoming" loading="lazy">
+                  <figcaption>Light demo, estate cleanout &middot; Lander, WY</figcaption>
+                </figure>
+              </div>
+
+              <div class="swiper-slide">
+                <figure>
+                  <img src="assets/images/junk-removal-lander-wy-foreclosure-collage.jpg" alt="Junk removal foreclosure cleanout in Lander, Wyoming" loading="lazy">
+                  <figcaption>Foreclosure cleanout &middot; Lander, WY</figcaption>
+                </figure>
+              </div>
+
+              <div class="swiper-slide">
+                <figure>
+                  <img src="assets/images/debris-removal-riverton-wy-foreclosure-before-after.jpg" alt="Debris removal and foreclosure cleanout before and after in Riverton, Wyoming" loading="lazy">
+                  <figcaption>Debris removal, foreclosure &middot; Riverton, WY</figcaption>
+                </figure>
+              </div>
+
+              <div class="swiper-slide">
+                <figure>
+                  <img src="assets/images/junk-removal-collage-fremont-county-property-maintenance.jpg" alt="Property maintenance cleanout collage in Fremont County, Wyoming" loading="lazy">
+                  <figcaption>Property maintenance cleanout &middot; Fremont County</figcaption>
+                </figure>
+              </div>
+
+            </div>
+
+            <div class="swiper-button-prev" aria-label="Previous photo"></div>
+            <div class="swiper-button-next" aria-label="Next photo"></div>
+            <div class="swiper-pagination" aria-label="Photo navigation"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -376,5 +442,29 @@
   </div>
 
   <script src="assets/script.js" defer></script>
+
+  <!-- Swiper (homepage photo slider) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    (function(){
+      new Swiper('.hero-swiper',{
+        loop:true,
+        autoplay:{delay:4500,disableOnInteraction:false,pauseOnMouseEnter:true},
+        speed:550,
+        slidesPerView:1,
+        spaceBetween:0,
+        navigation:{
+          nextEl:'.hero-swiper .swiper-button-next',
+          prevEl:'.hero-swiper .swiper-button-prev'
+        },
+        pagination:{
+          el:'.hero-swiper .swiper-pagination',
+          clickable:true
+        },
+        keyboard:{enabled:true},
+        a11y:{enabled:true}
+      });
+    })();
+  </script>
 </body>
 </html>
