@@ -397,3 +397,186 @@ input:focus-visible,textarea:focus-visible{
   margin-bottom:0;
 }
 
+/* ---------- Sticky Bar (mobile Call/Text) */
+.sticky-bar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:100;
+  display:flex;
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+
+.sticky-btn{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 10px;
+  font-weight:700;
+  font-size:1rem;
+  text-decoration:none;
+  color:var(--text);
+  transition:background var(--t-fast);
+}
+
+.sticky-btn:first-child{
+  border-right:1px solid var(--border);
+}
+
+.sticky-btn-primary{
+  background:linear-gradient(180deg,#2f6ff0,#1f56cc);
+  color:#fff;
+}
+
+body{padding-bottom:54px}
+
+/* ---------- Nav Toggle Bars (hamburger icon) */
+.nav-toggle-bars{
+  display:block;
+  position:relative;
+  width:20px;
+  height:2px;
+  background:var(--text);
+  border-radius:2px;
+}
+
+.nav-toggle-bars::before,
+.nav-toggle-bars::after{
+  content:"";
+  display:block;
+  position:absolute;
+  left:0;
+  width:20px;
+  height:2px;
+  background:var(--text);
+  border-radius:2px;
+  transition:transform var(--t-med), opacity var(--t-fast);
+}
+
+.nav-toggle-bars::before{top:-6px}
+.nav-toggle-bars::after{top:6px}
+
+/* ---------- Form two-column grid */
+.grid2{
+  display:grid;
+  gap:10px;
+  grid-template-columns:1fr 1fr;
+}
+
+@media (max-width:480px){
+  .grid2{grid-template-columns:1fr}
+}
+
+/* ---------- FAQ (details/summary pattern) */
+.faq details{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px 16px;
+  margin-bottom:10px;
+}
+
+.faq summary{
+  cursor:pointer;
+  font-weight:700;
+  list-style:none;
+}
+
+.faq summary::-webkit-details-marker{display:none}
+
+.faq details[open] summary{margin-bottom:8px}
+
+/* FAQ dl pattern */
+.faq dt{font-weight:700; margin:16px 0 4px}
+.faq dt:first-child{margin-top:0}
+.faq dd{margin:0 0 12px; color:var(--muted)}
+
+/* ---------- Trust grid (homepage, about) */
+.trust-grid{
+  display:grid;
+  gap:12px;
+  grid-template-columns:1fr;
+  margin-top:14px;
+}
+@media (min-width:760px){
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:1000px){
+  .trust-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+.trust-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  box-shadow:var(--shadow-sm);
+}
+
+.trust-card h3{margin:0 0 6px; font-size:1.02rem}
+.trust-card p{margin:0; color:var(--muted)}
+
+/* ---------- Steps (how it works) */
+.steps{
+  display:grid;
+  gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  margin:20px 0 0;
+}
+
+.step{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+}
+
+.step h3{margin:0 0 6px; font-size:1.05rem}
+.step p{margin:0; color:var(--muted)}
+
+/* ---------- Lead text */
+.lead{color:var(--muted); max-width:72ch}
+
+/* ---------- Testimonials placeholder */
+.testimonials-placeholder{
+  background:var(--surface);
+  border:2px dashed var(--border);
+  border-radius:14px;
+  padding:24px;
+  text-align:center;
+  color:var(--muted);
+}
+
+/* ---------- City links strip */
+.city-strip{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+.city-strip a{
+  display:inline-flex;
+  align-items:center;
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  font-weight:700;
+  font-size:.95rem;
+  text-decoration:none;
+  color:var(--text);
+  transition:background var(--t-fast), border-color var(--t-fast), transform var(--t-med);
+}
+
+.city-strip a:hover{
+  background:#f1f5f9;
+  transform:translateY(-1px);
+}
+
+/* ---------- Brand text */
+.brand-text{font-size:1rem}
+
