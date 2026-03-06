@@ -15,8 +15,10 @@
 
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
   <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
   <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <meta property="og:site_name" content="Wind River Renewal" />
   <meta property="og:locale" content="en_US" />
@@ -222,6 +224,93 @@
       </div>
     </section>
 
+    <!-- BEFORE & AFTER PHOTO GALLERY -->
+    <section class="section">
+      <div class="container">
+        <h2>Real Jobs. Real Results.</h2>
+        <p class="micro">Before &amp; after photos from actual cleanout and removal jobs across Fremont County and Natrona County.</p>
+
+        <div class="photo-strip">
+          <div class="swiper wrr-photo-swiper" aria-label="Before and after job photos">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <figure>
+                  <img src="assets/images/fence-cleanup-riverton-wy-apartment-cleanup-before-after.jpg"
+                       alt="Apartment fence cleanup before and after in Riverton, Wyoming"
+                       loading="lazy">
+                  <figcaption>Fence &amp; apartment cleanup, before &amp; after · Riverton, WY</figcaption>
+                </figure>
+              </div>
+
+              <div class="swiper-slide">
+                <figure>
+                  <img src="assets/images/junk-removal-collage-fremont-county-property-maintenance.jpg"
+                       alt="Junk removal and property maintenance collage for Fremont County, Wyoming"
+                       loading="lazy">
+                  <figcaption>Junk removal &amp; property maintenance · Fremont County, WY</figcaption>
+                </figure>
+              </div>
+
+              <div class="swiper-slide">
+                <figure>
+                  <img src="assets/images/garage-cleanout-riverton-wy-foreclosure-before-after.jpg"
+                       alt="Garage cleanout at foreclosure property before and after in Riverton, Wyoming"
+                       loading="lazy">
+                  <figcaption>Garage cleanout, foreclosure (before &amp; after) · Riverton, WY</figcaption>
+                </figure>
+              </div>
+
+              <div class="swiper-slide">
+                <figure>
+                  <img src="assets/images/junk-removal-lander-wy-foreclosure-collage.jpg"
+                       alt="Junk removal foreclosure cleanout collage in Lander, Wyoming"
+                       loading="lazy">
+                  <figcaption>Junk removal, foreclosure cleanout · Lander, WY</figcaption>
+                </figure>
+              </div>
+
+              <div class="swiper-slide">
+                <figure>
+                  <img src="assets/images/light-demo-lander-wy-estate-cleanout-before-after.jpg"
+                       alt="Light demolition and estate cleanout before and after in Lander, Wyoming"
+                       loading="lazy">
+                  <figcaption>Light demo, estate cleanout (before &amp; after) · Lander, WY</figcaption>
+                </figure>
+              </div>
+
+              <div class="swiper-slide">
+                <figure>
+                  <img src="assets/images/debris-removal-riverton-wy-foreclosure-before-after.jpg"
+                       alt="Debris removal at foreclosure property before and after in Riverton, Wyoming"
+                       loading="lazy">
+                  <figcaption>Debris removal, foreclosure cleanout (before &amp; after) · Riverton, WY</figcaption>
+                </figure>
+              </div>
+
+              <div class="swiper-slide">
+                <figure>
+                  <img src="assets/images/tree-trimming-riverton-wy-estate-cleanup-before-after.jpg"
+                       alt="Tree trimming and exterior estate cleanup before and after in Riverton, Wyoming"
+                       loading="lazy">
+                  <figcaption>Tree trimming, exterior estate cleanup (before &amp; after) · Riverton, WY</figcaption>
+                </figure>
+              </div>
+
+            </div>
+
+            <div class="swiper-button-prev" aria-label="Previous photo"></div>
+            <div class="swiper-button-next" aria-label="Next photo"></div>
+            <div class="swiper-pagination" aria-label="Photo navigation"></div>
+          </div>
+        </div>
+
+        <div class="center" style="margin-top:18px;">
+          <a class="btn" href="gallery.html">View Full Gallery</a>
+        </div>
+      </div>
+    </section>
+
     <!-- TRUST SECTION -->
     <section class="section">
       <div class="container">
@@ -376,5 +465,25 @@
   </div>
 
   <script src="assets/script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    (function(){
+      var s = new Swiper('.wrr-photo-swiper',{
+        loop:true,
+        spaceBetween:16,
+        slidesPerView:1,
+        navigation:{nextEl:'.wrr-photo-swiper .swiper-button-next',prevEl:'.wrr-photo-swiper .swiper-button-prev'},
+        pagination:{el:'.wrr-photo-swiper .swiper-pagination',clickable:true},
+        keyboard:{enabled:true},
+        a11y:{enabled:true}
+      });
+      document.querySelectorAll('.wrr-photo-swiper img').forEach(function(img){
+        img.addEventListener('error',function(){
+          var slide=img.closest('.swiper-slide');
+          if(slide){slide.remove();s.update();}
+        },{once:true});
+      });
+    })();
+  </script>
 </body>
 </html>
