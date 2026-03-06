@@ -433,6 +433,12 @@ input:focus-visible,textarea:focus-visible{
 
 body{padding-bottom:54px}
 
+/* Sticky bar is mobile-only; hide it on larger screens */
+@media (min-width: 960px){
+  .sticky-bar{display:none}
+  body{padding-bottom:0}
+}
+
 /* ---------- Nav Toggle Bars (hamburger icon) */
 .nav-toggle-bars{
   display:block;
