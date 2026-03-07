@@ -586,6 +586,85 @@ body{padding-bottom:54px}
 /* ---------- Brand text */
 .brand-text{font-size:1rem}
 
+/* ---------- Trust pills (hero trust badges) */
+.trust-pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  list-style:none;
+  margin:14px 0 0;
+  padding:0;
+}
+
+.trust-pills li{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:5px 12px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  font-size:.875rem;
+  font-weight:600;
+  color:var(--text);
+  box-shadow:var(--shadow-sm);
+}
+
+.trust-pills li::before{
+  content:"";
+  display:inline-block;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#16a34a;
+  flex-shrink:0;
+}
+
+/* ---------- Review cards */
+.review-grid{
+  display:grid;
+  gap:14px;
+  grid-template-columns:1fr;
+  margin-top:20px;
+}
+@media (min-width:760px){
+  .review-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:1000px){
+  .review-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+.review-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+  box-shadow:var(--shadow-sm);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.review-card blockquote{
+  margin:0;
+  font-style:italic;
+  color:var(--text);
+  line-height:1.6;
+}
+
+.review-card cite{
+  font-style:normal;
+  font-size:.875rem;
+  color:var(--muted);
+  display:block;
+}
+
+.review-stars{
+  color:#f59e0b;
+  font-size:1rem;
+  letter-spacing:.05em;
+}
+
 /* ---------- Single trust photo (one per non-homepage page) */
 .job-photo-wrap{
   margin:0 auto;

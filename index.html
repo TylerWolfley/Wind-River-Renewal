@@ -102,12 +102,13 @@
     .tagline{font-size:1.15rem; font-weight:700; margin:8px 0 4px}
 
     /* Homepage photo slider */
-    .hero-swiper{border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.07),0 8px 24px rgba(0,0,0,.1)}
-    .hero-swiper .swiper-slide{background:#0e1117}
+    .hero-swiper{border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.07),0 8px 24px rgba(0,0,0,.1);background:#f0f4f8}
+    .hero-swiper .swiper-wrapper{min-height:300px}
+    .hero-swiper .swiper-slide{background:#f0f4f8;overflow:hidden}
     .hero-swiper figure{margin:0;width:100%}
     .hero-swiper img{width:100%;height:300px;object-fit:cover;display:block}
-    @media (min-width:640px){.hero-swiper img{height:360px}}
-    @media (min-width:960px){.hero-swiper img{height:400px}}
+    @media (min-width:640px){.hero-swiper img{height:360px}.hero-swiper .swiper-wrapper{min-height:360px}}
+    @media (min-width:960px){.hero-swiper img{height:420px}.hero-swiper .swiper-wrapper{min-height:420px}}
     .hero-swiper figcaption{padding:7px 13px;font-size:.85rem;color:#64748b;background:#fff;border-top:1px solid #e5e7eb;text-align:center}
     .hero-swiper .swiper-button-prev,.hero-swiper .swiper-button-next{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.55)}
     .hero-swiper .swiper-button-prev:after,.hero-swiper .swiper-button-next:after{font-size:1.2rem;font-weight:900}
@@ -165,6 +166,13 @@
             <a class="btn btn-primary" href="tel:+13073494694">Call or Text 307-349-4694</a>
             <a class="btn btn-secondary js-keep-utm" href="quote.html">Get My Quote</a>
           </div>
+
+          <ul class="trust-pills" aria-label="Trust signals">
+            <li>Licensed &amp; Insured</li>
+            <li>Owner-Operated</li>
+            <li>Photo Documentation</li>
+            <li>Same-Day Available</li>
+          </ul>
 
           <p class="micro">Fastest quote: text a photo, your address, and what you want removed.</p>
         </div>
@@ -295,8 +303,6 @@
     <!-- TRUST SECTION -->
     <section class="section">
       <div class="container">
-        <h2>Why Wind River Renewal Over the Other Options</h2>
-        <p class="micro">Random haulers are unlicensed, uninsured, and hard to reach after the fact. Here is what you get when you hire us instead.</p>
 
         <div class="trust-grid">
           <div class="trust-card">
@@ -317,15 +323,49 @@
           </div>
           <div class="trust-card">
             <h3>Sweep-clean finish</h3>
-            <p>We broom-clean the area when we're done. Not just hauled out. Clean enough to photograph and show.</p>
+            <p>We broom-clean the area when we are done. Not just hauled out. Clean enough to photograph and show.</p>
           </div>
           <div class="trust-card">
-            <h3>You know who you're dealing with</h3>
-            <p>Name, number, licensed, insured. This is not a platform or a middleman. If something comes up, you have a real person to call.</p>
+
           </div>
         </div>
 
         <p class="micro" style="margin-top:18px;"><a href="about.html">More about Wind River Renewal and how we work</a></p>
+      </div>
+    </section>
+
+    <!-- WHY US INSTEAD -->
+    <section class="section" style="background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+      <div class="container">
+        <h2>Not Every Hauler Is the Same</h2>
+        <p class="micro">What you get with Wind River Renewal versus a random pick from Craigslist or Facebook Marketplace.</p>
+
+        <div class="cards" style="margin-top:20px">
+          <article class="card">
+            <h3>We show up</h3>
+            <p>Scheduled jobs get done. No last-minute no-shows, no ghosting after you clear your schedule.</p>
+          </article>
+          <article class="card">
+            <h3>We are licensed and insured</h3>
+            <p>An unlicensed hauler who damages your floor or drops something has no coverage. We do. That matters when things go sideways.</p>
+          </article>
+          <article class="card">
+            <h3>The price you get is the price you pay</h3>
+            <p>Some haulers quote low and add fees on arrival. We price from photos up front. No surprises at the end.</p>
+          </article>
+          <article class="card">
+            <h3>You deal with one person</h3>
+            <p>No call centers, no rotating crews. Tyler handles the quote, the schedule, and the job. You know who you are dealing with.</p>
+          </article>
+          <article class="card">
+            <h3>We leave it clean</h3>
+            <p>Hauling it out is not the finish line. We sweep the area clean. It matters for listings, rentals, and move-outs.</p>
+          </article>
+          <article class="card">
+            <h3>No junk left behind</h3>
+            <p>We take what we say we will take. No partial loads, no leaving the hard stuff, no "that costs extra" at the door.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -356,36 +396,7 @@
       </div>
     </section>
 
-    <!-- REVIEWS SECTION -->
-    <!-- TODO: Replace the Google Reviews link below with 2-3 real review cards once you have approved content.
-         Each card needs: exact quote text, reviewer first name, city, and job type.
-         Pull quotes from your Google Business Profile or ask satisfied customers directly.
-         Uncomment and fill in the review-card blocks in the review-grid div below. -->
-    <section class="section" style="background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
-      <div class="container">
-        <h2>What Customers Say</h2>
-        <p class="micro">Real jobs, real results. Read what customers have said about working with Wind River Renewal.</p>
 
-        <!--
-        UNCOMMENT AND FILL IN when real review content is available:
-        <div class="review-grid">
-          <article class="review-card">
-            <p class="review-text">"[Insert exact customer quote here]"</p>
-            <p class="review-attribution">[First name], [City] &bull; [Job type]</p>
-          </article>
-          <article class="review-card">
-            <p class="review-text">"[Insert exact customer quote here]"</p>
-            <p class="review-attribution">[First name], [City] &bull; [Job type]</p>
-          </article>
-          <article class="review-card">
-            <p class="review-text">"[Insert exact customer quote here]"</p>
-            <p class="review-attribution">[First name], [City] &bull; [Job type]</p>
-          </article>
-        </div>
-        -->
-
-        <p class="review-google-link">
-          <a class="btn" href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">See Reviews on Google</a>
         </p>
       </div>
     </section>
