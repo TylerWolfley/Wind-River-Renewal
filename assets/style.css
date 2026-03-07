@@ -70,9 +70,9 @@ img{max-width:100%;height:auto;display:block}
 }
 
 /* SINGLE SOURCE OF TRUTH FOR SECTION SPACING */
-.section{padding:44px 0}
+.section{padding:56px 0}
 @media (min-width:900px){
-  .section{padding:64px 0}
+  .section{padding:80px 0}
 }
 
 .micro{font-size:.95rem;color:var(--muted)}
@@ -169,10 +169,10 @@ img{max-width:100%;height:auto;display:block}
 .hero{
   background:linear-gradient(180deg,#ffffff,#f7f7f8);
   padding-top:10px;
-  padding-bottom:52px;
+  padding-bottom:64px;
 }
 @media (min-width:900px){
-  .hero{padding-bottom:64px}
+  .hero{padding-bottom:80px}
 }
 
 .hero .container{max-width:var(--container-hero)}
@@ -315,25 +315,18 @@ input:focus-visible,textarea:focus-visible{
 /* ---------- Mobile Nav */
 .nav-toggle{
   display:none;
-  align-items:center;
-  justify-content:center;
   width:44px;
-  height:44px;
+  height:40px;
   border-radius:12px;
-  border:none;
-  background:transparent;
-  cursor:pointer;
-  transition:background var(--t-fast);
-}
-
-.nav-toggle:hover{
-  background:#f1f5f9;
+  border:1px solid var(--border);
+  background:#fff;
+  transition:transform var(--t-med), box-shadow var(--t-med);
 }
 
 .nav-toggle:focus-visible{
   outline:none;
-  box-shadow:0 0 0 4px var(--ring-soft);
-  background:#f1f5f9;
+  box-shadow:0 0 0 4px var(--ring-soft), var(--shadow);
+  border-color:#93c5fd;
 }
 
 @media (max-width:760px){
@@ -446,15 +439,14 @@ body{padding-bottom:54px}
   body{padding-bottom:0}
 }
 
-/* ---------- Nav Toggle Bars (hamburger icon → animated X) */
+/* ---------- Nav Toggle Bars (hamburger icon) */
 .nav-toggle-bars{
   display:block;
   position:relative;
-  width:22px;
+  width:20px;
   height:2px;
   background:var(--text);
   border-radius:2px;
-  transition:background var(--t-med);
 }
 
 .nav-toggle-bars::before,
@@ -463,28 +455,15 @@ body{padding-bottom:54px}
   display:block;
   position:absolute;
   left:0;
-  width:22px;
+  width:20px;
   height:2px;
   background:var(--text);
   border-radius:2px;
-  transition:transform var(--t-med), top var(--t-med), opacity var(--t-fast);
+  transition:transform var(--t-med), opacity var(--t-fast);
 }
 
-.nav-toggle-bars::before{top:-7px}
-.nav-toggle-bars::after{top:7px}
-
-/* Animate to X when nav is open */
-body.nav-open .nav-toggle .nav-toggle-bars{
-  background:transparent;
-}
-body.nav-open .nav-toggle .nav-toggle-bars::before{
-  top:0;
-  transform:rotate(45deg);
-}
-body.nav-open .nav-toggle .nav-toggle-bars::after{
-  top:0;
-  transform:rotate(-45deg);
-}
+.nav-toggle-bars::before{top:-6px}
+.nav-toggle-bars::after{top:6px}
 
 /* ---------- Form two-column grid */
 .grid2{
