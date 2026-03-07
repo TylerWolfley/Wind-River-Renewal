@@ -690,3 +690,120 @@ body{padding-bottom:54px}
   border-top:1px solid var(--border);
 }
 
+/* ---------- Trust pills (hero trust strip) */
+.trust-pills{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:12px 0;
+}
+
+.trust-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:5px 12px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  font-size:.875rem;
+  font-weight:600;
+  color:var(--text);
+  white-space:nowrap;
+  box-shadow:var(--shadow-sm);
+}
+
+.trust-pill-check::before{
+  content:"✓";
+  color:#16a34a;
+  font-weight:800;
+}
+
+/* ---------- Review grid + cards */
+.review-grid{
+  display:grid;
+  gap:14px;
+  grid-template-columns:1fr;
+  margin-top:16px;
+}
+@media (min-width:760px){
+  .review-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:1000px){
+  .review-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+.review-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+  box-shadow:var(--shadow-sm);
+  position:relative;
+}
+
+.review-card::before{
+  content:"\201C";
+  position:absolute;
+  top:10px;
+  left:16px;
+  font-size:2.4rem;
+  line-height:1;
+  color:var(--border);
+  font-family:Georgia,serif;
+}
+
+.review-text{
+  margin:20px 0 10px;
+  font-style:italic;
+  color:var(--text);
+  line-height:1.55;
+}
+
+.review-attribution{
+  margin:0;
+  font-size:.875rem;
+  color:var(--muted);
+  font-weight:600;
+}
+
+/* Review Google link strip */
+.review-google-link{
+  margin-top:16px;
+}
+
+/* ---------- Competitive positioning strip */
+.compare-strip{
+  display:grid;
+  gap:12px;
+  grid-template-columns:1fr;
+  margin-top:14px;
+}
+@media (min-width:760px){
+  .compare-strip{grid-template-columns:1fr 1fr}
+}
+
+.compare-col{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  box-shadow:var(--shadow-sm);
+}
+
+.compare-col h4{margin:0 0 8px; font-size:1rem}
+.compare-col ul{margin:0; padding-left:16px; color:var(--muted)}
+.compare-col li{margin:5px 0; font-size:.95rem}
+
+.compare-col-alt{
+  border-color:#fca5a5;
+  background:#fff7f7;
+}
+.compare-col-alt h4{color:#b91c1c}
+
+.compare-col-pos{
+  border-color:#86efac;
+  background:#f0fdf4;
+}
+.compare-col-pos h4{color:#15803d}
+
