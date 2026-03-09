@@ -253,7 +253,7 @@ img{max-width:100%;height:auto;display:block}
 }
 
 /* ---------- Forms */
-input,textarea{
+input,textarea,select{
   font:inherit;
   width:100%;
   padding:12px 14px;
@@ -268,13 +268,13 @@ textarea{
   resize:vertical;
 }
 
-input:focus,textarea:focus{
+input:focus,textarea:focus,select:focus{
   outline:none;
   border-color:#93c5fd;
   box-shadow:0 0 0 4px var(--ring-soft);
 }
 
-input:focus-visible,textarea:focus-visible{
+input:focus-visible,textarea:focus-visible,select:focus-visible{
   outline:none;
   border-color:#93c5fd;
   box-shadow:0 0 0 4px var(--ring-soft);
@@ -586,16 +586,17 @@ body{padding-bottom:54px}
 /* ---------- Brand text */
 .brand-text{font-size:1rem}
 
-/* ---------- Trust pills (hero trust badges) */
+/* ---------- Trust pills (hero trust badges) — both li and span patterns */
 .trust-pills{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
   list-style:none;
-  margin:14px 0 0;
+  margin:12px 0;
   padding:0;
 }
 
+/* ul.trust-pills > li: green-dot pill (no checkmark) */
 .trust-pills li{
   display:inline-flex;
   align-items:center;
@@ -620,45 +621,29 @@ body{padding-bottom:54px}
   flex-shrink:0;
 }
 
-/* ---------- Review cards */
-.review-grid{
-  display:grid;
-  gap:14px;
-  grid-template-columns:1fr;
-  margin-top:20px;
-}
-@media (min-width:760px){
-  .review-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media (min-width:1000px){
-  .review-grid{grid-template-columns:repeat(3,1fr)}
-}
-
-.review-card{
-  background:var(--surface);
+/* .trust-pill span: checkmark pill */
+.trust-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:5px 12px;
+  border-radius:999px;
   border:1px solid var(--border);
-  border-radius:14px;
-  padding:18px;
-  box-shadow:var(--shadow-sm);
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
-.review-card blockquote{
-  margin:0;
-  font-style:italic;
-  color:var(--text);
-  line-height:1.6;
-}
-
-.review-card cite{
-  font-style:normal;
+  background:var(--surface);
   font-size:.875rem;
-  color:var(--muted);
-  display:block;
+  font-weight:600;
+  color:var(--text);
+  white-space:nowrap;
+  box-shadow:var(--shadow-sm);
 }
 
+.trust-pill-check::before{
+  content:"✓";
+  color:#16a34a;
+  font-weight:800;
+}
+
+/* ---------- Review cards */
 .review-stars{
   color:#f59e0b;
   font-size:1rem;
@@ -688,35 +673,6 @@ body{padding-bottom:54px}
   color:var(--muted);
   background:var(--surface);
   border-top:1px solid var(--border);
-}
-
-/* ---------- Trust pills (hero trust strip) */
-.trust-pills{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin:12px 0;
-}
-
-.trust-pill{
-  display:inline-flex;
-  align-items:center;
-  gap:5px;
-  padding:5px 12px;
-  border-radius:999px;
-  border:1px solid var(--border);
-  background:var(--surface);
-  font-size:.875rem;
-  font-weight:600;
-  color:var(--text);
-  white-space:nowrap;
-  box-shadow:var(--shadow-sm);
-}
-
-.trust-pill-check::before{
-  content:"✓";
-  color:#16a34a;
-  font-weight:800;
 }
 
 /* ---------- Review grid + cards */
@@ -806,4 +762,149 @@ body{padding-bottom:54px}
   background:#f0fdf4;
 }
 .compare-col-pos h4{color:#15803d}
+
+/* ---------- Contact page */
+.contact-hero{
+  padding:48px 0 36px;
+  background:linear-gradient(180deg,#ffffff,#f7f7f8);
+  border-bottom:1px solid var(--border);
+}
+@media (min-width:900px){.contact-hero{padding:64px 0 48px}}
+
+.contact-hero-inner{
+  display:grid;
+  gap:28px;
+  grid-template-columns:1fr;
+}
+@media (min-width:960px){
+  .contact-hero-inner{grid-template-columns:1.1fr .9fr; align-items:start}
+}
+
+.contact-hero-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+/* Panel: white card with border */
+.panel{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:var(--shadow-sm);
+}
+@media (min-width:760px){.panel{padding:26px}}
+
+.panel-soft{
+  background:#f8fafc;
+  border-color:#e2e8f0;
+}
+
+.panel-title{margin:0 0 4px; font-size:1.2rem}
+.panel-sub{margin:0 0 14px; color:var(--muted)}
+
+/* Contact grid: form left, sidebar right */
+.contact-grid{
+  display:grid;
+  gap:20px;
+  grid-template-columns:1fr;
+}
+@media (min-width:960px){
+  .contact-grid{grid-template-columns:1.2fr .8fr; align-items:start}
+}
+
+/* Form rows */
+.form-row{display:grid; gap:10px; margin-bottom:12px}
+.form-row.two{grid-template-columns:1fr 1fr}
+@media (max-width:580px){.form-row.two{grid-template-columns:1fr}}
+
+.form-row label{font-weight:700; font-size:.95rem; display:block; margin-bottom:5px}
+
+.form-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+
+/* Quick contact actions */
+.contact-quick-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:0 0 16px;
+}
+
+/* Mini contact info cards */
+.contact-mini-cards{display:flex; flex-direction:column; gap:10px; margin-bottom:16px}
+
+.mini-card{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:10px 14px;
+}
+
+.mini-kicker{
+  font-size:.8rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--muted);
+  margin-bottom:2px;
+}
+
+.mini-link{
+  font-weight:700;
+  color:var(--text);
+  text-decoration:none;
+  font-size:1rem;
+}
+.mini-link:hover{text-decoration:underline}
+
+.mini-text{color:var(--text); font-size:.95rem}
+
+/* Divider */
+.panel-divider{
+  border:0;
+  border-top:1px solid var(--border);
+  margin:16px 0;
+}
+
+/* Small section headings in sidebar */
+.mini-title{margin:0 0 8px; font-size:.95rem; font-weight:700}
+
+/* Checklist */
+.checklist{
+  margin:0;
+  padding-left:0;
+  list-style:none;
+}
+.checklist li{
+  padding:4px 0;
+  padding-left:20px;
+  position:relative;
+  color:var(--muted);
+  font-size:.95rem;
+}
+.checklist li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:#16a34a;
+  font-weight:800;
+}
+
+/* Contact links list in sidebar */
+.contact-links{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.contact-links li{margin:4px 0}
+.contact-links a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
+  font-size:.95rem;
+}
+.contact-links a:hover{text-decoration:underline}
+
 
