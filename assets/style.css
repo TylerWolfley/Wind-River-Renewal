@@ -215,6 +215,7 @@ img{max-width:100%;height:auto;display:block}
   display:grid;
   gap:14px;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  margin-top:16px;
 }
 @media (min-width:900px){
   .cards{gap:16px}
@@ -300,6 +301,12 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{
 }
 @media (min-width:760px){
   .footer-grid{grid-template-columns:1fr 1fr}
+}
+
+/* Footer copyright line */
+.site-footer > p.micro{
+  margin-top:16px;
+  padding-inline:16px;
 }
 
 .site-footer nav a{
@@ -396,6 +403,31 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{
 .section.coverage p{
   margin-bottom:0;
 }
+
+/* ---------- Alternate surface sections (white bg with border separators) */
+.surface-section{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+/* ---------- Full-width closing CTA block (blue gradient) */
+.cta-section{
+  background:linear-gradient(180deg,#1e40af,#1f56cc);
+  color:#fff;
+}
+.cta-section h2{color:#fff; margin:0 0 10px}
+.cta-section p{color:rgba(255,255,255,.85); margin:0 0 6px}
+.cta-section p.small{color:rgba(255,255,255,.7); font-size:.9rem; margin:0 0 20px}
+.cta-section .cta-row{justify-content:center}
+.cta-section .btn-cta-white{background:#fff; color:#1e40af; font-weight:800; border:none}
+.cta-section .btn-cta-ghost{background:rgba(255,255,255,.15); color:#fff; border:1px solid rgba(255,255,255,.35)}
+.cta-section .cta-link{color:rgba(255,255,255,.75); font-size:.9rem}
+.cta-section .container{text-align:center; max-width:720px}
+
+/* ---------- Gallery: tighter vertical padding for image-heavy sections */
+.section.gallery-head{padding-bottom:0}
+.section.gallery-wrap{padding-top:24px; padding-bottom:24px}
 
 /* ---------- Sticky Bar (mobile Call/Text) */
 .sticky-bar{
@@ -505,7 +537,7 @@ body{padding-bottom:54px}
   display:grid;
   gap:12px;
   grid-template-columns:1fr;
-  margin-top:14px;
+  margin-top:16px;
 }
 @media (min-width:760px){
   .trust-grid{grid-template-columns:repeat(2,1fr)}
@@ -530,7 +562,7 @@ body{padding-bottom:54px}
   display:grid;
   gap:14px;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  margin:20px 0 0;
+  margin:16px 0 0;
 }
 
 .step{
@@ -561,7 +593,7 @@ body{padding-bottom:54px}
   display:flex;
   gap:10px;
   flex-wrap:wrap;
-  margin-top:14px;
+  margin-top:16px;
 }
 
 .city-strip a{
@@ -592,7 +624,7 @@ body{padding-bottom:54px}
   flex-wrap:wrap;
   gap:8px;
   list-style:none;
-  margin:12px 0;
+  margin:12px 0 14px;
   padding:0;
 }
 
@@ -733,7 +765,7 @@ body{padding-bottom:54px}
   display:grid;
   gap:12px;
   grid-template-columns:1fr;
-  margin-top:14px;
+  margin-top:16px;
 }
 @media (min-width:760px){
   .compare-strip{grid-template-columns:1fr 1fr}
