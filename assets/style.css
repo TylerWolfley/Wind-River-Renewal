@@ -939,4 +939,72 @@ body{padding-bottom:54px}
 }
 .contact-links a:hover{text-decoration:underline}
 
+/* ---------- Service rows (text + photo, alternating) */
+.svc-row{
+  display:grid;
+  gap:32px;
+  grid-template-columns:1fr;
+  align-items:center;
+  padding:48px 0;
+  border-bottom:1px solid var(--border);
+}
+.svc-row:last-child{border-bottom:0}
+
+@media (min-width:900px){
+  .svc-row{
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+    padding:64px 0;
+  }
+  .svc-row-flip .svc-copy{order:2}
+  .svc-row-flip .svc-photo{order:1}
+}
+
+.svc-copy h3{
+  margin:0 0 10px;
+  font-size:clamp(1.2rem,.9rem + .8vw,1.5rem);
+  line-height:1.2;
+}
+
+.svc-copy p{
+  margin:0 0 12px;
+  color:var(--muted);
+}
+
+.svc-copy ul{
+  margin:0 0 14px;
+  padding-left:18px;
+  color:var(--muted);
+}
+
+.svc-copy ul li{
+  margin:5px 0;
+  font-size:.95rem;
+}
+
+.svc-copy .micro-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  font-weight:700;
+  font-size:.95rem;
+  color:var(--primary);
+  text-decoration:none;
+}
+.svc-copy .micro-cta:hover{text-decoration:underline}
+
+.svc-photo{
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow-md);
+}
+
+.svc-photo img{
+  width:100%;
+  height:auto;
+  max-height:380px;
+  object-fit:cover;
+  display:block;
+}
+
 
