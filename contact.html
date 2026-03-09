@@ -275,7 +275,7 @@
           <a href="tel:+13073494694">307-349-4694</a> ·
           <a href="mailto:windriverrenewal@gmail.com">windriverrenewal@gmail.com</a>
         </p>
-        <p class="micro">Licensed &amp; Insured</p>
+        <p class="micro">Licensed &amp; Insured &middot; Fremont County &amp; Natrona County</p>
       </div>
       <nav aria-label="Footer">
         <a href="services.html">Services</a>
@@ -284,38 +284,17 @@
         <a href="about.html">About</a>
         <a href="quote.html" class="js-keep-utm">Get a Quote</a>
         <a href="contact.html" aria-current="page" class="active">Contact</a>
+        <a href="https://www.facebook.com/WindRiverRenewal" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">Google Business Profile</a>
       </nav>
     </div>
     <p class="micro center">© 2025 Wind River Renewal</p>
   </footer>
 
-  <!-- Keep UTM params on quote links + fill hidden UTM fields -->
-  <script>
-    (function () {
-      function keepUTM(el, search) {
-        try {
-          const url = new URL(el.getAttribute('href'), window.location.origin);
-          const params = new URLSearchParams(search);
-          params.forEach((v,k) => { if (k.toLowerCase().startsWith('utm_')) url.searchParams.set(k,v); });
-          el.setAttribute('href', url.toString());
-        } catch(e) {}
-      }
-      function fillFormUTM(search) {
-        const p = new URLSearchParams(search);
-        const ids = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"];
-        ids.forEach(id => {
-          const el = document.getElementById(id);
-          if (el) el.value = p.get(id) || "";
-        });
-      }
-      function init() {
-        const search = window.location.search;
-        document.querySelectorAll('a.js-keep-utm').forEach(a => keepUTM(a, search));
-        fillFormUTM(search);
-      }
-      document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
-    })();
-  </script>
+  <div class="sticky-bar" role="region" aria-label="Quick contact">
+    <a class="sticky-btn" href="tel:+13073494694" aria-label="Call Wind River Renewal">Call</a>
+    <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694" aria-label="Text Wind River Renewal">Text</a>
+  </div>
 
   <script src="assets/script.js" defer></script>
 </body>

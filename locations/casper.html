@@ -58,20 +58,20 @@
     "image": "https://windriverrenewal.com/assets/images/og-cover.jpg",
     "telephone": "+1-307-349-4694",
     "email": "windriverrenewal@gmail.com",
-    "priceRange": "$",
+    "priceRange": "$$",
     "areaServed": [
       {"@type":"City","name":"Casper, WY"},
       {"@type":"AdministrativeArea","name":"Natrona County, WY"}
     ],
     "address": {
       "@type":"PostalAddress",
-      "addressLocality":"Casper",
+      "addressLocality":"Riverton",
       "addressRegion":"WY",
       "addressCountry":"US"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "addressLocality": "Casper",
+      "addressLocality": "Riverton",
       "addressRegion": "WY"
     },
     "openingHoursSpecification": [{
@@ -564,28 +564,6 @@
     <a class="sticky-btn" href="tel:+13073494694" aria-label="Call Wind River Renewal">Call</a>
     <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694" aria-label="Text Wind River Renewal">Text</a>
   </div>
-
-  <!-- Hamburger toggle (works even if script.js has other stuff) -->
-  <script>
-    (function () {
-      const btn = document.querySelector('.nav-toggle');
-      const nav = document.getElementById('site-nav');
-      if (!btn || !nav) return;
-
-      btn.addEventListener('click', () => {
-        const open = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!open));
-        document.body.classList.toggle('nav-open', !open);
-      });
-
-      nav.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-          btn.setAttribute('aria-expanded', 'false');
-          document.body.classList.remove('nav-open');
-        });
-      });
-    })();
-  </script>
 
   <script src="/assets/script.js" defer></script>
 </body>

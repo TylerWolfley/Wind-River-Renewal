@@ -318,28 +318,6 @@
     <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694" aria-label="Text Wind River Renewal">Text</a>
   </div>
 
-  <!-- Hamburger toggle -->
-  <script>
-    (function () {
-      const btn = document.querySelector('.nav-toggle');
-      const nav = document.getElementById('site-nav');
-      if (!btn || !nav) return;
-
-      btn.addEventListener('click', () => {
-        const open = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!open));
-        document.body.classList.toggle('nav-open', !open);
-      });
-
-      nav.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-          btn.setAttribute('aria-expanded', 'false');
-          document.body.classList.remove('nav-open');
-        });
-      });
-    })();
-  </script>
-
   <script src="/assets/script.js" defer></script>
 </body>
 </html>
