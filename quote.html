@@ -99,6 +99,18 @@
 
     .fineprint{margin-top:10px}
     .fineprint a{color:inherit}
+
+    .sms-callout{
+      margin:16px 0 20px;
+      padding:14px 16px;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-sm);
+    }
+    .sms-callout p{margin:0 0 4px;font-weight:700}
+    .sms-callout .help{margin:0 0 12px}
+    .sms-callout .phone-inline{display:inline-block;margin-left:10px;line-height:1.4}
   </style>
 </head>
 
@@ -138,6 +150,15 @@
       <div class="container quote-shell">
         <h1>Get a Quote</h1>
         <p class="lead">Fast estimates in Fremont County and Natrona County. Send details and photos and we will reply with price and availability.</p>
+
+        <div class="sms-callout">
+          <p>Fastest option: text photos</p>
+          <p class="help">Send 1&ndash;3 photos, your address, and what needs gone. We&rsquo;ll reply with price and availability.</p>
+          <a class="btn btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a fast quote">Text Photos for Fast Quote</a>
+          <span class="help phone-inline"><a href="tel:+13073494694">307-349-4694</a></span>
+        </div>
+
+        <p class="help" style="margin:0 0 8px">Prefer a form? Fill it out below.</p>
 
         <form class="form-card" action="https://formspree.io/f/mqadaqdp" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
           <input type="hidden" name="_redirect" value="thanks.html" />
@@ -238,7 +259,7 @@
 
   <div class="sticky-bar" role="region" aria-label="Quick contact">
     <a class="sticky-btn" href="tel:+13073494694" aria-label="Call Wind River Renewal">Call</a>
-    <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694" aria-label="Text Wind River Renewal">Text</a>
+    <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a quote">Text Photos</a>
   </div>
 
   <script src="assets/script.js" defer></script>
