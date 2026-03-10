@@ -307,32 +307,28 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{
 .site-footer{
   background:var(--surface);
   border-top:1px solid var(--border);
-  padding:28px 0;
+  padding:10px 0 8px;
 }
-
-.footer-grid{
-  display:grid;
-  gap:16px;
+.footer-info{
+  margin:0 0 6px;
+  font-size:.85rem;
+  line-height:1.6;
 }
-@media (min-width:760px){
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
-
-/* Footer copyright line */
-.site-footer > p.micro{
-  margin-top:16px;
-  padding-inline:16px;
-}
-
+.footer-info a{color:var(--text);text-decoration:none}
+.footer-info a:hover{text-decoration:underline}
+.footer-secondary{color:var(--muted)}
+.site-footer nav{display:flex;flex-wrap:wrap;gap:2px 0;margin-bottom:4px}
 .site-footer nav a{
   color:var(--text);
   text-decoration:none;
   display:inline-block;
-  padding:6px 8px;
-  border-radius:10px;
+  padding:3px 7px;
+  border-radius:8px;
+  font-size:.85rem;
   transition:background var(--t-fast);
 }
 .site-footer nav a:hover{background:#f1f5f9}
+.site-footer .micro{margin:0}
 
 /* ---------- Mobile Nav */
 .nav-toggle{
