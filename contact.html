@@ -92,178 +92,45 @@
   </header>
 
   <main id="main">
-
-    <!-- DIV (NOT section) so global section padding can't create huge dead space -->
-    <div class="contact-hero">
-      <div class="container">
-        <div class="contact-hero-inner">
-          <div class="contact-hero-copy">
-            <h1>Contact Wind River Renewal</h1>
-            <p class="micro lead">
-              We reply fast. Open daily 9 to 5. Same-day or ASAP when available. Serving Fremont County and Natrona County, including Riverton, Lander, and Casper.
-            </p>
-
-            <div class="contact-hero-actions">
-              <a class="btn btn-primary" href="tel:+13073494694">Call 307-349-4694</a>
-              <a class="btn" href="sms:+13073494694">Text photos for a fast quote</a>
-              <a class="btn js-keep-utm" href="quote.html">Get My Quote</a>
-            </div>
-
-            <p class="micro" style="margin:10px 0 0">
-              Fastest quote is a photo, your address, and what you want removed.
-            </p>
-          </div>
-
-          <div class="contact-hero-side">
-            <div class="panel panel-soft">
-              <h2 class="mini-title">Tight timeline?</h2>
-              <p class="micro" style="margin:6px 0 0">
-                If it is a move-out, listing, foreclosure, or fire cleanup, say so. We will prioritize it when we can.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
     <section class="section">
       <div class="container">
+        <div style="max-width:600px">
 
-        <div class="contact-grid">
+          <h1>Contact Wind River Renewal</h1>
+          <p class="micro lead" style="margin:8px 0 24px">
+            Call or text for the fastest reply. Text photos of what you need removed and we can quote quickly. Open every day 9 to 5 — same-day or ASAP when available.
+          </p>
 
-          <div class="panel">
-            <h2 class="panel-title">Send a Message</h2>
-            <p class="micro panel-sub">Tell us what you have. Photos help us quote faster.</p>
-
-            <form id="contact-form" action="https://formspree.io/f/mqadaqdp" method="POST" accept-charset="UTF-8">
-              <input type="hidden" name="_subject" value="New contact from windriverrenewal.com">
-              <input type="hidden" name="_redirect" value="thanks.html">
-              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-
-              <div class="form-row two">
-                <div>
-                  <label for="name">Name</label>
-                  <input id="name" name="name" type="text" autocomplete="name" required>
-                </div>
-                <div>
-                  <label for="phone">Phone</label>
-                  <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="307-349-4694" required>
-                </div>
-              </div>
-
-              <div class="form-row two">
-                <div>
-                  <label for="email">Email (optional)</label>
-                  <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
-                </div>
-                <div>
-                  <label for="city">City</label>
-                  <select id="city" name="city">
-                    <option value="Riverton">Riverton</option>
-                    <option value="Lander">Lander</option>
-                    <option value="Casper">Casper</option>
-                    <option value="Mills">Mills</option>
-                    <option value="Evansville">Evansville</option>
-                    <option value="Shoshoni">Shoshoni</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div>
-                  <label for="help">How can we help?</label>
-                  <textarea id="help" name="message" rows="7" placeholder="What needs to go, about how much, access, and timing. Mention any heavy stuff or stairs." required></textarea>
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div>
-                  <label for="photos">Photo links (optional)</label>
-                  <input id="photos" name="photo_links" type="url" placeholder="https://photos.app.goo.gl/... or https://imgur.com/...">
-                </div>
-              </div>
-
-              <input type="hidden" name="utm_source" id="utm_source">
-              <input type="hidden" name="utm_medium" id="utm_medium">
-              <input type="hidden" name="utm_campaign" id="utm_campaign">
-              <input type="hidden" name="utm_term" id="utm_term">
-              <input type="hidden" name="utm_content" id="utm_content">
-
-              <div class="form-actions">
-                <button class="btn btn-primary" type="submit">Send Message</button>
-                <a class="btn" href="tel:+13073494694">Or call now</a>
-              </div>
-
-              <p class="micro" style="margin-top:10px">
-                By sending, you agree we may contact you at the phone or email provided about your service request.
-              </p>
-            </form>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px">
+            <a class="btn btn-primary" href="tel:+13073494694">Call 307-349-4694</a>
+            <a class="btn" href="sms:+13073494694">Text photos for a fast quote</a>
           </div>
 
-          <aside class="panel">
-            <h2 class="panel-title">Quick Contacts</h2>
-            <p class="micro panel-sub">Call, text, or email. Whatever is easiest.</p>
+          <div class="mini-card" style="margin-bottom:10px">
+            <div class="mini-kicker">Phone / Text</div>
+            <a class="mini-link" href="tel:+13073494694">307-349-4694</a>
+          </div>
 
-            <div class="contact-quick-actions">
-              <a class="btn btn-primary" href="tel:+13073494694">Call</a>
-              <a class="btn" href="sms:+13073494694">Text</a>
-            </div>
+          <div class="mini-card" style="margin-bottom:10px">
+            <div class="mini-kicker">Email</div>
+            <a class="mini-link" href="mailto:windriverrenewal@gmail.com">windriverrenewal@gmail.com</a>
+          </div>
 
-            <div class="contact-mini-cards">
-              <div class="mini-card">
-                <div class="mini-kicker">Phone</div>
-                <a class="mini-link" href="tel:+13073494694">307-349-4694</a>
-              </div>
-              <div class="mini-card">
-                <div class="mini-kicker">Email</div>
-                <a class="mini-link" href="mailto:windriverrenewal@gmail.com">windriverrenewal@gmail.com</a>
-              </div>
-              <div class="mini-card">
-                <div class="mini-kicker">Hours</div>
-                <div class="mini-text">Every day 9 to 5 (same-day or ASAP when available)</div>
-              </div>
-            </div>
+          <div class="mini-card" style="margin-bottom:10px">
+            <div class="mini-kicker">Hours</div>
+            <div class="mini-text">Every day 9 to 5 &mdash; same-day or ASAP when available</div>
+          </div>
 
-            <div class="panel-divider"></div>
+          <div class="mini-card" style="margin-bottom:28px">
+            <div class="mini-kicker">Service Area</div>
+            <div class="mini-text">Fremont County and Natrona County &mdash; Riverton, Lander, Casper, and surrounding areas</div>
+          </div>
 
-            <h3 class="mini-title">Fast quote checklist</h3>
-            <ul class="checklist">
-              <li>Photos (or a quick video)</li>
-              <li>Address or general location</li>
-              <li>Any heavy items (pianos, safes, appliances)</li>
-              <li>Access notes (stairs, tight driveway, gate codes)</li>
-              <li>Preferred timing</li>
-            </ul>
-
-            <div class="panel-divider"></div>
-
-            <h3 class="mini-title">Service Area</h3>
-            <p class="micro" style="margin:6px 0 0">
-              Fremont County and Natrona County, including Riverton, Lander, Casper, Mills, Evansville, and Shoshoni.
-            </p>
-
-            <div class="panel-divider"></div>
-
-            <ul class="contact-links">
-              <li><a class="js-keep-utm" href="quote.html">Get a Quote</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="gallery.html">Before &amp; After</a></li>
-              <li><a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">Google Business Profile</a></li>
-              <li><a href="https://www.facebook.com/WindRiverRenewal" target="_blank" rel="noopener">Facebook</a></li>
-            </ul>
-          </aside>
+          <a class="btn js-keep-utm" href="quote.html">Get a Full Quote</a>
 
         </div>
-
-        <div class="center mt-l">
-          <a class="btn btn-primary js-keep-utm" href="quote.html">Get a Quote</a>
-        </div>
-
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
