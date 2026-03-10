@@ -429,6 +429,55 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{
 .section.gallery-head{padding-bottom:0}
 .section.gallery-wrap{padding-top:24px; padding-bottom:24px}
 
+/* ---------- Gallery groups (gallery.html) */
+.gallery-group{margin-bottom:48px}
+.gallery-group:last-child{margin-bottom:0}
+
+.gallery-group-title{
+  font-size:.875rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  color:var(--muted);
+  margin:0 0 14px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--border);
+}
+
+.gallery-grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns:1fr;
+}
+@media (min-width:600px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+.gallery-item{
+  margin:0;
+  border-radius:var(--radius-sm);
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+  background:var(--surface);
+  border:1px solid var(--border);
+}
+
+.gallery-item img{
+  width:100%;
+  aspect-ratio:3/2;
+  object-fit:cover;
+  display:block;
+}
+
+.gallery-item figcaption{
+  padding:8px 12px;
+  font-size:.875rem;
+  color:var(--muted);
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  line-height:1.4;
+}
+
 /* ---------- Sticky Bar (mobile Call/Text) */
 .sticky-bar{
   position:fixed;
