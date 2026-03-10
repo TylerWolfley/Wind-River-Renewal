@@ -317,6 +317,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{
   background:var(--surface);
   border-top:1px solid var(--border);
   padding:10px 0 8px;
+  text-align:center;
 }
 .footer-info{
   margin:0 0 6px;
@@ -326,7 +327,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{
 .footer-info a{color:var(--text);text-decoration:none}
 .footer-info a:hover{text-decoration:underline}
 .footer-secondary{color:var(--muted)}
-.site-footer nav{display:flex;flex-wrap:wrap;gap:2px 0;margin-bottom:4px}
+.site-footer nav{display:flex;flex-wrap:wrap;gap:2px 0;margin-bottom:4px;justify-content:center}
 .site-footer nav a{
   color:var(--text);
   text-decoration:none;
