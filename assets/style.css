@@ -75,6 +75,12 @@ img{max-width:100%;height:auto;display:block}
   .section{padding:52px 0}
 }
 
+/* Pull internal page intro/hero sections up — reduce dead space under the navbar */
+#main > .section:first-child{padding-top:16px}
+@media (min-width:900px){
+  #main > .section:first-child{padding-top:24px}
+}
+
 /* Remove browser-default top margin on section headings so padding alone controls the gap */
 .section h1,.section h2{margin-top:0;margin-bottom:14px}
 
