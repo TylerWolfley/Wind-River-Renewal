@@ -108,101 +108,238 @@
     <section class="section gallery-head">
       <div class="container">
         <h1>Before &amp; After Photos</h1>
-        <p class="sub">Real jobs in Riverton, Lander, Casper, and across Fremont County and Natrona County — organized by job type below. Cleanouts, haul-away, light demo, and property maintenance. This is what clean looks like when we're done.</p>
-        <p class="micro" style="margin-top:8px">See job photos inline on the <a href="/">homepage</a> and <a href="/junk-removal-riverton.html">city pages</a>. This gallery is additional reference.</p>
+        <p class="sub">Real jobs in Riverton, Lander, Casper, and across Fremont County and Natrona County. Cleanouts, haul-away, light demo, and property maintenance — this is what clean looks like when we're done.</p>
       </div>
     </section>
 
-    <!-- Gallery groups -->
+    <!-- Gallery slider -->
     <section class="section gallery-wrap">
       <div class="container">
 
-        <!-- Group: Cleanouts & Haul-Away -->
-        <div class="gallery-group">
-          <h2 class="gallery-group-title">Cleanouts &amp; Haul-Away</h2>
-          <div class="gallery-grid">
+        <div class="wrr-slider" id="gallery-slider" role="region" aria-label="Job photo gallery" aria-roledescription="carousel">
 
-            <figure class="gallery-item">
-              <img src="assets/images/junk-removal-riverton-wy-estate-cleanout-before-after.jpg" alt="Estate cleanout junk removal before and after in Riverton, Wyoming" loading="lazy">
-              <figcaption>Estate cleanout · Riverton, WY</figcaption>
-            </figure>
+          <!-- Image stage -->
+          <div class="wrr-stage" id="slider-stage">
+            <div class="wrr-track" id="slider-track">
 
-            <figure class="gallery-item">
-              <img src="assets/images/garage-cleanout-riverton-wy-foreclosure-before-after.jpg" alt="Garage cleanout foreclosure before and after in Riverton, Wyoming" loading="lazy">
-              <figcaption>Garage cleanout, foreclosure · Riverton, WY</figcaption>
-            </figure>
+              <!-- 1 — Cleanouts & Haul-Away -->
+              <div class="wrr-slide"
+                   data-label="Estate cleanout"
+                   data-loc="Riverton, WY"
+                   role="group" aria-roledescription="slide" aria-label="1 of 12">
+                <img src="assets/images/junk-removal-riverton-wy-estate-cleanout-before-after.jpg"
+                     alt="Estate cleanout junk removal before and after, Riverton, Wyoming"
+                     width="900" height="600"
+                     loading="eager" decoding="async">
+              </div>
 
-            <figure class="gallery-item">
-              <img src="assets/images/debris-removal-riverton-wy-foreclosure-before-after.jpg" alt="Debris removal foreclosure cleanout before and after in Riverton, Wyoming" loading="lazy">
-              <figcaption>Debris removal, foreclosure cleanout · Riverton, WY</figcaption>
-            </figure>
+              <!-- 2 -->
+              <div class="wrr-slide"
+                   data-label="Garage cleanout — foreclosure"
+                   data-loc="Riverton, WY"
+                   role="group" aria-roledescription="slide" aria-label="2 of 12">
+                <img src="assets/images/garage-cleanout-riverton-wy-foreclosure-before-after.jpg"
+                     alt="Garage cleanout foreclosure before and after, Riverton, Wyoming"
+                     width="900" height="600"
+                     loading="lazy" decoding="async">
+              </div>
 
-            <figure class="gallery-item">
-              <img src="assets/images/junk-removal-lander-wy-foreclosure-collage.jpg" alt="Junk removal foreclosure collage in Lander, Wyoming" loading="lazy">
-              <figcaption>Junk removal, foreclosure collage · Lander, WY</figcaption>
-            </figure>
+              <!-- 3 -->
+              <div class="wrr-slide"
+                   data-label="Debris removal — foreclosure cleanout"
+                   data-loc="Riverton, WY"
+                   role="group" aria-roledescription="slide" aria-label="3 of 12">
+                <img src="assets/images/debris-removal-riverton-wy-foreclosure-before-after.jpg"
+                     alt="Debris removal foreclosure cleanout before and after, Riverton, Wyoming"
+                     width="900" height="600"
+                     loading="lazy" decoding="async">
+              </div>
 
+              <!-- 4 -->
+              <div class="wrr-slide"
+                   data-label="Junk removal — foreclosure"
+                   data-loc="Lander, WY"
+                   role="group" aria-roledescription="slide" aria-label="4 of 12">
+                <img src="assets/images/junk-removal-lander-wy-foreclosure-collage.jpg"
+                     alt="Junk removal foreclosure collage, Lander, Wyoming"
+                     width="900" height="600"
+                     loading="lazy" decoding="async">
+              </div>
+
+              <!-- 5 — Light Demo & Tear-Outs -->
+              <div class="wrr-slide"
+                   data-label="Light demo — estate cleanout"
+                   data-loc="Lander, WY"
+                   role="group" aria-roledescription="slide" aria-label="5 of 12">
+                <img src="assets/images/light-demo-lander-wy-estate-cleanout-before-after.jpg"
+                     alt="Light demolition estate cleanout before and after, Lander, Wyoming"
+                     width="900" height="600"
+                     loading="lazy" decoding="async">
+              </div>
+
+              <!-- 6 -->
+              <div class="wrr-slide"
+                   data-label="Light demo — estate cleanout"
+                   data-loc="Lander, WY"
+                   role="group" aria-roledescription="slide" aria-label="6 of 12">
+                <img src="assets/images/light-demo-lander-wy-estate-cleanout-before-after-2.jpg"
+                     alt="Light demolition estate cleanout before and after, Lander, Wyoming (set 2)"
+                     width="900" height="600"
+                     loading="lazy" decoding="async">
+              </div>
+
+              <!-- 7 -->
+              <div class="wrr-slide"
+                   data-label="Light demo — garage cleanout"
+                   data-loc="Riverton, WY"
+                   role="group" aria-roledescription="slide" aria-label="7 of 12">
+                <img src="assets/images/light-demo-riverton-wy-garage-cleanout-before-after.jpg"
+                     alt="Light demolition garage cleanout before and after, Riverton, Wyoming"
+                     width="900" height="600"
+                     loading="lazy" decoding="async">
+              </div>
+
+              <!-- 8 — Property Maintenance & Exterior -->
+              <div class="wrr-slide"
+                   data-label="Property maintenance — junk removal"
+                   data-loc="Fremont County, WY"
+                   role="group" aria-roledescription="slide" aria-label="8 of 12">
+                <img src="assets/images/junk-removal-collage-fremont-county-property-maintenance.jpg"
+                     alt="Junk removal collage for property maintenance, Fremont County, Wyoming"
+                     width="900" height="600"
+                     loading="lazy" decoding="async">
+              </div>
+
+              <!-- 9 -->
+              <div class="wrr-slide"
+                   data-label="Fence cleanup — apartment exterior"
+                   data-loc="Riverton, WY"
+                   role="group" aria-roledescription="slide" aria-label="9 of 12">
+                <img src="assets/images/fence-cleanup-riverton-wy-apartment-cleanup-before-after.jpg"
+                     alt="Apartment fence cleanup before and after, Riverton, Wyoming"
+                     width="900" height="600"
+                     loading="lazy" decoding="async">
+              </div>
+
+              <!-- 10 -->
+              <div class="wrr-slide"
+                   data-label="Tree trimming — estate cleanup"
+                   data-loc="Riverton, WY"
+                   role="group" aria-roledescription="slide" aria-label="10 of 12">
+                <img src="assets/images/tree-trimming-riverton-wy-estate-cleanup-before-after.jpg"
+                     alt="Tree trimming and estate cleanup before and after, Riverton, Wyoming"
+                     width="900" height="600"
+                     loading="lazy" decoding="async">
+              </div>
+
+              <!-- 11 -->
+              <div class="wrr-slide"
+                   data-label="Rental property turnover"
+                   data-loc="Riverton, WY"
+                   role="group" aria-roledescription="slide" aria-label="11 of 12">
+                <img src="assets/images/property-turnover-riverton-wyoming.jpg"
+                     alt="Rental property turnover cleanout, Riverton, Wyoming"
+                     width="900" height="600"
+                     loading="lazy" decoding="async">
+              </div>
+
+              <!-- 12 -->
+              <div class="wrr-slide"
+                   data-label="Junk removal"
+                   data-loc="Shoshoni, WY"
+                   role="group" aria-roledescription="slide" aria-label="12 of 12">
+                <img src="assets/images/junk-removal-shoshoni-wyoming.jpg"
+                     alt="Junk removal job, Shoshoni, Wyoming"
+                     width="900" height="600"
+                     loading="lazy" decoding="async">
+              </div>
+
+            </div><!-- /wrr-track -->
+
+            <!-- Prev / Next controls -->
+            <button class="wrr-btn wrr-prev" id="slider-prev" aria-label="Previous photo" type="button">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                <path d="M11 4L6 9l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button class="wrr-btn wrr-next" id="slider-next" aria-label="Next photo" type="button">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                <path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+          </div><!-- /wrr-stage -->
+
+          <!-- Caption + counter -->
+          <div class="wrr-info">
+            <p class="wrr-caption" id="slider-caption" aria-live="polite" aria-atomic="true"></p>
+            <span class="wrr-count" id="slider-count" aria-hidden="true"></span>
           </div>
-        </div>
 
-        <!-- Group: Light Demo & Tear-Outs -->
-        <div class="gallery-group">
-          <h2 class="gallery-group-title">Light Demo &amp; Tear-Outs</h2>
-          <div class="gallery-grid">
-
-            <figure class="gallery-item">
-              <img src="assets/images/light-demo-lander-wy-estate-cleanout-before-after.jpg" alt="Light demolition estate cleanout before and after in Lander, Wyoming" loading="lazy">
-              <figcaption>Light demo, estate cleanout · Lander, WY</figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <img src="assets/images/light-demo-lander-wy-estate-cleanout-before-after-2.jpg" alt="Light demolition estate cleanout before and after in Lander, Wyoming (set 2)" loading="lazy">
-              <figcaption>Light demo, estate cleanout · Lander, WY (2)</figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <img src="assets/images/light-demo-riverton-wy-garage-cleanout-before-after.jpg" alt="Light demolition garage cleanout before and after in Riverton, Wyoming" loading="lazy">
-              <figcaption>Light demo, garage cleanout · Riverton, WY</figcaption>
-            </figure>
-
-          </div>
-        </div>
-
-        <!-- Group: Property Maintenance & Exterior -->
-        <div class="gallery-group">
-          <h2 class="gallery-group-title">Property Maintenance &amp; Exterior</h2>
-          <div class="gallery-grid">
-
-            <figure class="gallery-item">
-              <img src="assets/images/junk-removal-collage-fremont-county-property-maintenance.jpg" alt="Junk removal collage for property maintenance in Fremont County, Wyoming" loading="lazy">
-              <figcaption>Property maintenance, junk removal · Fremont County</figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <img src="assets/images/fence-cleanup-riverton-wy-apartment-cleanup-before-after.jpg" alt="Apartment fence cleanup before and after in Riverton, Wyoming" loading="lazy">
-              <figcaption>Fence cleanup, apartment exterior · Riverton, WY</figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <img src="assets/images/tree-trimming-riverton-wy-estate-cleanup-before-after.jpg" alt="Tree trimming and estate cleanup before and after in Riverton, Wyoming" loading="lazy">
-              <figcaption>Tree trimming, estate cleanup · Riverton, WY</figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <img src="assets/images/property-turnover-riverton-wyoming.jpg" alt="Rental property turnover cleanout in Riverton, Wyoming" loading="lazy">
-              <figcaption>Rental property turnover · Riverton, WY</figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <img src="assets/images/junk-removal-shoshoni-wyoming.jpg" alt="Junk removal job in Shoshoni, Wyoming" loading="lazy">
-              <figcaption>Junk removal · Shoshoni, WY</figcaption>
-            </figure>
-
-          </div>
-        </div>
+        </div><!-- /wrr-slider -->
 
       </div>
     </section>
+
+    <script>
+    (function () {
+      "use strict";
+      var track   = document.getElementById("slider-track");
+      var caption = document.getElementById("slider-caption");
+      var count   = document.getElementById("slider-count");
+      var prev    = document.getElementById("slider-prev");
+      var next    = document.getElementById("slider-next");
+      var stage   = document.getElementById("slider-stage");
+
+      if (!track || !prev || !next) return;
+
+      var slides  = track.querySelectorAll(".wrr-slide");
+      var total   = slides.length;
+      var current = 0;
+
+      function goTo(n) {
+        current = ((n % total) + total) % total;
+        track.style.transform = "translateX(-" + (current * 100) + "%)";
+        var s = slides[current];
+        var label = s.getAttribute("data-label") || "";
+        var loc   = s.getAttribute("data-loc")   || "";
+        // Build caption with DOM methods to avoid innerHTML with data attributes
+        var strong = document.createElement("strong");
+        strong.textContent = label;
+        caption.textContent = "";
+        caption.appendChild(strong);
+        caption.appendChild(document.createTextNode(loc));
+        count.textContent = (current + 1) + "\u00a0/\u00a0" + total;
+      }
+
+      prev.addEventListener("click", function () { goTo(current - 1); });
+      next.addEventListener("click", function () { goTo(current + 1); });
+
+      // Keyboard navigation — skip when a form control has focus
+      document.addEventListener("keydown", function (e) {
+        var tag = document.activeElement && document.activeElement.tagName;
+        if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+        if (e.key === "ArrowLeft")  { goTo(current - 1); }
+        if (e.key === "ArrowRight") { goTo(current + 1); }
+      });
+
+      // Touch / swipe
+      var touchStartX = null;
+      stage.addEventListener("touchstart", function (e) {
+        touchStartX = e.touches[0].clientX;
+      }, { passive: true });
+      stage.addEventListener("touchend", function (e) {
+        if (touchStartX === null) return;
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        touchStartX = null;
+        if (Math.abs(dx) < 40) return;
+        goTo(dx < 0 ? current + 1 : current - 1);
+      }, { passive: true });
+
+      // Init
+      goTo(0);
+    })();
+    </script>
 
     <!-- GALLERY CTA + INTERNAL LINKS -->
     <section class="section surface-section">
