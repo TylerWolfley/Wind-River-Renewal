@@ -70,14 +70,17 @@ img{max-width:100%;height:auto;display:block}
 }
 
 /* SINGLE SOURCE OF TRUTH FOR SECTION SPACING */
-.section{padding:56px 0}
+.section{padding:32px 0}
 @media (min-width:900px){
-  .section{padding:80px 0}
+  .section{padding:52px 0}
 }
+
+/* Remove browser-default top margin on section headings so padding alone controls the gap */
+.section h1,.section h2{margin-top:0;margin-bottom:14px}
 
 .micro{font-size:.95rem;color:var(--muted)}
 .center{text-align:center}
-.mt-l{margin-top:32px}
+.mt-l{margin-top:24px}
 
 /* ---------- Header */
 .site-header{
@@ -184,10 +187,10 @@ img{max-width:100%;height:auto;display:block}
 .hero{
   background:linear-gradient(180deg,#ffffff,#f7f7f8);
   padding-top:10px;
-  padding-bottom:64px;
+  padding-bottom:40px;
 }
 @media (min-width:900px){
-  .hero{padding-bottom:80px}
+  .hero{padding-bottom:52px}
 }
 
 .hero .container{max-width:var(--container-hero)}
@@ -429,7 +432,7 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{
 }
 .cta-section h2{color:#fff; margin:0 0 10px}
 .cta-section p{color:rgba(255,255,255,.85); margin:0 0 6px}
-.cta-section p.small{color:rgba(255,255,255,.7); font-size:.9rem; margin:0 0 20px}
+.cta-section p.small{color:rgba(255,255,255,.7); font-size:.9rem; margin:0 0 14px}
 .cta-section .cta-row{justify-content:center}
 .cta-section .btn-cta-white{background:#fff; color:#1e40af; font-weight:800; border:none}
 .cta-section .btn-cta-ghost{background:rgba(255,255,255,.15); color:#fff; border:1px solid rgba(255,255,255,.35)}
