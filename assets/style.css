@@ -307,32 +307,52 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{
 .site-footer{
   background:var(--surface);
   border-top:1px solid var(--border);
-  padding:28px 0;
+  padding:32px 0 20px;
 }
 
 .footer-grid{
   display:grid;
-  gap:16px;
+  gap:24px;
+  align-items:start;
 }
 @media (min-width:760px){
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 
+.footer-info h4{
+  margin:0 0 8px;
+}
+.footer-info p{
+  margin:4px 0 0;
+}
+
 /* Footer copyright line */
 .site-footer > p.micro{
-  margin-top:16px;
+  margin-top:20px;
   padding-inline:16px;
 }
 
 .site-footer nav a{
   color:var(--text);
   text-decoration:none;
-  display:inline-block;
-  padding:6px 8px;
-  border-radius:10px;
-  transition:background var(--t-fast);
+  display:block;
+  padding:3px 0;
+  transition:color var(--t-fast);
 }
-.site-footer nav a:hover{background:#f1f5f9}
+.site-footer nav a:hover{
+  color:var(--primary);
+  background:transparent;
+}
+
+.footer-profiles{
+  margin-top:14px;
+  padding-top:12px;
+  border-top:1px solid var(--border);
+}
+.footer-profiles a{
+  color:var(--muted);
+  font-size:.9rem;
+}
 
 /* ---------- Mobile Nav */
 .nav-toggle{
