@@ -7,7 +7,8 @@
 
 /* ---------- Base */
 :root{
-  --bg:#f7f7f8;
+  --bg:#f5f4f1;
+  --bg-tint:#eceae4;
   --surface:#ffffff;
   --text:#0f172a;
   --muted:#64748b;
@@ -191,7 +192,7 @@ img{max-width:100%;height:auto;display:block}
 
 /* ---------- HERO */
 .hero{
-  background:linear-gradient(180deg,#ffffff,#f7f7f8);
+  background:linear-gradient(180deg,#fafaf8,var(--bg));
   padding-top:10px;
   padding-bottom:40px;
 }
@@ -438,6 +439,13 @@ input:focus-visible,textarea:focus-visible,select:focus-visible{
   background:var(--surface);
   border-top:1px solid var(--border);
   border-bottom:1px solid var(--border);
+}
+
+/* ---------- Warm-tinted section (slightly deeper warm bg for visual rhythm) */
+.section-tint{
+  background:var(--bg-tint);
+  border-top:1px solid #ddd9d0;
+  border-bottom:1px solid #ddd9d0;
 }
 
 /* ---------- Full-width closing CTA block (blue gradient) */
@@ -941,7 +949,7 @@ body{padding-bottom:54px}
 /* ---------- Contact page */
 .contact-hero{
   padding:48px 0 36px;
-  background:linear-gradient(180deg,#ffffff,#f7f7f8);
+  background:linear-gradient(180deg,#fafaf8,var(--bg));
   border-bottom:1px solid var(--border);
 }
 @media (min-width:900px){.contact-hero{padding:64px 0 48px}}
