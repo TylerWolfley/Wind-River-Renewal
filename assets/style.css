@@ -1161,4 +1161,59 @@ body{padding-bottom:54px}
   display:block;
 }
 
+/* ---------- Proof bar (homepage trust strip below hero) */
+.proof-bar{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:13px 0;
+}
+
+.proof-bar-inner{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  gap:6px 22px;
+  list-style:none;
+  margin:0;
+  padding:0;
+  font-size:.875rem;
+  font-weight:600;
+  color:var(--text);
+}
+
+.proof-bar-inner .hero-stars{
+  font-size:.95rem;
+  margin-right:3px;
+}
+
+/* ---------- Why-list (homepage differentiators — stacked, not equal cards) */
+.why-list{
+  margin-top:20px;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+
+.why-item{
+  padding:20px 24px;
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+}
+
+.why-item:last-child{
+  border-bottom:0;
+}
+
+.why-item h3{
+  margin:0 0 6px;
+  font-size:1.05rem;
+}
+
+.why-item p{
+  margin:0;
+  color:var(--muted);
+}
+
 
