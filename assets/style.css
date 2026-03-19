@@ -833,6 +833,9 @@ body{padding-bottom:54px}
   margin:0 0 12px;
 }
 
+/* Inline star rating (used in hero text and micro-proof lines) */
+.hero-stars{color:#f59e0b;letter-spacing:.05em;margin-right:3px}
+
 /* ---------- Single trust photo (one per non-homepage page) */
 .job-photo-wrap{
   margin:0 auto;
