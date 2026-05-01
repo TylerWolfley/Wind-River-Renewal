@@ -53,13 +53,6 @@
         {"@type":"AdministrativeArea","name":"Fremont County, WY"},
         {"@type":"AdministrativeArea","name":"Natrona County, WY"}
       ],
-      "aggregateRating":{
-        "@type":"AggregateRating",
-        "ratingValue":"5",
-        "bestRating":"5",
-        "ratingCount":"3",
-        "reviewCount":"3"
-      },
       "contactPoint":[
         {"@type":"ContactPoint","contactType":"customer service","telephone":"+1-307-349-4694","areaServed":"US","availableLanguage":"English"}
       ]
@@ -93,7 +86,7 @@
         <a href="/locations/">Service Areas</a>
         <a href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
-        <a href="quote.html" class="btn btn-primary js-keep-utm">Get a Quote</a>
+        <a class="btn btn-primary js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
         <a href="contact.html" class="active" aria-current="page">Contact</a>
       </nav>
     </div>
@@ -119,7 +112,7 @@
           </div>
 
           <div class="cta-row" style="margin-top:20px;margin-bottom:28px">
-            <a class="btn btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20will%20attach%20photos." aria-label="Text photos for a fast quote">Text Photos for a Fast Quote</a>
+            <a class="btn btn-primary js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
             <a class="btn" href="tel:+13073494694">Call 307-349-4694</a>
           </div>
 
@@ -152,28 +145,21 @@
     <!-- REVIEWS -->
     <section class="section">
       <div class="container">
-        <h2>What Customers Say</h2>
-        <p class="micro"><span class="hero-stars" aria-hidden="true">★★★★★</span> Rated on Google &middot; <a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">See all reviews</a></p>
+        <h2>Verified Google Reviews</h2>
+        <p class="micro">Read current customer feedback on our Google Business Profile before you call, text, or request a quote.</p>
 
-        <div class="review-grid">
-          <article class="review-card">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text">&ldquo;Tyler showed up on time, worked fast, and left the garage completely clean. Quoted a fair price up front and stuck to it. Would absolutely call again.&rdquo;</p>
-            <p class="review-attribution">Sarah M. &middot; Riverton, WY &middot; Google</p>
-          </article>
-          <article class="review-card">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text">&ldquo;Used Wind River Renewal for a full estate cleanout. Tyler was professional, respectful, and took care of everything. Cleared the whole property in one visit.&rdquo;</p>
-            <p class="review-attribution">Mike D. &middot; Lander, WY &middot; Google</p>
-          </article>
-          <article class="review-card">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text">&ldquo;As a property manager I need someone reliable for move-outs. Tyler responds fast, shows up, and gets it done right. He&rsquo;s my first call for every turnover now.&rdquo;</p>
-            <p class="review-attribution">Jennifer K. &middot; Casper, WY &middot; Google</p>
-          </article>
+        <div class="trust-grid">
+          <div class="trust-card">
+            <h3>Public Customer Feedback</h3>
+            <p>Reviews stay on Google, where you can see the latest customer comments without copied quotes or stale snippets.</p>
+          </div>
+          <div class="trust-card">
+            <h3>Local Service Proof</h3>
+            <p>Use the reviews alongside the job photos and service pages to decide if we are the right fit for your cleanout.</p>
+          </div>
         </div>
 
-        <p class="micro review-google-link"><a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">See all reviews on Google &rarr;</a></p>
+        <p class="micro review-google-link"><a class="btn btn-primary" href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">See Verified Reviews on Google</a></p>
       </div>
     </section>
 
@@ -218,8 +204,8 @@
   </footer>
 
   <div class="sticky-bar" role="region" aria-label="Quick contact">
-    <a class="sticky-btn" href="tel:+13073494694" aria-label="Call Wind River Renewal">Call</a>
-    <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20will%20attach%20photos." aria-label="Text photos for a quote">Text Photos</a>
+    <a class="sticky-btn js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
+    <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text job photos">Text Photos</a>
   </div>
 
   <script src="assets/script.js" defer></script>

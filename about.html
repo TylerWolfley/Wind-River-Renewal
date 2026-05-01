@@ -125,7 +125,7 @@
       <a href="/locations/">Service Areas</a>
       <a href="gallery.html">Gallery</a>
       <a class="active" aria-current="page" href="about.html">About</a>
-      <a href="quote.html" class="btn btn-primary js-keep-utm">Get a Quote</a>
+      <a class="btn btn-primary js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
       <a href="contact.html" id="call-link">Contact</a>
     </nav>
   </div>
@@ -150,11 +150,14 @@
         <div class="about-photo-wrap">
           <img
             class="about-photo"
-            src="assets/images/tyler-wolfley-wind-river-renewal.jpg"
+            src="assets/images/optimized/tyler-wolfley-wind-river-renewal-960.jpg"
+            srcset="assets/images/optimized/tyler-wolfley-wind-river-renewal-640.jpg 640w, assets/images/optimized/tyler-wolfley-wind-river-renewal-960.jpg 960w, assets/images/optimized/tyler-wolfley-wind-river-renewal-1400.jpg 1400w"
+            sizes="(max-width: 760px) calc(100vw - 32px), 420px"
             alt="Tyler Wolfley, owner of Wind River Renewal, Fremont County Wyoming"
-            width="840"
-            height="980"
+            width="960"
+            height="1280"
             loading="lazy"
+            decoding="async"
           />
         </div>
 
@@ -172,8 +175,8 @@
           <p><strong>Licensed &amp; insured.</strong> We carry proper coverage. Banks, agents, and property managers can work with us without the liability question.</p>
 
           <div class="cta-row" style="margin-top:14px">
-            <a class="btn btn-primary js-keep-utm" href="quote.html">Get My Quote</a>
-            <a class="btn" href="tel:+13073494694">Call or Text 307-349-4694</a>
+            <a class="btn btn-primary js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
+            <a class="btn" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a quote">Text Photos</a>
           </div>
         </div>
       </div>
@@ -203,7 +206,7 @@
       </div>
 
       <div class="center mt-l">
-        <a class="btn btn-primary js-keep-utm" href="quote.html">Get a Quote</a>
+        <a class="btn btn-primary js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
       </div>
     </div>
   </section>
@@ -231,7 +234,7 @@
 
       <details>
         <summary>How do I get a fast quote?</summary>
-        <p>Text 1&ndash;3 photos, your address, and what needs gone to <a href="sms:+13073494694">307-349-4694</a>. We&rsquo;ll reply with price and availability.</p>
+        <p>Text 1&ndash;3 photos, your address, and what needs gone to <a href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos.">307-349-4694</a>. We&rsquo;ll reply with price and availability.</p>
       </details>
 
       <details>
@@ -245,7 +248,7 @@
       </details>
 
       <div class="center mt-l">
-        <a class="btn btn-primary js-keep-utm" href="quote.html">Get a Quote</a>
+        <a class="btn btn-primary js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
         <a class="btn" href="services.html">See All Services</a>
       </div>
     </div>
@@ -276,8 +279,8 @@
   </footer>
 
   <div class="sticky-bar" role="region" aria-label="Quick contact">
-    <a class="sticky-btn" href="tel:+13073494694" aria-label="Call Wind River Renewal">Call</a>
-    <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a quote">Text Photos</a>
+    <a class="sticky-btn js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
+    <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text job photos">Text Photos</a>
   </div>
 
   <script src="assets/script.js" defer></script>

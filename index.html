@@ -98,13 +98,14 @@
     .tagline{font-size:1.15rem; font-weight:700; margin:8px 0 4px}
 
     /* Homepage proof block */
-    .proof-block{border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.07),0 8px 24px rgba(0,0,0,.1);background:#f0f4f8}
-    .proof-block figure{margin:0}
+    .proof-block{max-width:100%;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.07),0 8px 24px rgba(0,0,0,.1);background:#f0f4f8}
+    .proof-block figure{min-width:0;margin:0}
     .proof-main img{width:100%;height:300px;object-fit:cover;display:block}
     @media(min-width:640px){.proof-main img{height:360px}}
     @media(min-width:960px){.proof-main img{height:380px}}
     .proof-block figcaption{padding:7px 13px;font-size:.85rem;color:#64748b;background:#fff;border-top:1px solid #e5e7eb;text-align:center}
-    .proof-pair{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#e5e7eb;border-top:2px solid #e5e7eb}
+    .proof-block picture{display:block}
+    .proof-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2px;background:#e5e7eb;border-top:2px solid #e5e7eb}
     .proof-pair figure{margin:0}
     .proof-pair img{width:100%;height:140px;object-fit:cover;display:block}
     @media(min-width:640px){.proof-pair img{height:160px}}
@@ -133,7 +134,7 @@
         <a href="/locations/">Service Areas</a>
         <a href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
-        <a href="quote.html" class="btn btn-primary js-keep-utm">Get a Quote</a>
+        <a class="btn btn-primary js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -145,43 +146,86 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <h1>Junk Removal &amp; Light Demolition in Riverton, Lander &amp; Casper, WY</h1>
+          <h1>Property Cleanouts &amp; <br/>Junk Removal in <br/>Riverton, Lander &amp; <br/>Casper, WY</h1>
 
           <div class="trust-pills" aria-label="Key trust points">
             <span class="trust-pill trust-pill-check">Owner-operated</span>
             <span class="trust-pill trust-pill-check">Licensed &amp; insured</span>
-            <span class="trust-pill trust-pill-check">Photo quotes</span>
+            <span class="trust-pill trust-pill-check">Property cleanouts</span>
             <span class="trust-pill trust-pill-check">Sweep-clean finish</span>
           </div>
 
           <p class="sub">
-            Serving Fremont County and Natrona County.<br/>
-            <a href="/junk-removal-riverton.html">Riverton</a> &bull; <a href="/junk-removal-lander.html">Lander</a> &bull; <a href="/junk-removal-casper.html">Casper</a><br/>
+            Estate cleanouts, foreclosure cleanouts, rental turnovers, listing prep, light demolition, and regular residential junk removal for banks, agents, landlords, property managers, estates, and homeowners.<br/>
+            Serving Fremont County and Natrona County: <a href="/junk-removal-riverton.html">Riverton</a> &bull; <a href="/junk-removal-lander.html">Lander</a> &bull; <a href="/junk-removal-casper.html">Casper</a><br/>
             Open daily 9&ndash;5. Same-day available.
           </p>
 
           <div class="cta-row">
-            <a class="btn btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a fast quote">Text Photos for Fast Quote</a>
-            <a class="btn js-keep-utm" href="quote.html">Get a Quote</a>
+            <a class="btn btn-primary js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
+            <a class="btn" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a quote">Text Photos</a>
           </div>
 
           <p class="micro">Text 1&ndash;3 photos, your address, and what needs gone. We&rsquo;ll reply with price and availability. Or call <a href="tel:+13073494694">307&#8209;349&#8209;4694</a>.</p>
-          <p class="micro hero-google-proof"><span class="hero-stars" aria-label="5-star rating">★★★★★</span> Rated on Google &middot; <a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">See our reviews</a></p>
+          <p class="micro hero-google-proof">Customer feedback is available on Google &middot; <a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">See verified reviews</a></p>
         </div>
 
         <div class="hero-media">
           <div class="proof-block" aria-label="Before and after job photos from Wind River Renewal">
             <figure class="proof-main">
-              <img src="assets/images/junk-removal-riverton-wy-estate-cleanout-before-after.jpg" alt="Estate cleanout before and after in Riverton, Wyoming" loading="eager" fetchpriority="high">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="assets/images/optimized/junk-removal-riverton-wy-estate-cleanout-before-after-640.webp 640w, assets/images/optimized/junk-removal-riverton-wy-estate-cleanout-before-after-960.webp 960w, assets/images/optimized/junk-removal-riverton-wy-estate-cleanout-before-after-1400.webp 1400w"
+                  sizes="(max-width: 959px) calc(100vw - 32px), 52vw">
+                <img
+                  src="assets/images/optimized/junk-removal-riverton-wy-estate-cleanout-before-after-960.jpg"
+                  srcset="assets/images/optimized/junk-removal-riverton-wy-estate-cleanout-before-after-640.jpg 640w, assets/images/optimized/junk-removal-riverton-wy-estate-cleanout-before-after-960.jpg 960w, assets/images/optimized/junk-removal-riverton-wy-estate-cleanout-before-after-1400.jpg 1400w"
+                  sizes="(max-width: 959px) calc(100vw - 32px), 52vw"
+                  width="1400"
+                  height="1051"
+                  alt="Estate cleanout before and after in Riverton, Wyoming"
+                  loading="eager"
+                  decoding="async"
+                  fetchpriority="high">
+              </picture>
               <figcaption>Estate cleanout, before &amp; after &middot; Riverton, WY</figcaption>
             </figure>
             <div class="proof-pair">
               <figure>
-                <img src="assets/images/garage-cleanout-riverton-wy-foreclosure-before-after.jpg" alt="Garage cleanout foreclosure before and after in Riverton, Wyoming" loading="lazy">
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="assets/images/optimized/garage-cleanout-riverton-wy-foreclosure-before-after-640.webp 640w, assets/images/optimized/garage-cleanout-riverton-wy-foreclosure-before-after-960.webp 960w, assets/images/optimized/garage-cleanout-riverton-wy-foreclosure-before-after-1400.webp 1400w"
+                    sizes="(max-width: 959px) calc((100vw - 34px) / 2), 26vw">
+                  <img
+                    src="assets/images/optimized/garage-cleanout-riverton-wy-foreclosure-before-after-640.jpg"
+                    srcset="assets/images/optimized/garage-cleanout-riverton-wy-foreclosure-before-after-640.jpg 640w, assets/images/optimized/garage-cleanout-riverton-wy-foreclosure-before-after-960.jpg 960w, assets/images/optimized/garage-cleanout-riverton-wy-foreclosure-before-after-1400.jpg 1400w"
+                    sizes="(max-width: 959px) calc((100vw - 34px) / 2), 26vw"
+                    width="1400"
+                    height="1051"
+                    alt="Garage cleanout foreclosure before and after in Riverton, Wyoming"
+                    loading="lazy"
+                    decoding="async">
+                </picture>
                 <figcaption>Garage cleanout &middot; Riverton, WY</figcaption>
               </figure>
               <figure>
-                <img src="assets/images/light-demo-lander-wy-estate-cleanout-before-after.jpg" alt="Light demolition and estate cleanout before and after in Lander, Wyoming" loading="lazy">
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="assets/images/optimized/light-demo-lander-wy-estate-cleanout-before-after-640.webp 640w, assets/images/optimized/light-demo-lander-wy-estate-cleanout-before-after-960.webp 960w, assets/images/optimized/light-demo-lander-wy-estate-cleanout-before-after-1400.webp 1400w"
+                    sizes="(max-width: 959px) calc((100vw - 34px) / 2), 26vw">
+                  <img
+                    src="assets/images/optimized/light-demo-lander-wy-estate-cleanout-before-after-640.jpg"
+                    srcset="assets/images/optimized/light-demo-lander-wy-estate-cleanout-before-after-640.jpg 640w, assets/images/optimized/light-demo-lander-wy-estate-cleanout-before-after-960.jpg 960w, assets/images/optimized/light-demo-lander-wy-estate-cleanout-before-after-1400.jpg 1400w"
+                    sizes="(max-width: 959px) calc((100vw - 34px) / 2), 26vw"
+                    width="1400"
+                    height="1051"
+                    alt="Light demolition and estate cleanout before and after in Lander, Wyoming"
+                    loading="lazy"
+                    decoding="async">
+                </picture>
                 <figcaption>Light demo &middot; Lander, WY</figcaption>
               </figure>
             </div>
@@ -194,7 +238,7 @@
     <div class="proof-bar">
       <div class="container">
         <ul class="proof-bar-inner" aria-label="Key facts about Wind River Renewal">
-          <li><span class="hero-stars" aria-hidden="true">★★★★★</span> Rated on Google</li>
+          <li>Google reviews available</li>
           <li>Owner-operated</li>
           <li>Licensed &amp; insured</li>
           <li>Riverton &bull; Lander &bull; Casper</li>
@@ -318,34 +362,28 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
+    <!-- REVIEWS -->
     <section class="section surface-section">
       <div class="container">
-        <h2>What Customers Are Saying</h2>
-        <p class="micro"><span class="hero-stars" aria-hidden="true">★★★★★</span> Rated on Google &middot; <a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">Read all reviews</a></p>
+        <h2>Verified Google Reviews</h2>
+        <p class="micro">Customer feedback is kept on our Google Business Profile so you can read current, verified reviews before you call or text.</p>
 
-        <!-- Replace the placeholder quotes below with verbatim text from your actual Google Business Profile reviews -->
-        <div class="review-grid">
-          <article class="review-card">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text">&ldquo;Tyler showed up on time, worked fast, and left the garage completely clean. Quoted a fair price up front and stuck to it. Would absolutely call again.&rdquo;</p>
-            <p class="review-attribution">Sarah M. &middot; Riverton, WY &middot; Google</p>
-          </article>
-
-          <article class="review-card">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text">&ldquo;Used Wind River Renewal for a full estate cleanout. Tyler was professional, respectful, and took care of everything. Cleared the whole property in one visit.&rdquo;</p>
-            <p class="review-attribution">Mike D. &middot; Lander, WY &middot; Google</p>
-          </article>
-
-          <article class="review-card">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text">&ldquo;As a property manager I need someone reliable for move-outs. Tyler responds fast, shows up, and gets it done right. He&rsquo;s my first call for every turnover now.&rdquo;</p>
-            <p class="review-attribution">Jennifer K. &middot; Casper, WY &middot; Google</p>
-          </article>
+        <div class="trust-grid">
+          <div class="trust-card">
+            <h3>Read Recent Reviews</h3>
+            <p>See customer feedback directly on Google instead of relying on copied or outdated quotes.</p>
+          </div>
+          <div class="trust-card">
+            <h3>Check the Work</h3>
+            <p>Pair the live reviews with the before-and-after photos on this site to see the kind of cleanouts customers are reviewing.</p>
+          </div>
+          <div class="trust-card">
+            <h3>Talk Directly with Tyler</h3>
+            <p>Wind River Renewal is owner-operated, so the same person handling your quote is accountable for the job.</p>
+          </div>
         </div>
 
-        <p class="micro review-google-link"><a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">See all reviews on Google &rarr;</a></p>
+        <p class="micro review-google-link"><a class="btn btn-primary" href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">See Verified Reviews on Google</a></p>
       </div>
     </section>
 
@@ -374,8 +412,8 @@
         <p>Text 1&ndash;3 photos, your address, and what needs gone. We&rsquo;ll reply with price and availability.</p>
         <p class="small">Open daily 9&ndash;5. Same-day when available. <a class="cta-link" href="tel:+13073494694">307-349-4694</a></p>
         <div class="cta-row">
-          <a class="btn btn-cta-white" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a fast quote">Text Photos for Fast Quote</a>
-          <a class="btn btn-cta-ghost js-keep-utm" href="quote.html">Use the Form</a>
+          <a class="btn btn-cta-white js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
+          <a class="btn btn-cta-ghost" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a quote">Text Photos</a>
         </div>
         <p style="margin:16px 0 0;"><a class="cta-link" href="gallery.html">See before &amp; after photos from real jobs</a></p>
       </div>
@@ -409,8 +447,8 @@
   </footer>
 
   <div class="sticky-bar" role="region" aria-label="Quick contact">
-    <a class="sticky-btn" href="tel:+13073494694" aria-label="Call Wind River Renewal">Call</a>
-    <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a quote">Text Photos</a>
+    <a class="sticky-btn js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
+    <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text job photos">Text Photos</a>
   </div>
 
   <script src="assets/script.js" defer></script>

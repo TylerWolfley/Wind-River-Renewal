@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Get a Quote | Wind River Renewal</title>
-  <meta name="description" content="Request a fast junk removal estimate in Fremont County & Natrona County. Riverton, Lander, Casper. Call/text 307-349-4694." />
+  <meta name="description" content="Get a fast junk removal estimate in Fremont County & Natrona County. Text photos or use the quote form. Riverton, Lander, Casper." />
   <meta name="application-name" content="Wind River Renewal" />
 
   <link rel="canonical" href="https://windriverrenewal.com/quote.html" />
@@ -25,13 +25,13 @@
   <meta property="og:site_name" content="Wind River Renewal" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Get a Quote | Wind River Renewal" />
-  <meta property="og:description" content="Send details and optional photos. Get a quick estimate and availability." />
+  <meta property="og:description" content="Text photos or use the quote form for a fast junk removal estimate." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://windriverrenewal.com/quote.html" />
   <meta property="og:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Get a Quote | Wind River Renewal" />
-  <meta name="twitter:description" content="Send details and optional photos. Get a quick estimate and availability." />
+  <meta name="twitter:description" content="Text photos or use the quote form for a fast junk removal estimate." />
   <meta name="twitter:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
 
   <!-- GA4 -->
@@ -46,12 +46,28 @@
   <!-- Quote page polish (keeps global CSS intact) -->
   <style>
     .lead{max-width:70ch;color:var(--muted);margin:8px 0 0}
-    .quote-shell{max-width:980px;margin:0 auto}
+    .quote-shell{max-width:1100px;margin:0 auto}
 
     /* Use .section spacing so it matches the rest of the site */
     .quote-hero{padding-top:0}
+    .quote-intro{max-width:780px}
 
-    .form-card{
+    .smart-quote-grid{
+      display:grid;
+      gap:18px;
+      align-items:start;
+      margin-top:18px;
+    }
+    @media (min-width:980px){
+      .smart-quote-grid{
+        grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);
+        gap:22px;
+      }
+    }
+
+    .form-card,
+    .summary-card,
+    .quote-help-card{
       margin-top:16px;
       background:var(--surface);
       border:1px solid var(--border);
@@ -59,7 +75,27 @@
       padding:22px;
       box-shadow:var(--shadow);
     }
-    @media (min-width:760px){ .form-card{padding:26px} }
+    .form-card{margin-top:0}
+    @media (min-width:760px){
+      .form-card,
+      .summary-card,
+      .quote-help-card{padding:26px}
+    }
+
+    .summary-card{margin-top:0}
+    @media (min-width:980px){
+      .summary-card{position:sticky;top:82px}
+    }
+
+    .assistant-heading{margin:0 0 6px;font-size:1.35rem}
+    .assistant-sub{margin:0 0 16px;color:var(--muted)}
+    .form-section{
+      padding-top:16px;
+      margin-top:16px;
+      border-top:1px solid var(--border);
+    }
+    .form-section:first-of-type{padding-top:0;margin-top:0;border-top:0}
+    .form-section h3{margin:0 0 12px;font-size:1.05rem}
 
     .grid2{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:14px}
     @media (min-width:760px){ .grid2{grid-template-columns:1fr 1fr} }
@@ -71,6 +107,20 @@
     /* Keep consistent with your global input styling */
     .ctrl{width:100%}
     textarea{min-height:140px;resize:vertical}
+
+    .check-field{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:10px;
+      align-items:start;
+      padding:12px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:#f8fafc;
+      margin-top:10px;
+    }
+    .check-field input{width:auto;margin-top:3px}
+    .check-field strong{display:block;margin-bottom:2px}
 
     .drop{
       background:#f8fafc;
@@ -94,8 +144,11 @@
       white-space:pre-line
     }
 
-    .actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:6px}
+    .actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:14px}
     .actions .help a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+    @media (max-width:520px){
+      .actions .btn{width:100%}
+    }
 
     .fineprint{margin-top:10px}
     .fineprint a{color:inherit}
@@ -111,6 +164,56 @@
     .sms-callout p{margin:0 0 4px;font-weight:700}
     .sms-callout .help{margin:0 0 12px}
     .sms-callout .phone-inline{display:inline-block;margin-left:10px;line-height:1.4}
+
+    .readiness{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:12px;
+      background:#f8fafc;
+      margin-bottom:16px;
+    }
+    .readiness-kicker{
+      display:block;
+      color:var(--muted);
+      font-size:.78rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      margin-bottom:4px;
+    }
+    .readiness-label{display:block;font-size:1.05rem;font-weight:900}
+    .readiness-meter{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:6px;
+      margin:10px 0;
+    }
+    .readiness-meter span{
+      height:8px;
+      border-radius:999px;
+      background:#e2e8f0;
+    }
+    .readiness-meter span.active{background:#2563eb}
+    .readiness p{margin:0;color:var(--muted);font-size:.9rem}
+
+    .quote-summary-box{
+      margin:12px 0 14px;
+      padding:14px;
+      background:#f8fafc;
+      border:1px solid var(--border);
+      border-radius:12px;
+      color:var(--text);
+      font:inherit;
+      line-height:1.5;
+      min-height:260px;
+      max-height:520px;
+      overflow:auto;
+      white-space:pre-wrap;
+      word-break:break-word;
+    }
+    .quote-help-card{margin-top:18px}
+    .quote-help-card h2{font-size:1.35rem;margin-bottom:10px}
+    .quote-help-card p{margin:0;color:var(--muted)}
   </style>
 </head>
 
@@ -149,91 +252,211 @@
 
     <section class="section quote-hero">
       <div class="container quote-shell">
-        <h1>Get a Quote</h1>
-        <p class="lead">Fast estimates in Fremont County and Natrona County. Send details and photos and we will reply with price and availability.</p>
-        <p class="micro" style="margin:10px 0 0"><span class="hero-stars" aria-hidden="true">★★★★★</span> &ldquo;Quoted a fair price up front and stuck to it. Would absolutely call again.&rdquo; &mdash; Sarah M., Riverton &middot; <a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">See all reviews</a></p>
+        <div class="quote-intro">
+          <h1>Get a Quote</h1>
+          <p class="lead">Use the form below to email Wind River Renewal the job details. Photos help the fastest, most accurate quote.</p>
+          <p class="micro" style="margin:10px 0 0">Customer feedback is available on our Google Business Profile. <a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">See verified reviews</a>.</p>
+        </div>
 
         <div class="sms-callout" style="margin-top:16px">
           <p>Fastest option: text photos</p>
           <p class="help">Text 1&ndash;3 photos, your address, and what needs gone. We&rsquo;ll reply with price and availability.</p>
           <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-            <a class="btn btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a fast quote">Text Photos for Fast Quote</a>
+            <a class="btn btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a quote">Text Photos</a>
             <a class="btn" href="tel:+13073494694">Call 307-349-4694</a>
           </div>
         </div>
 
-        <p class="help" style="margin:0 0 8px">Prefer a form? Fill it out below.</p>
+        <div class="smart-quote-grid">
+          <form id="smartQuoteForm" class="form-card smart-quote-form" action="https://formspree.io/f/mqadaqdp" method="POST" enctype="multipart/form-data" accept-charset="UTF-8" data-track-label="quote_request_form">
+            <input type="hidden" name="subject" value="Wind River Renewal Quote Request from {{ name }}" />
+            <input type="hidden" name="_redirect" value="thanks.html" />
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+            <textarea id="q-summary-field" name="message" hidden></textarea>
 
-        <form class="form-card" action="https://formspree.io/f/mqadaqdp" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
-          <input type="hidden" name="_redirect" value="thanks.html" />
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+            <h2 class="assistant-heading">Quote Request Form</h2>
+            <p class="assistant-sub">Fill in what you know. When you tap Send Quote Request, the form emails Tyler the details and any photos you include.</p>
 
-          <div class="grid2">
-            <div class="field">
-              <label class="label" for="q-name">Full name</label>
-              <input id="q-name" class="ctrl" name="name" required autocomplete="name" />
+            <div class="form-section">
+              <h3>Contact</h3>
+              <div class="grid2">
+                <div class="field">
+                  <label class="label" for="q-name">Full name</label>
+                  <input id="q-name" class="ctrl" name="name" required autocomplete="name" />
+                </div>
+                <div class="field">
+                  <label class="label" for="q-phone">Phone</label>
+                  <input id="q-phone" class="ctrl" name="phone" required autocomplete="tel" inputmode="tel" />
+                </div>
+              </div>
+
+              <div class="grid2">
+                <div class="field">
+                  <label class="label" for="q-email">Email <span class="help">(optional)</span></label>
+                  <input id="q-email" class="ctrl" name="email" type="email" autocomplete="email" />
+                </div>
+                <div class="field">
+                  <label class="label" for="q-city">City / town</label>
+                  <input id="q-city" class="ctrl" name="city_town" required placeholder="Riverton, Lander, Casper, Mills, Shoshoni..." autocomplete="address-level2" />
+                </div>
+              </div>
             </div>
-            <div class="field">
-              <label class="label" for="q-phone">Phone</label>
-              <input id="q-phone" class="ctrl" name="phone" required autocomplete="tel" inputmode="tel" />
+
+            <div class="form-section">
+              <h3>Job</h3>
+              <div class="grid2">
+                <div class="field">
+                  <label class="label" for="q-service">Service type</label>
+                  <select id="q-service" class="ctrl" name="service_type" required>
+                    <option value="">Choose one</option>
+                    <option>Junk removal / haul-away</option>
+                    <option>Estate cleanout</option>
+                    <option>Foreclosure cleanout</option>
+                    <option>Rental turnover</option>
+                    <option>Listing prep / sale-ready cleanup</option>
+                    <option>Light demolition</option>
+                    <option>Exterior cleanup</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label class="label" for="q-customer">Customer type</label>
+                  <select id="q-customer" class="ctrl" name="customer_type" required>
+                    <option value="">Choose one</option>
+                    <option>Homeowner</option>
+                    <option>Renter</option>
+                    <option>Landlord</option>
+                    <option>Property manager</option>
+                    <option>Real estate agent</option>
+                    <option>Bank / asset manager</option>
+                    <option>Estate / executor</option>
+                    <option>Contractor</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field" style="margin-bottom:14px;">
+                <label class="label" for="q-details">Job details</label>
+                <textarea id="q-details" class="ctrl" name="job_details" placeholder="What needs gone? Include rooms, items, piles, cleanout type, or anything that helps explain the job." required></textarea>
+              </div>
+
+              <div class="grid2">
+                <div class="field">
+                  <label class="label" for="q-load">Approximate load size</label>
+                  <select id="q-load" class="ctrl" name="approximate_load_size" required>
+                    <option value="">Choose one</option>
+                    <option>Small pickup load</option>
+                    <option>Quarter truck</option>
+                    <option>Half truck</option>
+                    <option>Full truck</option>
+                    <option>Multiple loads</option>
+                    <option>Not sure</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label class="label" for="q-urgency">Urgency</label>
+                  <select id="q-urgency" class="ctrl" name="urgency" required>
+                    <option value="">Choose one</option>
+                    <option>Flexible</option>
+                    <option>This week</option>
+                    <option>Next 1-2 days</option>
+                    <option>Same-day if available</option>
+                    <option>Before a closing / listing / move-out date</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field" style="margin-bottom:14px;">
+                <label class="label" for="q-access">Access notes</label>
+                <textarea id="q-access" class="ctrl" name="access_notes" placeholder="Stairs, basement, elevator, gate, tight driveway, long carry, parking, or write 'easy access'." required></textarea>
+              </div>
+
+              <div class="field">
+                <label class="label" for="q-heavy">Heavy/special items</label>
+                <textarea id="q-heavy" class="ctrl" name="heavy_special_items" placeholder="Appliances, hot tub, piano, tires, concrete, mattresses, or write 'none'." required></textarea>
+              </div>
             </div>
-          </div>
 
-          <div class="grid2">
-            <div class="field">
-              <label class="label" for="q-email">Email <span class="help">(optional)</span></label>
-              <input id="q-email" class="ctrl" name="email" type="email" autocomplete="email" />
+            <div class="form-section">
+              <h3>Timing</h3>
+              <div class="grid2">
+                <div class="field">
+                  <label class="label" for="q-date">Preferred date <span class="help">(optional)</span></label>
+                  <input id="q-date" class="ctrl" name="preferred_date" type="date" />
+                </div>
+                <div class="field">
+                  <label class="label" for="q-time">Preferred time <span class="help">(optional)</span></label>
+                  <select id="q-time" class="ctrl" name="preferred_time">
+                    <option>Anytime</option>
+                    <option>Morning</option>
+                    <option>Afternoon</option>
+                    <option>Evening if available</option>
+                  </select>
+                </div>
+              </div>
+
+              <label class="check-field" for="q-photo-doc">
+                <input id="q-photo-doc" name="photo_documentation" type="checkbox" value="Yes" />
+                <span><strong>Before-and-after photo documentation</strong><span class="help">I need before-and-after photos for a cleanout, foreclosure, rental, listing prep, or managed property.</span></span>
+              </label>
             </div>
-            <div class="field">
-              <label class="label" for="q-city">City</label>
-              <input id="q-city" class="ctrl" name="city" placeholder="Riverton / Lander / Casper / Mills / Evans / Shoshoni" autocomplete="address-level2" />
+
+            <div class="form-section">
+              <h3>Photos and safety</h3>
+              <div class="field" style="margin-bottom:14px;">
+                <label class="label" for="q-photos">Photos <span class="help">(optional, up to 5)</span></label>
+                <label class="drop" id="drop" for="q-photos">
+                  <input id="q-photos" name="photos" type="file" accept="image/*" multiple style="display:none">
+                  <div><strong>Tap to upload photos</strong></div>
+                  <div class="help">Clear photos help us quote accurately.</div>
+                </label>
+                <div id="fileList" class="file-list" aria-live="polite"></div>
+              </div>
+
+              <label class="check-field" for="q-hazard">
+                <input id="q-hazard" name="hazardous_material_confirmation" type="checkbox" value="Confirmed" required />
+                <span><strong>Hazardous material confirmation</strong><span class="help">I understand Wind River Renewal does not handle regulated hazardous waste, including paint, solvents, oils, pesticides, asbestos, medical sharps, propane tanks, or other items requiring licensed disposal.</span></span>
+              </label>
             </div>
-          </div>
 
-          <div class="field" style="margin-bottom:14px;">
-            <label class="label" for="q-details">What do you need removed?</label>
-            <textarea id="q-details" class="ctrl" name="details" placeholder="What it is, about how much, access (stairs/gate/parking), and your timing." required></textarea>
-          </div>
+            <!-- UTM capture -->
+            <input type="hidden" name="utm_source" id="utm_source">
+            <input type="hidden" name="utm_medium" id="utm_medium">
+            <input type="hidden" name="utm_campaign" id="utm_campaign">
+            <input type="hidden" name="utm_term" id="utm_term">
+            <input type="hidden" name="utm_content" id="utm_content">
 
-          <div class="field" style="margin-bottom:14px;">
-            <label class="label" for="q-photos">Photos <span class="help">(up to 5)</span></label>
-            <label class="drop" id="drop">
-              <input id="q-photos" name="photos" type="file" accept="image/*" multiple style="display:none">
-              <div><strong>Drag and drop</strong> or <u>click to upload</u></div>
-              <div class="help">Clear photos help us quote accurately.</div>
-            </label>
-            <div id="fileList" class="file-list" aria-live="polite"></div>
-          </div>
-
-          <div class="grid2">
-            <div class="field">
-              <label class="label" for="q-date">Preferred date <span class="help">(optional)</span></label>
-              <input id="q-date" class="ctrl" name="date" type="date" />
+            <div class="actions">
+              <button class="btn btn-primary" type="submit">Send Quote Request</button>
+              <span class="help">Or call or text <a href="tel:+13073494694">307-349-4694</a></span>
             </div>
-            <div class="field">
-              <label class="label" for="q-time">Preferred time <span class="help">(optional)</span></label>
-              <select id="q-time" class="ctrl" name="time">
-                <option>Anytime</option>
-                <option>Morning</option>
-                <option>Afternoon</option>
-              </select>
+
+            <p class="help fineprint">We do not handle regulated hazardous waste. Items requiring licensed disposal must be arranged separately before scheduling. <a href="tel:+13073494694">Call or text us</a> if you are unsure whether something qualifies.</p>
+          </form>
+
+          <aside class="summary-card" aria-labelledby="quote-summary-title">
+            <div class="readiness" aria-live="polite">
+              <span class="readiness-kicker">Quote readiness</span>
+              <span id="readinessLabel" class="readiness-label">Good start</span>
+              <div class="readiness-meter" aria-hidden="true">
+                <span id="readinessStep1" class="active"></span>
+                <span id="readinessStep2"></span>
+                <span id="readinessStep3"></span>
+              </div>
+              <p id="readinessHint">Add the basics, job details, access, timing, and the hazardous material confirmation.</p>
             </div>
-          </div>
 
-          <!-- UTM capture -->
-          <input type="hidden" name="utm_source" id="utm_source">
-          <input type="hidden" name="utm_medium" id="utm_medium">
-          <input type="hidden" name="utm_campaign" id="utm_campaign">
-          <input type="hidden" name="utm_term" id="utm_term">
-          <input type="hidden" name="utm_content" id="utm_content">
+            <h2 id="quote-summary-title" class="assistant-heading">Request Preview</h2>
+            <p class="assistant-sub">This preview is included in the email Tyler receives when you send the form.</p>
+            <pre id="quoteSummary" class="quote-summary-box" aria-live="polite"></pre>
+          </aside>
+        </div>
 
-          <div class="actions">
-            <button class="btn btn-primary" type="submit">Request Quote</button>
-            <span class="help">Or call or text <a href="tel:+13073494694">307-349-4694</a></span>
-          </div>
-
-          <p class="help fineprint">We do not handle regulated hazardous waste. Items requiring licensed disposal must be arranged separately before scheduling. <a href="tel:+13073494694">Call or text us</a> if you are unsure whether something qualifies.</p>
-        </form>
+        <div class="quote-help-card">
+          <h2>What helps us quote faster</h2>
+          <p>The fastest quotes include clear photos, the address or town, what needs gone, whether there are stairs or tight access, and when you need it done. For cleanouts, foreclosures, rentals, and listing prep, tell us if you need before-and-after photos.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -261,42 +484,199 @@
   </footer>
 
   <div class="sticky-bar" role="region" aria-label="Quick contact">
-    <a class="sticky-btn" href="tel:+13073494694" aria-label="Call Wind River Renewal">Call</a>
-    <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a quote">Text Photos</a>
+    <a class="sticky-btn js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
+    <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text job photos">Text Photos</a>
   </div>
 
   <script src="assets/script.js" defer></script>
 
   <script>
     (function(){
-      const drop = document.getElementById('drop');
-      const input = document.getElementById('q-photos');
-      const list = document.getElementById('fileList');
+      const form = document.getElementById("smartQuoteForm");
+      const drop = document.getElementById("drop");
+      const photoInput = document.getElementById("q-photos");
+      const fileList = document.getElementById("fileList");
+      const summaryBox = document.getElementById("quoteSummary");
+      const summaryField = document.getElementById("q-summary-field");
+      const readinessLabel = document.getElementById("readinessLabel");
+      const readinessHint = document.getElementById("readinessHint");
+      const readinessSteps = [
+        document.getElementById("readinessStep1"),
+        document.getElementById("readinessStep2"),
+        document.getElementById("readinessStep3")
+      ];
 
-      function renderList(){
-        const files = Array.from(input.files || []).slice(0,5);
-        list.textContent = files.length ? files.map(f => '• ' + f.name).join('\n') : '';
+      const ids = {
+        name: "q-name",
+        phone: "q-phone",
+        email: "q-email",
+        city: "q-city",
+        service: "q-service",
+        customer: "q-customer",
+        details: "q-details",
+        load: "q-load",
+        access: "q-access",
+        heavy: "q-heavy",
+        urgency: "q-urgency",
+        date: "q-date",
+        time: "q-time",
+        photoDoc: "q-photo-doc",
+        hazard: "q-hazard"
+      };
+
+      function el(id) {
+        return document.getElementById(id);
       }
 
-      drop.addEventListener('click', () => input.click());
-      drop.addEventListener('dragover', (e) => { e.preventDefault(); drop.classList.add('drag'); });
-      drop.addEventListener('dragleave', () => drop.classList.remove('drag'));
-      drop.addEventListener('drop', (e) => {
-        e.preventDefault();
-        drop.classList.remove('drag');
+      function value(id) {
+        const node = el(id);
+        return node ? (node.value || "").trim() : "";
+      }
 
-        const incoming = Array.from(e.dataTransfer.files || [])
-          .filter(f => f.type && f.type.startsWith('image/'))
-          .slice(0,5);
+      function yesNo(checked) {
+        return checked ? "Yes" : "No";
+      }
 
-        const dt = new DataTransfer();
-        incoming.forEach(f => dt.items.add(f));
-        input.files = dt.files;
+      function fallback(text) {
+        return text || "Not provided";
+      }
 
-        renderList();
+      function selectedPhotoCount() {
+        return photoInput && photoInput.files ? Math.min(photoInput.files.length, 5) : 0;
+      }
+
+      function plural(count, word) {
+        return count === 1 ? word : word + "s";
+      }
+
+      function buildSummary() {
+        const photoCount = selectedPhotoCount();
+        const photoDoc = el(ids.photoDoc).checked;
+        const hazard = el(ids.hazard).checked;
+        const preferredDate = value(ids.date) || "No specific date";
+        const preferredTime = value(ids.time) || "Anytime";
+
+        return [
+          "Wind River Renewal Quote Request",
+          "",
+          "Name: " + fallback(value(ids.name)),
+          "Phone: " + fallback(value(ids.phone)),
+          "Email: " + fallback(value(ids.email)),
+          "City / town: " + fallback(value(ids.city)),
+          "Service type: " + fallback(value(ids.service)),
+          "Customer type: " + fallback(value(ids.customer)),
+          "",
+          "Job details:",
+          fallback(value(ids.details)),
+          "",
+          "Approximate load size: " + fallback(value(ids.load)),
+          "Access notes: " + fallback(value(ids.access)),
+          "Heavy/special items: " + fallback(value(ids.heavy)),
+          "Urgency: " + fallback(value(ids.urgency)),
+          "Preferred date: " + preferredDate,
+          "Preferred time: " + preferredTime,
+          "",
+          "Before-and-after photo documentation needed: " + yesNo(photoDoc),
+          "Hazardous material confirmation: " + (hazard ? "Confirmed" : "Not confirmed yet"),
+          "Photos selected on form: " + (photoCount ? photoCount + " " + plural(photoCount, "photo") : "No photos selected"),
+          "",
+          "Sent from windriverrenewal.com/quote.html"
+        ].join("\n");
+      }
+
+      function readinessLevel() {
+        const readyFields = [
+          value(ids.name),
+          value(ids.phone),
+          value(ids.city),
+          value(ids.service),
+          value(ids.customer),
+          value(ids.details).length >= 20 ? "details" : "",
+          value(ids.load),
+          value(ids.access),
+          value(ids.heavy),
+          value(ids.urgency),
+          el(ids.hazard).checked ? "hazard" : ""
+        ];
+        const ready = readyFields.every(Boolean);
+        const best = ready && selectedPhotoCount() > 0;
+        if (best) {
+          return {
+            level: 3,
+            label: "Best chance of fast quote",
+            hint: "This is quote-ready. Send the form and Tyler will have the details needed to price it."
+          };
+        }
+        if (ready) {
+          return {
+            level: 2,
+            label: "Ready to price",
+            hint: "This has the core details Tyler needs. Photos can make it faster."
+          };
+        }
+        return {
+          level: 1,
+          label: "Good start",
+          hint: "Add the basics, job details, access, timing, and the hazardous material confirmation."
+        };
+      }
+
+      function updateReadiness() {
+        const state = readinessLevel();
+        readinessLabel.textContent = state.label;
+        readinessHint.textContent = state.hint;
+        readinessSteps.forEach((step, index) => {
+          step.classList.toggle("active", index < state.level);
+        });
+      }
+
+      function updateSummary() {
+        const summary = buildSummary();
+        summaryBox.textContent = summary;
+        summaryField.value = summary;
+        updateReadiness();
+      }
+
+      function setFiles(files) {
+        const incoming = Array.from(files || [])
+          .filter((file) => !file.type || file.type.startsWith("image/"))
+          .slice(0, 5);
+
+        if (window.DataTransfer) {
+          const dt = new DataTransfer();
+          incoming.forEach((file) => dt.items.add(file));
+          photoInput.files = dt.files;
+        }
+
+        fileList.textContent = incoming.length
+          ? incoming.map((file) => "- " + file.name).join("\n")
+          : "No photos selected yet.";
+        updateSummary();
+      }
+
+      form.addEventListener("input", updateSummary);
+      form.addEventListener("change", updateSummary);
+      form.addEventListener("submit", updateSummary);
+
+      photoInput.addEventListener("change", () => {
+        setFiles(photoInput.files);
       });
 
-      input.addEventListener('change', renderList);
+      drop.addEventListener("dragover", (event) => {
+        event.preventDefault();
+        drop.classList.add("drag");
+      });
+      drop.addEventListener("dragleave", () => {
+        drop.classList.remove("drag");
+      });
+      drop.addEventListener("drop", (event) => {
+        event.preventDefault();
+        drop.classList.remove("drag");
+        setFiles(event.dataTransfer.files);
+      });
+
+      fileList.textContent = "No photos selected yet.";
+      updateSummary();
     })();
   </script>
 </body>
