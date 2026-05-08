@@ -1,0 +1,114 @@
+{
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services.html",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/gallery.html",
+      "destination": "/gallery/",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/quote.html",
+      "destination": "/quote/",
+      "permanent": true
+    },
+    {
+      "source": "/thanks.html",
+      "destination": "/thanks/",
+      "permanent": true
+    },
+    {
+      "source": "/junk-removal-riverton.html",
+      "destination": "/junk-removal-riverton/",
+      "permanent": true
+    },
+    {
+      "source": "/junk-removal-lander.html",
+      "destination": "/junk-removal-lander/",
+      "permanent": true
+    },
+    {
+      "source": "/junk-removal-dubois-wy.html",
+      "destination": "/junk-removal-dubois-wy/",
+      "permanent": true
+    },
+    {
+      "source": "/junk-removal-casper.html",
+      "destination": "/junk-removal-casper/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/index.html",
+      "destination": "/locations/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/bar-nunn.html",
+      "destination": "/locations/bar-nunn/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/casper.html",
+      "destination": "/junk-removal-casper/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/ethete.html",
+      "destination": "/locations/ethete/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/evansville.html",
+      "destination": "/locations/evansville/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/fort-washakie.html",
+      "destination": "/locations/fort-washakie/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/hudson.html",
+      "destination": "/locations/hudson/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/mills.html",
+      "destination": "/locations/mills/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/pavillion.html",
+      "destination": "/locations/pavillion/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/shoshoni.html",
+      "destination": "/locations/shoshoni/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/casper",
+      "destination": "/junk-removal-casper/",
+      "permanent": true
+    }
+  ]
+}

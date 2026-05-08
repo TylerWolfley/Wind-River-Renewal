@@ -1,0 +1,12 @@
+.next/
+out/
+node_modules/
+.env*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+serve.out.log
+serve.err.log
+.serve.pid
+test-results/
