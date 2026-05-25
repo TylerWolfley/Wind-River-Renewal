@@ -1,6 +1,6 @@
 # Wind River Renewal Migration Inventory
 
-Generated: 2026-05-08T17:22:49.427Z
+Generated: 2026-05-25T16:16:40.944Z
 
 ## Route Inventory
 
@@ -18,15 +18,15 @@ Generated: 2026-05-08T17:22:49.427Z
 | junk-removal-dubois-wy.html  | /junk-removal-dubois-wy.html  | /junk-removal-dubois-wy/  | https://windriverrenewal.com/junk-removal-dubois-wy/  | 2       | 1     | yes     |
 | junk-removal-casper.html     | /junk-removal-casper.html     | /junk-removal-casper/     | https://windriverrenewal.com/junk-removal-casper/     | 2       | 1     | yes     |
 | locations/index.html         | /locations/index.html         | /locations/               | https://windriverrenewal.com/locations/               | 1       | 0     | yes     |
-| locations/bar-nunn.html      | /locations/bar-nunn.html      | /locations/bar-nunn/      | https://windriverrenewal.com/locations/bar-nunn/      | 2       | 1     | yes     |
+| locations/bar-nunn.html      | /locations/bar-nunn.html      | /locations/bar-nunn/      | https://windriverrenewal.com/locations/bar-nunn/      | 2       | 0     | yes     |
 | locations/casper.html        | /locations/casper.html        | /junk-removal-casper/     | https://windriverrenewal.com/junk-removal-casper/     | 0       | 0     | no      |
-| locations/ethete.html        | /locations/ethete.html        | /locations/ethete/        | https://windriverrenewal.com/locations/ethete/        | 2       | 1     | yes     |
-| locations/evansville.html    | /locations/evansville.html    | /locations/evansville/    | https://windriverrenewal.com/locations/evansville/    | 2       | 1     | yes     |
-| locations/fort-washakie.html | /locations/fort-washakie.html | /locations/fort-washakie/ | https://windriverrenewal.com/locations/fort-washakie/ | 2       | 1     | yes     |
-| locations/hudson.html        | /locations/hudson.html        | /locations/hudson/        | https://windriverrenewal.com/locations/hudson/        | 2       | 1     | yes     |
-| locations/mills.html         | /locations/mills.html         | /locations/mills/         | https://windriverrenewal.com/locations/mills/         | 2       | 1     | yes     |
-| locations/pavillion.html     | /locations/pavillion.html     | /locations/pavillion/     | https://windriverrenewal.com/locations/pavillion/     | 2       | 1     | yes     |
-| locations/shoshoni.html      | /locations/shoshoni.html      | /locations/shoshoni/      | https://windriverrenewal.com/locations/shoshoni/      | 2       | 1     | yes     |
+| locations/ethete.html        | /locations/ethete.html        | /locations/ethete/        | https://windriverrenewal.com/locations/ethete/        | 2       | 0     | yes     |
+| locations/evansville.html    | /locations/evansville.html    | /locations/evansville/    | https://windriverrenewal.com/locations/evansville/    | 2       | 0     | yes     |
+| locations/fort-washakie.html | /locations/fort-washakie.html | /locations/fort-washakie/ | https://windriverrenewal.com/locations/fort-washakie/ | 2       | 0     | yes     |
+| locations/hudson.html        | /locations/hudson.html        | /locations/hudson/        | https://windriverrenewal.com/locations/hudson/        | 2       | 0     | yes     |
+| locations/mills.html         | /locations/mills.html         | /locations/mills/         | https://windriverrenewal.com/locations/mills/         | 2       | 0     | yes     |
+| locations/pavillion.html     | /locations/pavillion.html     | /locations/pavillion/     | https://windriverrenewal.com/locations/pavillion/     | 2       | 0     | yes     |
+| locations/shoshoni.html      | /locations/shoshoni.html      | /locations/shoshoni/      | https://windriverrenewal.com/locations/shoshoni/      | 2       | 0     | yes     |
 
 ## Redirect Strategy
 
