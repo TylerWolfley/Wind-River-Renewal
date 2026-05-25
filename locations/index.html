@@ -69,9 +69,89 @@
 
     .service-areas-intro{max-width:72ch}
 
-    .jump-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
-    .jump-row a{font-weight:800; text-decoration:none}
-    .jump-row a:hover{text-decoration:underline}
+    .service-map{
+      position:relative;
+      overflow:hidden;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);
+      box-shadow:var(--shadow-sm);
+      padding:16px;
+    }
+    @media (min-width:960px){
+      .service-map{position:sticky; top:80px}
+    }
+    .service-map-header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:10px;
+    }
+    .service-map h2{margin:0; font-size:1.1rem}
+    .service-map-note{margin:2px 0 0; color:var(--muted); font-size:.9rem; line-height:1.4}
+    .service-map-graphic{overflow-x:auto; -webkit-overflow-scrolling:touch}
+    .service-map svg{display:block; width:100%; height:auto}
+    @media (max-width:600px){
+      .service-map-graphic svg{min-width:560px}
+    }
+    .service-map .state-outline{fill:#f8fafc; stroke:#cbd5e1; stroke-width:2}
+    .service-map .county-muted{fill:#eef2f7; stroke:#cbd5e1; stroke-width:1.5}
+    .service-map .county-fremont{fill:#dcfce7; stroke:#16a34a; stroke-width:2.5}
+    .service-map .county-natrona{fill:#dbeafe; stroke:#2563eb; stroke-width:2.5}
+    .service-map .road{
+      fill:none;
+      stroke:#94a3b8;
+      stroke-width:2.4;
+      stroke-linecap:round;
+      stroke-dasharray:5 7;
+    }
+    .service-map .county-label{
+      fill:rgba(15,23,42,.62);
+      font-size:14px;
+      font-weight:900;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    .service-map .town-dot{stroke:#ffffff; stroke-width:3}
+    .service-map .town-dot-primary{fill:#0f172a}
+    .service-map .town-dot-fremont{fill:#16a34a}
+    .service-map .town-dot-natrona{fill:#2563eb}
+    .service-map .town-label,
+    .service-map .town-label-small{
+      fill:#0f172a;
+      paint-order:stroke;
+      stroke:#ffffff;
+      stroke-linejoin:round;
+    }
+    .service-map .town-label{font-size:14px; font-weight:900; stroke-width:5px}
+    .service-map .town-label-small{font-size:12px; font-weight:800; stroke-width:4px; fill:#334155}
+    .service-map-legend{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      list-style:none;
+      margin:10px 0 0;
+      padding:0;
+    }
+    .service-map-legend li{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      color:var(--text);
+      font-size:.88rem;
+      font-weight:800;
+    }
+    .map-key{width:12px; height:12px; border-radius:999px; display:inline-block}
+    .map-key-fremont{background:#16a34a}
+    .map-key-natrona{background:#2563eb}
+    .map-key-check{background:#0f172a}
+    .service-map-actions{
+      border-top:1px solid var(--border);
+      margin-top:12px;
+      padding-top:12px;
+    }
+    .service-map-actions p{margin:0}
 
     .areas-grid{display:grid; gap:14px; margin-top:14px}
     @media (min-width: 960px){.areas-grid{grid-template-columns:1fr 1fr}}
@@ -162,11 +242,62 @@
         <p class="micro">Fastest quote: send photos, the address, and what needs removed.</p>
       </div>
 
-      <div class="card" aria-label="Service area contact">
-        <h2 style="margin:0 0 10px;font-size:1.15rem">Need us to check an address?</h2>
-        <p>Text the town or address with a few photos. We will tell you if we can schedule it and what details we need for pricing.</p>
-        <div class="cta-row" style="margin-top:12px">
-          <a class="btn js-keep-utm" href="tel:+13073494694">Call 307-349-4694</a>
+      <div class="service-map" aria-labelledby="service-map-title">
+        <div class="service-map-header">
+          <div>
+            <h2 id="service-map-title">Service Areas Map</h2>
+            <p class="service-map-note">Approximate planning map. Text the address to confirm scheduling.</p>
+          </div>
+        </div>
+
+        <div class="service-map-graphic" tabindex="0">
+        <svg viewBox="0 0 640 430" role="img" aria-labelledby="map-title map-desc">
+          <title id="map-title">Wind River Renewal service areas in Fremont County and Natrona County</title>
+          <desc id="map-desc">A simplified Wyoming map showing Fremont County towns and Natrona County towns served by Wind River Renewal.</desc>
+          <rect class="state-outline" x="56" y="44" width="528" height="324" rx="4" />
+          <path class="county-muted" d="M56 44h528v324H56z" />
+          <path class="county-fremont" d="M118 86 292 70 354 144 320 254 250 312 132 300 92 214z" />
+          <path class="county-natrona" d="M354 144 508 128 552 208 520 300 370 300 320 254z" />
+          <path class="road" d="M164 112C208 128 244 148 276 184s52 42 72 10" />
+          <path class="road" d="M235 273c44-32 80-58 113-79s72-18 107 34" />
+          <text class="county-label" x="126" y="286">Fremont County</text>
+          <text class="county-label" x="386" y="286">Natrona County</text>
+
+          <circle class="town-dot town-dot-fremont" cx="164" cy="112" r="6" />
+          <text class="town-label-small" x="139" y="96">Dubois</text>
+          <circle class="town-dot town-dot-fremont" cx="244" cy="142" r="5.5" />
+          <text class="town-label-small" x="252" y="130">Pavillion</text>
+          <circle class="town-dot town-dot-primary" cx="276" cy="184" r="7" />
+          <text class="town-label" x="288" y="184">Riverton</text>
+          <circle class="town-dot town-dot-fremont" cx="329" cy="178" r="5.5" />
+          <text class="town-label-small" x="336" y="164">Shoshoni</text>
+          <circle class="town-dot town-dot-fremont" cx="202" cy="208" r="5.5" />
+          <text class="town-label-small" x="157" y="211">Ethete</text>
+          <circle class="town-dot town-dot-fremont" cx="184" cy="244" r="5.5" />
+          <text class="town-label-small" x="104" y="255">Fort Washakie</text>
+          <circle class="town-dot town-dot-primary" cx="235" cy="273" r="7" />
+          <text class="town-label" x="248" y="289">Lander</text>
+          <circle class="town-dot town-dot-fremont" cx="258" cy="250" r="5.5" />
+          <text class="town-label-small" x="269" y="253">Hudson</text>
+
+          <circle class="town-dot town-dot-natrona" cx="455" cy="183" r="5.5" />
+          <text class="town-label-small" x="467" y="178">Bar Nunn</text>
+          <circle class="town-dot town-dot-natrona" cx="429" cy="235" r="5.5" />
+          <text class="town-label-small" x="386" y="250">Mills</text>
+          <circle class="town-dot town-dot-primary" cx="455" cy="228" r="7" />
+          <text class="town-label" x="468" y="223">Casper</text>
+          <circle class="town-dot town-dot-natrona" cx="484" cy="228" r="5.5" />
+          <text class="town-label-small" x="494" y="242">Evansville</text>
+        </svg>
+        </div>
+
+        <ul class="service-map-legend" aria-label="Map legend">
+          <li><span class="map-key map-key-fremont" aria-hidden="true"></span>Fremont County</li>
+          <li><span class="map-key map-key-natrona" aria-hidden="true"></span>Natrona County</li>
+          <li><span class="map-key map-key-check" aria-hidden="true"></span>Confirm by address</li>
+        </ul>
+        <div class="service-map-actions">
+          <p class="micro">Send photos, the address, and what needs removed. We will confirm the schedule before quoting.</p>
         </div>
       </div>
     </div>
