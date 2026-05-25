@@ -39,17 +39,15 @@
   </script>
 
   <style>
-    .service-hero.section{padding-bottom:20px}
-    @media (min-width:900px){.service-hero.section{padding-bottom:28px}}
-    .service-hero-grid{display:grid;gap:28px;align-items:center}
-    @media (min-width:960px){.service-hero-grid{grid-template-columns:1.05fr .95fr}}
-    .service-hero-photo{margin:0;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.09)}
-    .service-hero-photo img{display:block;width:100%;height:auto;max-height:360px;object-fit:cover}
-    .service-hero-photo figcaption{padding:8px 14px;font-size:.875rem;color:var(--muted);background:var(--surface);border-top:1px solid var(--border)}
-    .service-hero-copy .lead{margin-bottom:0}
-    #service-details{padding-top:12px}
+    #service-details{background:var(--surface)}
     #service-details .svc-row:first-child{padding-top:0}
-    .svc-copy h2{margin:0 0 10px;font-size:clamp(1.2rem,.9rem + .8vw,1.5rem);line-height:1.2}
+    #service-details .svc-row:first-child .svc-photo img{max-height:560px}
+    .svc-copy h1{margin:0 0 14px;font-size:2rem;line-height:1.12}
+    .svc-copy h2{margin:0 0 10px;font-size:1.5rem;line-height:1.2}
+    @media (min-width:900px){
+      .svc-copy h1{font-size:2.25rem}
+      .svc-copy h2{font-size:1.65rem}
+    }
     .service-quote-note{margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
   </style>
 
@@ -124,44 +122,11 @@
   </header>
 
   <main id="main">
-    <section class="section service-hero">
-      <div class="container service-hero-grid">
-        <figure class="service-hero-photo">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="assets/images/optimized/junk-removal-riverton-wy-estate-cleanout-before-after-640.webp 640w, assets/images/optimized/junk-removal-riverton-wy-estate-cleanout-before-after-960.webp 960w, assets/images/optimized/junk-removal-riverton-wy-estate-cleanout-before-after-1400.webp 1400w"
-              sizes="(max-width: 959px) calc(100vw - 32px), 52vw">
-            <img
-              src="assets/images/optimized/junk-removal-riverton-wy-estate-cleanout-before-after-960.jpg"
-              srcset="assets/images/optimized/junk-removal-riverton-wy-estate-cleanout-before-after-640.jpg 640w, assets/images/optimized/junk-removal-riverton-wy-estate-cleanout-before-after-960.jpg 960w, assets/images/optimized/junk-removal-riverton-wy-estate-cleanout-before-after-1400.jpg 1400w"
-              sizes="(max-width: 959px) calc(100vw - 32px), 52vw"
-              alt="Estate cleanout before and after in Riverton, Wyoming"
-              width="1400"
-              height="1051"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high">
-          </picture>
-          <figcaption>Estate cleanout, before and after &middot; Riverton, WY</figcaption>
-        </figure>
-
-        <div class="service-hero-copy">
-          <h1>Services</h1>
-          <p class="lead">Junk removal, cleanouts, rental turnovers, exterior cleanup, and light demolition in Fremont County and Natrona County.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
-            <a class="btn" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a quote">Text Photos</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section surface-section" id="service-details">
       <div class="container">
         <div class="svc-row" id="junk-removal">
           <div class="svc-copy">
-            <h2>Junk Removal</h2>
+            <h1>Junk Removal</h1>
             <p>From a single piece of furniture to a full property cleanout, we load what needs to go and protect what stays. Common loads include appliances, mattresses, couches, boxes, garage junk, storage unit contents, drywall, lumber, and renovation debris.</p>
             <ul>
               <li>Furniture, appliances, and mixed household junk</li>
@@ -176,8 +141,9 @@
               sizes="(max-width: 760px) calc(100vw - 32px), 520px"
               alt="Junk removal job in Fremont County, Wyoming by Wind River Renewal"
               width="1400" height="1051"
-              loading="lazy"
+              loading="eager"
               decoding="async"
+              fetchpriority="high"
             />
           </div>
         </div>
