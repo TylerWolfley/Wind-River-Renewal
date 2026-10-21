@@ -1278,7 +1278,7 @@ h2 { line-height:1.2; letter-spacing:-.025em; }
 .hero .proof-block { border-radius:12px; }
 .hero .proof-main img { height:auto; object-fit:contain; }
 .hero .proof-pair img { height:auto; object-fit:contain; }
-.hero .proof-block figcaption { font-size:.75rem; padding:9px 6px; color:#526174; }
+.hero .proof-block figcaption { font-size:.85rem; padding:12px; color:#526174; line-height:1.6; }
 .hero .hero-google-proof { font-size:.82rem; }
 .section-intro { max-width:62ch; color:var(--muted); }
 .trust-grid { gap:20px; }
@@ -1377,3 +1377,20 @@ h2 { line-height:1.2; letter-spacing:-.025em; }
 .refined-footer{padding:34px 0 18px;text-align:left;background:#f8fafc}.footer-grid{display:grid;grid-template-columns:1.25fr .7fr 1fr;gap:40px}.footer-brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-size:1.08rem}.footer-company p{font-size:.88rem;color:var(--muted);margin:12px 0}.footer-company>a:not(.footer-brand){display:block;width:fit-content;margin:8px 0;color:var(--text);font-size:.9rem}.footer-heading{font-size:.86rem;letter-spacing:.03em;margin:8px 0 14px}.refined-footer .footer-nav{display:grid;grid-template-columns:1fr 1fr;justify-content:start;gap:6px 14px}.refined-footer .footer-nav a{padding:6px 0;font-size:.9rem}.footer-social{display:flex;flex-wrap:wrap;gap:10px}.refined-footer .social-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:10px 13px;min-height:44px;border-radius:8px;text-decoration:none;font-size:.85rem;font-weight:600;line-height:1.4;border:1px solid #d8e0ea;white-space:nowrap}.refined-footer .facebook-button{background:#0866ff;color:#fff}.refined-footer .facebook-button:hover{background:#0755d3}.refined-footer .google-button{background:#fff;color:#253247}.refined-footer .google-button:hover{background:#edf2f8}.social-button svg{flex-shrink:0}.footer-payment{font-size:.8rem;color:var(--muted);margin-top:16px}.footer-bottom{margin-top:26px;padding-top:16px;border-top:1px solid #dce3ec;display:flex;align-items:center;justify-content:space-between;gap:16px}.refined-footer .footer-bottom nav{margin:0;gap:6px}.refined-footer .footer-bottom p{font-size:.78rem}
 @media(max-width:960px){.footer-grid{gap:26px;grid-template-columns:1fr 1fr}.footer-company{grid-column:1/-1}.home-page>.hero{padding-block:30px}.home-page .hero-grid{gap:26px}}
 @media(max-width:640px){.site-header .brand>img{width:44px;height:44px}.site-header .brand-text{font-size:1.03rem}.home-page>.section{padding-block:30px}.home-page>.hero{padding-block:28px}.refined-footer{padding-top:28px}.footer-grid{grid-template-columns:1fr;gap:22px}.footer-company{grid-column:auto}.refined-footer .footer-nav{grid-template-columns:repeat(3,1fr)}.footer-heading{margin-top:0;margin-bottom:8px}.footer-bottom{flex-direction:column;align-items:flex-start;gap:10px}.refined-footer .footer-bottom nav{justify-content:flex-start}.footer-social{gap:10px}}
+
+/* Job evidence and the property-professional path use existing project photos. */
+.property-checklist{padding-left:20px;color:var(--muted);line-height:1.65}
+.property-checklist li{margin-block:12px}
+.property-checklist strong{color:var(--text)}
+.home-projects .project-proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:26px;align-items:start}
+.project-proof-grid figure{margin:0;min-width:0;background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.project-proof-grid img{display:block;width:100%;height:auto}
+.project-proof-grid figcaption{padding:22px}
+.project-proof-grid h3{margin:0 0 10px;font-size:1.15rem}
+.project-proof-grid p{color:var(--muted);margin:0 0 16px;line-height:1.6}
+.photo-grid .project-context{display:block;margin-top:6px}
+.photo-grid figcaption strong{color:var(--text)}
+.property-quote-guidance{border-top:1px solid var(--border);margin-top:26px;padding-top:18px}
+.property-quote-guidance h3{font-size:1.15rem}
+#property-professionals,#property-job,.photo-grid figure[id]{scroll-margin-top:110px}
+@media(max-width:640px){.home-projects .project-proof-grid{grid-template-columns:1fr;gap:22px}.project-proof-grid figcaption{padding:18px}}

@@ -113,6 +113,11 @@ const check = (name, value) => { results[value ? 'passes' : 'failures'].push(nam
  check('Gallery preserves eleven job photos',await page.locator('.photo-grid figure').count()===11);
  check('All gallery photos visible without a disclosure',await page.locator('.photo-grid figure:visible').count()===11 && await page.locator('.more-photos').count()===0);
  check('Garage gallery location neutral',!(await page.locator('.photo-grid figure').first().innerText()).match(/Riverton|Natrona|Casper/));
+ await page.goto(base+'/?utm_source=property-review',{waitUntil:'networkidle'});
+ await page.getByRole('link',{name:'Request a property cleanout',exact:true}).click();
+ await page.waitForURL(base+'/quote/?utm_source=property-review#property-job');
+ check('Property lead path preserves UTM and reaches the simple form',await page.locator('#property-job .quote-form').count()===1 && await page.locator('.quote-form [required]').count()===4);
+ check('Property guidance leaves service selection optional',await page.locator('#q-service').getAttribute('required')===null && await page.locator('#q-service').inputValue()==='');
  for(const width of [1440,375,390]) {
   await page.setViewportSize({width,height:width===1440?1000:844});
   for(const route of ['/','/quote/','/services/','/gallery/','/junk-removal-casper/']) {
