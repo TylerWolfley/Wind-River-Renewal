@@ -1,6 +1,6 @@
 # Wind River Renewal Migration Inventory
 
-Generated: 2026-10-21T03:04:44.382Z
+Generated: 2026-10-21T05:34:34.810Z
 
 ## Route Inventory
 
@@ -9,7 +9,7 @@ Generated: 2026-10-21T03:04:44.382Z
 | index.html                   | /index.html                   | /                         | https://windriverrenewal.com/                         | 1       | 0     | yes     |
 | services.html                | /services.html                | /services/                | https://windriverrenewal.com/services/                | 2       | 0     | yes     |
 | gallery.html                 | /gallery.html                 | /gallery/                 | https://windriverrenewal.com/gallery/                 | 1       | 0     | yes     |
-| about.html                   | /about.html                   | /about/                   | https://windriverrenewal.com/about/                   | 1       | 0     | yes     |
+| about.html                   | /about.html                   | /                         | https://windriverrenewal.com/                         | 0       | 0     | no      |
 | contact.html                 | /contact.html                 | /contact/                 | https://windriverrenewal.com/contact/                 | 1       | 0     | yes     |
 | quote.html                   | /quote.html                   | /quote/                   | https://windriverrenewal.com/quote/                   | 0       | 1     | yes     |
 | thanks.html                  | /thanks.html                  | /thanks/                  | https://windriverrenewal.com/thanks/                  | 0       | 0     | no      |
@@ -37,7 +37,7 @@ The project is configured for static export because the existing repository cont
 | /index.html                   | /                         |
 | /services.html                | /services/                |
 | /gallery.html                 | /gallery/                 |
-| /about.html                   | /about/                   |
+| /about.html                   | /                         |
 | /contact.html                 | /contact/                 |
 | /quote.html                   | /quote/                   |
 | /thanks.html                  | /thanks/                  |
@@ -56,6 +56,7 @@ The project is configured for static export because the existing repository cont
 | /locations/pavillion.html     | /locations/pavillion/     |
 | /locations/shoshoni.html      | /locations/shoshoni/      |
 | /locations/casper             | /junk-removal-casper/     |
+| /about                        | /                         |
 
 ## Verification Checklist
 

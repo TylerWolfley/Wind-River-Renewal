@@ -49,7 +49,7 @@ function oldPathForFile(file) {
 
 function mapOldPath(oldPath) {
   const normalized = normalizePath(oldPath);
-  if (normalized === "/index.html") return "/";
+  if (normalized === "/index.html" || normalized === "/about.html" || normalized === "/about") return "/";
   if (normalized === "/locations/index.html") return "/locations/";
   if (normalized === "/locations/casper.html") return "/junk-removal-casper/";
   if (normalized.endsWith(".html")) return publicPathForRoute(normalized.replace(/\.html$/, ""));
@@ -78,6 +78,7 @@ for (const file of legacyFiles) {
   legacyRedirects[oldPath] = mapOldPath(oldPath);
 }
 legacyRedirects["/locations/casper"] = "/junk-removal-casper/";
+legacyRedirects["/about"] = "/";
 
 function decodeHtml(value = "") {
   return value
@@ -252,7 +253,7 @@ function buildPage(file, sitemapEntries) {
   const twitterImage = getMeta(head, "twitter:image", "name");
   const robotsContent = getMeta(head, "robots", "name");
   const includeInSitemap =
-    (sitemapEntries.has(route) || sitemapEntries.has(publicPath)) && route !== "/locations/casper";
+    (sitemapEntries.has(route) || sitemapEntries.has(publicPath)) && route !== "/locations/casper" && route !== "/about";
   const body = getBody(html).replace(/<!-- WRR_QUOTE_FORM city="([^"]*)" -->/g, (_, city) =>
     fs.readFileSync(path.join(root, "src/content/quote-form.html"), "utf8").replaceAll("{{city}}", city)
   );
@@ -264,7 +265,7 @@ function buildPage(file, sitemapEntries) {
     route,
     publicPath,
     slug: route === "/" ? [] : route.slice(1).split("/"),
-    redirectTo: file === "locations/casper.html" ? "/junk-removal-casper/" : null,
+    redirectTo: file === "about.html" ? "/" : file === "locations/casper.html" ? "/junk-removal-casper/" : null,
     title,
     description,
     applicationName: getMeta(head, "application-name"),
@@ -375,7 +376,7 @@ function writeRedirectStubs() {
   }
 
   for (const [from, to] of Object.entries(legacyRedirects)) {
-    if (from === "/index.html" || from === "/locations/index.html" || from === "/locations/casper") continue;
+    if (from === "/index.html" || from === "/locations/index.html" || from === "/locations/casper" || from === "/about") continue;
     const targetPath = path.join(root, "public", from.slice(1));
     fs.mkdirSync(path.dirname(targetPath), { recursive: true });
     fs.writeFileSync(targetPath, redirectHtml(from, to));
