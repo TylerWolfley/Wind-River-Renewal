@@ -32,3 +32,13 @@ Legacy `.html` URLs are covered three ways:
 - Submit a real Formspree test only when ready to send a live lead email.
 - Confirm GA4 events in production/debug view after deployment.
 - Review the preserved copy and layout before starting a redesign pass.
+
+## Local review refresh
+
+The HTML files at the repository root and in `locations/` remain the page source. Do not edit `generated-pages.js` or `public/assets/` directly: inventory regenerates them. The shared form is maintained in `src/content/quote-form.html` and expanded at `WRR_QUOTE_FORM` markers. Shared interactions live in `assets/` and load through Next Script. The gallery uses a static, responsive photo layout.
+
+Run inventory before building. `npm run preview` now uses the dependency-free local server at `127.0.0.1:4173`. It adds a review banner and blocks external form submissions and analytics using response headers; exported production files retain their Formspree integration. Set PORT to choose another local port. `--test` omits that preview guard only for browser tests which intercept all external requests.
+
+The form requires name, phone or email, location, and job description. Qualification details are optional. Photos are sent by text: a live check confirmed the existing Formspree account rejects file uploads. Formspree endpoint `mqadaqdp`, UTM fields, contact links, and the Google Business Profile link are retained. AJAX success requires both a successful HTTP status and an explicit `ok: true` JSON response. Errors and timeouts retain entered details and permit retry. Lead events fire only after confirmed acceptance, not on submit or a direct visit to the thanks page. The thanks URL remains available for native form fallback.
+
+Browser regression checks: run `scripts/verify-site.cjs` with Playwright available (`PLAYWRIGHT_MODULE` can supply an installed module path). It expects the guarded test server, supports `TEST_URL`, `TEST_OUTPUT`, and `BROWSER_PATH`, blocks all external traffic, and mocks Formspree. An authorized text-only live test was accepted by Formspree; inbox delivery was not confirmed. GA ingestion remains unverified.

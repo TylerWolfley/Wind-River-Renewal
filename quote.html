@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Get a Quote | Wind River Renewal</title>
-  <meta name="description" content="Get a fast junk removal estimate in Fremont County & Natrona County. Text photos or use the quote form. Riverton, Lander, Casper." />
+  <meta name="description" content="Request a cleanout or hauling quote in Fremont and Natrona County. Tell us your location and what needs to go. Photos are optional." />
   <meta name="application-name" content="Wind River Renewal" />
 
   <link rel="canonical" href="https://windriverrenewal.com/quote.html" />
@@ -25,13 +25,13 @@
   <meta property="og:site_name" content="Wind River Renewal" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Get a Quote | Wind River Renewal" />
-  <meta property="og:description" content="Text photos or use the quote form for a fast junk removal estimate." />
+  <meta property="og:description" content="Tell us your location and what needs to go. Request a cleanout or hauling quote; photos are optional." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://windriverrenewal.com/quote.html" />
   <meta property="og:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Get a Quote | Wind River Renewal" />
-  <meta name="twitter:description" content="Text photos or use the quote form for a fast junk removal estimate." />
+  <meta name="twitter:description" content="Tell us your location and what needs to go. Request a cleanout or hauling quote; photos are optional." />
   <meta name="twitter:image" content="https://windriverrenewal.com/assets/images/og-cover.jpg" />
 
   <!-- GA4 -->
@@ -44,177 +44,7 @@
   </script>
 
   <!-- Quote page polish (keeps global CSS intact) -->
-  <style>
-    .lead{max-width:70ch;color:var(--muted);margin:8px 0 0}
-    .quote-shell{max-width:1100px;margin:0 auto}
 
-    /* Use .section spacing so it matches the rest of the site */
-    .quote-hero{padding-top:0}
-    .quote-intro{max-width:780px}
-
-    .smart-quote-grid{
-      display:grid;
-      gap:18px;
-      align-items:start;
-      margin-top:18px;
-    }
-    @media (min-width:980px){
-      .smart-quote-grid{
-        grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);
-        gap:22px;
-      }
-    }
-
-    .form-card,
-    .summary-card,
-    .quote-help-card{
-      margin-top:16px;
-      background:var(--surface);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:22px;
-      box-shadow:var(--shadow);
-    }
-    .form-card{margin-top:0}
-    @media (min-width:760px){
-      .form-card,
-      .summary-card,
-      .quote-help-card{padding:26px}
-    }
-
-    .summary-card{margin-top:0}
-    @media (min-width:980px){
-      .summary-card{position:sticky;top:82px}
-    }
-
-    .assistant-heading{margin:0 0 6px;font-size:1.35rem}
-    .assistant-sub{margin:0 0 16px;color:var(--muted)}
-    .form-section{
-      padding-top:16px;
-      margin-top:16px;
-      border-top:1px solid var(--border);
-    }
-    .form-section:first-of-type{padding-top:0;margin-top:0;border-top:0}
-    .form-section h3{margin:0 0 12px;font-size:1.05rem}
-
-    .grid2{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:14px}
-    @media (min-width:760px){ .grid2{grid-template-columns:1fr 1fr} }
-
-    .field{display:flex;flex-direction:column;gap:8px}
-    .label{font-weight:700;font-size:.95rem}
-    .help{color:var(--muted);font-size:.9rem}
-
-    /* Keep consistent with your global input styling */
-    .ctrl{width:100%}
-    textarea{min-height:140px;resize:vertical}
-
-    .check-field{
-      display:grid;
-      grid-template-columns:auto 1fr;
-      gap:10px;
-      align-items:start;
-      padding:12px;
-      border:1px solid var(--border);
-      border-radius:12px;
-      background:#f8fafc;
-      margin-top:10px;
-    }
-    .check-field input{width:auto;margin-top:3px}
-    .check-field strong{display:block;margin-bottom:2px}
-
-    .drop{
-      background:#f8fafc;
-      border:2px dashed var(--border);
-      border-radius:14px;
-      padding:14px;
-      text-align:center;
-      cursor:pointer;
-      transition:border .15s ease, background .15s ease;
-      user-select:none;
-    }
-    .drop.drag{
-      border-color:color-mix(in oklab, var(--primary) 55%, var(--border));
-      background:#eef2ff;
-    }
-    .file-list{
-      color:var(--muted);
-      font-size:.9rem;
-      margin-top:8px;
-      text-align:left;
-      white-space:pre-line
-    }
-
-    .actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:14px}
-    .actions .help a{color:inherit;text-decoration:underline;text-underline-offset:3px}
-    @media (max-width:520px){
-      .actions .btn{width:100%}
-    }
-
-    .fineprint{margin-top:10px}
-    .fineprint a{color:inherit}
-
-    .sms-callout{
-      margin:16px 0 20px;
-      padding:14px 16px;
-      background:var(--surface);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow-sm);
-    }
-    .sms-callout p{margin:0 0 4px;font-weight:700}
-    .sms-callout .help{margin:0 0 12px}
-    .sms-callout .phone-inline{display:inline-block;margin-left:10px;line-height:1.4}
-
-    .readiness{
-      border:1px solid var(--border);
-      border-radius:12px;
-      padding:12px;
-      background:#f8fafc;
-      margin-bottom:16px;
-    }
-    .readiness-kicker{
-      display:block;
-      color:var(--muted);
-      font-size:.78rem;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.06em;
-      margin-bottom:4px;
-    }
-    .readiness-label{display:block;font-size:1.05rem;font-weight:900}
-    .readiness-meter{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:6px;
-      margin:10px 0;
-    }
-    .readiness-meter span{
-      height:8px;
-      border-radius:999px;
-      background:#e2e8f0;
-    }
-    .readiness-meter span.active{background:#2563eb}
-    .readiness p{margin:0;color:var(--muted);font-size:.9rem}
-
-    .quote-summary-box{
-      margin:12px 0 14px;
-      padding:14px;
-      background:#f8fafc;
-      border:1px solid var(--border);
-      border-radius:12px;
-      color:var(--text);
-      font:inherit;
-      line-height:1.5;
-      min-height:260px;
-      max-height:520px;
-      overflow:auto;
-      white-space:pre-wrap;
-      word-break:break-word;
-    }
-    .quote-help-card{margin-top:18px}
-    .quote-help-card h2{font-size:1.35rem;margin-bottom:10px}
-    .quote-help-card p{margin:0;color:var(--muted)}
-  </style>
 </head>
 
 <body class="light">
@@ -254,430 +84,43 @@
       <div class="container quote-shell">
         <div class="quote-intro">
           <h1>Get a Quote</h1>
-          <p class="lead">Use the form below to email Wind River Renewal the job details. Photos help the fastest, most accurate quote.</p>
+          <p class="lead">A few details are enough to get started. Tell us what you need cleared and how to reach you.</p>
           <p class="micro" style="margin:10px 0 0">Customer feedback is available on our Google Business Profile. <a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">See verified reviews</a>.</p>
         </div>
 
         <div class="sms-callout" style="margin-top:16px">
-          <p>Fastest option: text photos</p>
-          <p class="help">Text 1&ndash;3 photos, your address, and what needs gone. We&rsquo;ll reply with price and availability.</p>
+          <p>Prefer to text?</p>
+          <p class="help">Send photos, your location, and what needs to go. We may need more details or a site visit before confirming a firm price.</p>
           <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-            <a class="btn btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a quote">Text Photos</a>
+            <a class="btn btn-primary" href="sms:+13073494694?body=Hi%20Wind%20River%20Renewal%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text photos for a quote">Text Photos</a>
             <a class="btn" href="tel:+13073494694">Call 307-349-4694</a>
           </div>
         </div>
 
         <div class="smart-quote-grid">
-          <form id="smartQuoteForm" class="form-card smart-quote-form" action="https://formspree.io/f/mqadaqdp" method="POST" enctype="multipart/form-data" accept-charset="UTF-8" data-track-label="quote_request_form">
-            <input type="hidden" name="subject" value="Wind River Renewal Quote Request from {{ name }}" />
-            <input type="hidden" name="_redirect" value="thanks.html" />
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-            <textarea id="q-summary-field" name="message" hidden></textarea>
+          <!-- WRR_QUOTE_FORM city="" -->
 
-            <h2 class="assistant-heading">Quote Request Form</h2>
-            <p class="assistant-sub">Fill in what you know. When you tap Send Quote Request, the form emails Tyler the details and any photos you include.</p>
-
-            <div class="form-section">
-              <h3>Contact</h3>
-              <div class="grid2">
-                <div class="field">
-                  <label class="label" for="q-name">Full name</label>
-                  <input id="q-name" class="ctrl" name="name" required autocomplete="name" />
-                </div>
-                <div class="field">
-                  <label class="label" for="q-phone">Phone</label>
-                  <input id="q-phone" class="ctrl" name="phone" required autocomplete="tel" inputmode="tel" />
-                </div>
-              </div>
-
-              <div class="grid2">
-                <div class="field">
-                  <label class="label" for="q-email">Email <span class="help">(optional)</span></label>
-                  <input id="q-email" class="ctrl" name="email" type="email" autocomplete="email" />
-                </div>
-                <div class="field">
-                  <label class="label" for="q-city">City / town</label>
-                  <input id="q-city" class="ctrl" name="city_town" required placeholder="Riverton, Lander, Casper, Mills, Shoshoni..." autocomplete="address-level2" />
-                </div>
-              </div>
-            </div>
-
-            <div class="form-section">
-              <h3>Job</h3>
-              <div class="grid2">
-                <div class="field">
-                  <label class="label" for="q-service">Service type</label>
-                  <select id="q-service" class="ctrl" name="service_type" required>
-                    <option value="">Choose one</option>
-                    <option>Junk removal / haul-away</option>
-                    <option>Estate cleanout</option>
-                    <option>Foreclosure cleanout</option>
-                    <option>Rental turnover</option>
-                    <option>Listing prep / sale-ready cleanup</option>
-                    <option>Light demolition</option>
-                    <option>Exterior cleanup</option>
-                    <option>Not sure yet</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label class="label" for="q-customer">Customer type</label>
-                  <select id="q-customer" class="ctrl" name="customer_type" required>
-                    <option value="">Choose one</option>
-                    <option>Homeowner</option>
-                    <option>Renter</option>
-                    <option>Landlord</option>
-                    <option>Property manager</option>
-                    <option>Real estate agent</option>
-                    <option>Bank / asset manager</option>
-                    <option>Estate / executor</option>
-                    <option>Contractor</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="field" style="margin-bottom:14px;">
-                <label class="label" for="q-details">Job details</label>
-                <textarea id="q-details" class="ctrl" name="job_details" placeholder="What needs gone? Include rooms, items, piles, cleanout type, or anything that helps explain the job." required></textarea>
-              </div>
-
-              <div class="grid2">
-                <div class="field">
-                  <label class="label" for="q-load">Approximate load size</label>
-                  <select id="q-load" class="ctrl" name="approximate_load_size" required>
-                    <option value="">Choose one</option>
-                    <option>Small pickup load</option>
-                    <option>Quarter truck</option>
-                    <option>Half truck</option>
-                    <option>Full truck</option>
-                    <option>Multiple loads</option>
-                    <option>Not sure</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label class="label" for="q-urgency">Urgency</label>
-                  <select id="q-urgency" class="ctrl" name="urgency" required>
-                    <option value="">Choose one</option>
-                    <option>Flexible</option>
-                    <option>This week</option>
-                    <option>Next 1-2 days</option>
-                    <option>Same-day if available</option>
-                    <option>Before a closing / listing / move-out date</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="field" style="margin-bottom:14px;">
-                <label class="label" for="q-access">Access notes</label>
-                <textarea id="q-access" class="ctrl" name="access_notes" placeholder="Stairs, basement, elevator, gate, tight driveway, long carry, parking, or write 'easy access'." required></textarea>
-              </div>
-
-              <div class="field">
-                <label class="label" for="q-heavy">Heavy/special items</label>
-                <textarea id="q-heavy" class="ctrl" name="heavy_special_items" placeholder="Appliances, hot tub, piano, tires, concrete, mattresses, or write 'none'." required></textarea>
-              </div>
-            </div>
-
-            <div class="form-section">
-              <h3>Timing</h3>
-              <div class="grid2">
-                <div class="field">
-                  <label class="label" for="q-date">Preferred date <span class="help">(optional)</span></label>
-                  <input id="q-date" class="ctrl" name="preferred_date" type="date" />
-                </div>
-                <div class="field">
-                  <label class="label" for="q-time">Preferred time <span class="help">(optional)</span></label>
-                  <select id="q-time" class="ctrl" name="preferred_time">
-                    <option>Anytime</option>
-                    <option>Morning</option>
-                    <option>Afternoon</option>
-                    <option>Evening if available</option>
-                  </select>
-                </div>
-              </div>
-
-              <label class="check-field" for="q-photo-doc">
-                <input id="q-photo-doc" name="photo_documentation" type="checkbox" value="Yes" />
-                <span><strong>Before-and-after photo documentation</strong><span class="help">I need before-and-after photos for a cleanout, foreclosure, rental, listing prep, or managed property.</span></span>
-              </label>
-            </div>
-
-            <div class="form-section">
-              <h3>Photos and safety</h3>
-              <div class="field" style="margin-bottom:14px;">
-                <label class="label" for="q-photos">Photos <span class="help">(optional, up to 5)</span></label>
-                <label class="drop" id="drop" for="q-photos">
-                  <input id="q-photos" name="photos" type="file" accept="image/*" multiple style="display:none">
-                  <div><strong>Tap to upload photos</strong></div>
-                  <div class="help">Clear photos help us quote accurately.</div>
-                </label>
-                <div id="fileList" class="file-list" aria-live="polite"></div>
-              </div>
-
-              <label class="check-field" for="q-hazard">
-                <input id="q-hazard" name="hazardous_material_confirmation" type="checkbox" value="Confirmed" required />
-                <span><strong>Hazardous material confirmation</strong><span class="help">I understand Wind River Renewal does not handle regulated hazardous waste, including paint, solvents, oils, pesticides, asbestos, medical sharps, propane tanks, or other items requiring licensed disposal.</span></span>
-              </label>
-            </div>
-
-            <!-- UTM capture -->
-            <input type="hidden" name="utm_source" id="utm_source">
-            <input type="hidden" name="utm_medium" id="utm_medium">
-            <input type="hidden" name="utm_campaign" id="utm_campaign">
-            <input type="hidden" name="utm_term" id="utm_term">
-            <input type="hidden" name="utm_content" id="utm_content">
-
-            <div class="actions">
-              <button class="btn btn-primary" type="submit">Send Quote Request</button>
-              <span class="help">Or call or text <a href="tel:+13073494694">307-349-4694</a></span>
-            </div>
-
-            <p class="help fineprint">We do not handle regulated hazardous waste. Items requiring licensed disposal must be arranged separately before scheduling. <a href="tel:+13073494694">Call or text us</a> if you are unsure whether something qualifies.</p>
-          </form>
-
-          <aside class="summary-card" aria-labelledby="quote-summary-title">
-            <div class="readiness" aria-live="polite">
-              <span class="readiness-kicker">Quote readiness</span>
-              <span id="readinessLabel" class="readiness-label">Good start</span>
-              <div class="readiness-meter" aria-hidden="true">
-                <span id="readinessStep1" class="active"></span>
-                <span id="readinessStep2"></span>
-                <span id="readinessStep3"></span>
-              </div>
-              <p id="readinessHint">Add the basics, job details, access, timing, and the hazardous material confirmation.</p>
-            </div>
-
-            <h2 id="quote-summary-title" class="assistant-heading">Request Preview</h2>
-            <p class="assistant-sub">This preview is included in the email Tyler receives when you send the form.</p>
-            <pre id="quoteSummary" class="quote-summary-box" aria-live="polite"></pre>
-          </aside>
+          <aside class="quote-guidance"><p class="eyebrow">What happens next</p><h2>A conversation,<br>then a clear quote.</h2><p>We review your request and get in touch using the contact details you provide.</p><p>Photos help, but a firm price may need more details or a site visit. Sending this form does not book a job.</p></aside>
         </div>
 
-        <div class="quote-help-card">
-          <h2>What helps us quote faster</h2>
-          <p>The fastest quotes include clear photos, the address or town, what needs gone, whether there are stairs or tight access, and when you need it done. For cleanouts, foreclosures, rentals, and listing prep, tell us if you need before-and-after photos.</p>
-        </div>
+
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p class="footer-info">
-        <strong>Wind River Renewal</strong> &middot;
-        <a href="tel:+13073494694">307-349-4694</a> &middot;
-        <a href="mailto:windriverrenewal@gmail.com">windriverrenewal@gmail.com</a> &middot;
-        <span class="footer-secondary">Licensed &amp; Insured &middot; Fremont County &amp; Natrona County &middot; Cash, Check, Venmo, Cash App</span>
-      </p>
-      <nav aria-label="Footer">
-        <a href="services.html">Services</a>
-        <a href="/locations/">Service Areas</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html">About</a>
-        <a href="quote.html" aria-current="page" class="active">Get a Quote</a>
-        <a href="contact.html">Contact</a>
-        <a href="https://www.facebook.com/WindRiverRenewal" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener">Google Business Profile</a>
-      </nav>
-      <p class="micro">&copy; 2026 Wind River Renewal</p>
-    </div>
-  </footer>
+  <footer class="site-footer refined-footer"><div class="container"><div class="footer-grid">
+<div class="footer-company"><a class="footer-brand" href="/"><img src="/assets/logo-256.png" width="46" height="46" alt=""><strong>Wind River Renewal</strong></a><p>Based in Riverton, Wyoming.<br>Serving Fremont &amp; Natrona County.</p><a href="tel:+13073494694">307-349-4694</a><a href="mailto:windriverrenewal@gmail.com">windriverrenewal@gmail.com</a><p class="micro">Open daily, 9am–5pm</p></div>
+<div><h2 class="footer-heading">Explore</h2><nav class="footer-nav" aria-label="Footer"><a href="/services.html">Services</a><a href="/locations/">Service Areas</a><a href="/gallery.html">Gallery</a><a href="/about.html">About</a><a href="/quote.html" class="js-keep-utm">Get a Quote</a><a href="/contact.html">Contact</a></nav></div>
+<div><h2 class="footer-heading">Find us online</h2><div class="footer-social"><a class="social-button facebook-button" href="https://www.facebook.com/windriverrenewal" target="_blank" rel="noopener" aria-label="Wind River Renewal on Facebook (opens in a new tab)"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.026 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971h-1.513c-1.491 0-1.956.931-1.956 1.887v2.263h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073Z"/></svg><span>Facebook</span></a><a class="social-button google-button" href="https://share.google/DIeP3Qh1gvPvirfrX" target="_blank" rel="noopener" aria-label="Wind River Renewal Google reviews (opens in a new tab)"><svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true" focusable="false"><path fill="#4285F4" d="M43.61 24.46c0-1.36-.12-2.66-.35-3.92H24v7.42h11a9.4 9.4 0 0 1-4.08 6.17v5h6.61c3.87-3.56 6.08-8.81 6.08-14.67Z"/><path fill="#34A853" d="M24 44c5.5 0 10.12-1.82 13.5-4.96l-6.61-5c-1.83 1.23-4.17 1.97-6.89 1.97-5.32 0-9.84-3.59-11.45-8.42H5.72v5.17A20 20 0 0 0 24 44Z"/><path fill="#FBBC05" d="M12.55 27.59A12 12 0 0 1 12 24c0-1.24.2-2.45.55-3.59v-5.17H5.72A20 20 0 0 0 4 24c0 3.23.77 6.29 2.13 9l6.42-5.41Z"/><path fill="#EA4335" d="M24 12c3 0 5.69 1.03 7.81 3.05l5.86-5.86C34.11 5.88 29.5 4 24 4A20 20 0 0 0 5.72 15.24l6.83 5.17C14.16 15.59 18.68 12 24 12Z"/></svg><span>Google reviews</span></a></div><p class="footer-payment">Cash, check, Venmo &amp; Cash App</p></div>
+</div><div class="footer-bottom"><p class="micro">&copy; 2026 Wind River Renewal</p><nav aria-label="Nearby service areas"><a href="/junk-removal-riverton.html">Riverton</a><a href="/junk-removal-lander.html">Lander</a><a href="/junk-removal-casper.html">Casper</a><a href="/junk-removal-dubois-wy.html">Dubois</a></nav></div></div></footer>
 
   <div class="sticky-bar" role="region" aria-label="Quick contact">
     <a class="sticky-btn js-keep-utm" href="/quote.html" aria-label="Get a quote">Get a Quote</a>
-    <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text job photos">Text Photos</a>
+    <a class="sticky-btn sticky-btn-primary" href="sms:+13073494694?body=Hi%20Wind%20River%20Renewal%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos." aria-label="Text job photos">Text Photos</a>
   </div>
 
   <script src="assets/script.js" defer></script>
 
-  <script>
-    (function(){
-      const form = document.getElementById("smartQuoteForm");
-      const drop = document.getElementById("drop");
-      const photoInput = document.getElementById("q-photos");
-      const fileList = document.getElementById("fileList");
-      const summaryBox = document.getElementById("quoteSummary");
-      const summaryField = document.getElementById("q-summary-field");
-      const readinessLabel = document.getElementById("readinessLabel");
-      const readinessHint = document.getElementById("readinessHint");
-      const readinessSteps = [
-        document.getElementById("readinessStep1"),
-        document.getElementById("readinessStep2"),
-        document.getElementById("readinessStep3")
-      ];
 
-      const ids = {
-        name: "q-name",
-        phone: "q-phone",
-        email: "q-email",
-        city: "q-city",
-        service: "q-service",
-        customer: "q-customer",
-        details: "q-details",
-        load: "q-load",
-        access: "q-access",
-        heavy: "q-heavy",
-        urgency: "q-urgency",
-        date: "q-date",
-        time: "q-time",
-        photoDoc: "q-photo-doc",
-        hazard: "q-hazard"
-      };
-
-      function el(id) {
-        return document.getElementById(id);
-      }
-
-      function value(id) {
-        const node = el(id);
-        return node ? (node.value || "").trim() : "";
-      }
-
-      function yesNo(checked) {
-        return checked ? "Yes" : "No";
-      }
-
-      function fallback(text) {
-        return text || "Not provided";
-      }
-
-      function selectedPhotoCount() {
-        return photoInput && photoInput.files ? Math.min(photoInput.files.length, 5) : 0;
-      }
-
-      function plural(count, word) {
-        return count === 1 ? word : word + "s";
-      }
-
-      function buildSummary() {
-        const photoCount = selectedPhotoCount();
-        const photoDoc = el(ids.photoDoc).checked;
-        const hazard = el(ids.hazard).checked;
-        const preferredDate = value(ids.date) || "No specific date";
-        const preferredTime = value(ids.time) || "Anytime";
-
-        return [
-          "Wind River Renewal Quote Request",
-          "",
-          "Name: " + fallback(value(ids.name)),
-          "Phone: " + fallback(value(ids.phone)),
-          "Email: " + fallback(value(ids.email)),
-          "City / town: " + fallback(value(ids.city)),
-          "Service type: " + fallback(value(ids.service)),
-          "Customer type: " + fallback(value(ids.customer)),
-          "",
-          "Job details:",
-          fallback(value(ids.details)),
-          "",
-          "Approximate load size: " + fallback(value(ids.load)),
-          "Access notes: " + fallback(value(ids.access)),
-          "Heavy/special items: " + fallback(value(ids.heavy)),
-          "Urgency: " + fallback(value(ids.urgency)),
-          "Preferred date: " + preferredDate,
-          "Preferred time: " + preferredTime,
-          "",
-          "Before-and-after photo documentation needed: " + yesNo(photoDoc),
-          "Hazardous material confirmation: " + (hazard ? "Confirmed" : "Not confirmed yet"),
-          "Photos selected on form: " + (photoCount ? photoCount + " " + plural(photoCount, "photo") : "No photos selected"),
-          "",
-          "Sent from windriverrenewal.com/quote.html"
-        ].join("\n");
-      }
-
-      function readinessLevel() {
-        const readyFields = [
-          value(ids.name),
-          value(ids.phone),
-          value(ids.city),
-          value(ids.service),
-          value(ids.customer),
-          value(ids.details).length >= 20 ? "details" : "",
-          value(ids.load),
-          value(ids.access),
-          value(ids.heavy),
-          value(ids.urgency),
-          el(ids.hazard).checked ? "hazard" : ""
-        ];
-        const ready = readyFields.every(Boolean);
-        const best = ready && selectedPhotoCount() > 0;
-        if (best) {
-          return {
-            level: 3,
-            label: "Best chance of fast quote",
-            hint: "This is quote-ready. Send the form and Tyler will have the details needed to price it."
-          };
-        }
-        if (ready) {
-          return {
-            level: 2,
-            label: "Ready to price",
-            hint: "This has the core details Tyler needs. Photos can make it faster."
-          };
-        }
-        return {
-          level: 1,
-          label: "Good start",
-          hint: "Add the basics, job details, access, timing, and the hazardous material confirmation."
-        };
-      }
-
-      function updateReadiness() {
-        const state = readinessLevel();
-        readinessLabel.textContent = state.label;
-        readinessHint.textContent = state.hint;
-        readinessSteps.forEach((step, index) => {
-          step.classList.toggle("active", index < state.level);
-        });
-      }
-
-      function updateSummary() {
-        const summary = buildSummary();
-        summaryBox.textContent = summary;
-        summaryField.value = summary;
-        updateReadiness();
-      }
-
-      function setFiles(files) {
-        const incoming = Array.from(files || [])
-          .filter((file) => !file.type || file.type.startsWith("image/"))
-          .slice(0, 5);
-
-        if (window.DataTransfer) {
-          const dt = new DataTransfer();
-          incoming.forEach((file) => dt.items.add(file));
-          photoInput.files = dt.files;
-        }
-
-        fileList.textContent = incoming.length
-          ? incoming.map((file) => "- " + file.name).join("\n")
-          : "No photos selected yet.";
-        updateSummary();
-      }
-
-      form.addEventListener("input", updateSummary);
-      form.addEventListener("change", updateSummary);
-      form.addEventListener("submit", updateSummary);
-
-      photoInput.addEventListener("change", () => {
-        setFiles(photoInput.files);
-      });
-
-      drop.addEventListener("dragover", (event) => {
-        event.preventDefault();
-        drop.classList.add("drag");
-      });
-      drop.addEventListener("dragleave", () => {
-        drop.classList.remove("drag");
-      });
-      drop.addEventListener("drop", (event) => {
-        event.preventDefault();
-        drop.classList.remove("drag");
-        setFiles(event.dataTransfer.files);
-      });
-
-      fileList.textContent = "No photos selected yet.";
-      updateSummary();
-    })();
-  </script>
 </body>
 </html>

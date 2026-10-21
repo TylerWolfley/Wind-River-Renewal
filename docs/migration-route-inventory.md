@@ -1,6 +1,6 @@
 # Wind River Renewal Migration Inventory
 
-Generated: 2026-05-25T19:04:16.735Z
+Generated: 2026-10-21T03:04:44.382Z
 
 ## Route Inventory
 
@@ -62,7 +62,7 @@ The project is configured for static export because the existing repository cont
 - Build with npm run build.
 - Crawl clean routes and legacy .html URLs.
 - Confirm legacy redirects preserve query strings for UTM parameters.
-- Confirm Formspree action, hidden UTM fields, quote summary script, photo input UX, and thanks-page lead event are still present.
+- Confirm Formspree action, hidden UTM fields, shared quote form, photo validation, error recovery, and success-only lead tracking.
 - Confirm GA4 id G-038JRWGVWW, click_to_call tracking, and generate_lead tracking hooks are present.
 - Confirm JSON-LD, canonical, OpenGraph, Twitter metadata, robots, sitemap, and robots.txt output.
 - Confirm real business images render from /assets/images and /assets/images/optimized.

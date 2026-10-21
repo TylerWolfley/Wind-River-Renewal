@@ -1,0 +1,25 @@
+<form class="quote-form" action="https://formspree.io/f/mqadaqdp" method="POST" enctype="multipart/form-data" accept-charset="UTF-8" data-track-label="quote_request_form">
+  <input type="hidden" name="subject" value="Wind River Renewal Quote Request">
+  <input type="hidden" name="_redirect" value="https://windriverrenewal.com/thanks/">
+  <input type="text" name="_gotcha" hidden tabindex="-1" autocomplete="off">
+  <h2>Tell us what needs to go</h2>
+  <p class="micro">Four basics to start. Extra details are optional.</p>
+  <div class="form-grid">
+    <label for="q-name">Name <input id="q-name" name="name" autocomplete="name" required maxlength="120"></label>
+    <label for="q-contact">Phone or email <input id="q-contact" name="contact" autocomplete="off" required maxlength="254" aria-describedby="contact-hint"><span id="contact-hint" class="help">Use the number or email where we can reach you.</span></label>
+  </div>
+  <label for="q-location">Job location <input id="q-location" name="city_town" autocomplete="street-address" value="{{city}}" placeholder="Town or street address" required maxlength="300"></label>
+  <label for="q-description">What needs to go? <textarea id="q-description" name="job_details" rows="4" required maxlength="6000" placeholder="Rooms, items, or piles to clear. Let us know what should stay."></textarea></label>
+  <p class="help">Have photos? <a href="sms:+13073494694">Text them to 307-349-4694</a> with your name and job location. You can send this request first.</p>
+  <details class="quote-details"><summary>Add job details <span>(optional)</span></summary>
+    <label for="q-service">Type of job <select id="q-service" name="service_type"><option value="">Not sure / leave blank</option><option>Whole-property cleanout</option><option>Estate cleanout</option><option>Rental turnover</option><option>Bundled hauling</option><option>Junk removal / smaller load</option><option>Light demolition</option></select></label>
+    <label for="q-access">Access and special items <textarea id="q-access" name="access_notes" rows="3" placeholder="Stairs, long carries, heavy items, refrigerators, or anything else we should plan for." maxlength="3000"></textarea></label>
+    <label for="q-timing">Timing needs <input id="q-timing" name="timing" placeholder="Flexible, or a date you are working toward" maxlength="300"></label>
+    <label class="check-label" for="q-documentation"><input id="q-documentation" type="checkbox" name="photo_documentation" value="Requested"> I would like before-and-after photos.</label>
+  </details>
+  <p class="quote-safety">Refrigerators and other Freon-containing appliances are accepted. We cannot take regulated hazardous waste, including paint, solvents, oils, batteries, pesticides, propane tanks, asbestos, or medical sharps. <a href="/services/#hazardous-materials">Service details</a>.</p>
+  <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="utm_content">
+  <p class="form-status" role="status" aria-live="polite" tabindex="-1"></p>
+  <button class="btn btn-primary" type="submit">Send quote request</button>
+  <p class="help">We will review the details and confirm next steps. This is a request, not a booking.</p>
+</form>

@@ -1,7 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const root = process.cwd();
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const siteUrl = "https://windriverrenewal.com";
 const generatedAt = new Date().toISOString();
 
@@ -207,7 +208,7 @@ function rewriteReferences(value) {
     next = next.replaceAll(`${siteUrl}${oldPath}`, toAbsoluteUrl(target));
     next = next.replaceAll(oldPath, target);
   }
-  next = next.replaceAll("assets/", "/assets/");
+  next = next.replace(/(?<![\w/])assets\//g, "/assets/");
   next = next.replaceAll('"wrr-favicon.ico"', '"/wrr-favicon.ico"');
   return next;
 }
@@ -252,6 +253,10 @@ function buildPage(file, sitemapEntries) {
   const robotsContent = getMeta(head, "robots", "name");
   const includeInSitemap =
     (sitemapEntries.has(route) || sitemapEntries.has(publicPath)) && route !== "/locations/casper";
+  const body = getBody(html).replace(/<!-- WRR_QUOTE_FORM city="([^"]*)" -->/g, (_, city) =>
+    fs.readFileSync(path.join(root, "src/content/quote-form.html"), "utf8").replaceAll("{{city}}", city)
+  );
+  const scripts = [...body.matchAll(/<script\s+[^>]*src="([^"]+)"[^>]*><\/script>/g)].map(match => mapHref(match[1], route));
 
   return {
     sourceFile: file,
@@ -284,8 +289,8 @@ function buildPage(file, sitemapEntries) {
     },
     headStyles: getStyles(head),
     jsonLd: getJsonLd(head),
-    thanksLeadEvent: file === "thanks.html",
-    bodyHtml: rewriteSpecialFormValues(rewriteAttributes(getBody(html), route)),
+    scripts,
+    bodyHtml: rewriteSpecialFormValues(rewriteAttributes(body.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ""), route)),
     includeInSitemap,
     changeFrequency: pageChangeFrequency(publicPath, sitemapEntries),
     priority: pagePriority(publicPath, sitemapEntries)
@@ -439,7 +444,7 @@ ${markdownTable(redirectRows)}
 - Build with npm run build.
 - Crawl clean routes and legacy .html URLs.
 - Confirm legacy redirects preserve query strings for UTM parameters.
-- Confirm Formspree action, hidden UTM fields, quote summary script, photo input UX, and thanks-page lead event are still present.
+- Confirm Formspree action, hidden UTM fields, shared quote form, photo validation, error recovery, and success-only lead tracking.
 - Confirm GA4 id G-038JRWGVWW, click_to_call tracking, and generate_lead tracking hooks are present.
 - Confirm JSON-LD, canonical, OpenGraph, Twitter metadata, robots, sitemap, and robots.txt output.
 - Confirm real business images render from /assets/images and /assets/images/optimized.

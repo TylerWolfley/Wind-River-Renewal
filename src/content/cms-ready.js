@@ -21,10 +21,10 @@ export const galleryItems = [
     alt: "Estate cleanout junk removal before and after, Riverton, Wyoming"
   },
   {
-    label: "Garage cleanout - foreclosure",
-    location: "Riverton, WY",
+    label: "Garage cleanout",
+    location: "Before and after",
     image: "/assets/images/optimized/garage-cleanout-riverton-wy-foreclosure-before-after-960.jpg",
-    alt: "Garage cleanout foreclosure before and after, Riverton, Wyoming"
+    alt: "Garage cleanout, before and after"
   },
   {
     label: "Debris removal - foreclosure cleanout",

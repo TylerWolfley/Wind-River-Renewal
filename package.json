@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "npm run preview",
-    "preview": "npx serve@14.2.6 out",
+    "start": "node scripts/preview.mjs",
+    "preview": "node scripts/preview.mjs",
     "inventory": "node scripts/extract-legacy-content.mjs"
   },
   "dependencies": {

@@ -4,7 +4,7 @@ export const site = {
   phoneDisplay: "307-349-4694",
   phoneHref: "tel:+13073494694",
   smsHref:
-    "sms:+13073494694?body=Hi%20Tyler%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos.",
+    "sms:+13073494694?body=Hi%20Wind%20River%20Renewal%2C%20I%20need%20a%20junk%20removal%20quote.%20My%20address%20is%20____.%20I%20attached%20photos.",
   email: "windriverrenewal@gmail.com",
   googleBusinessProfile: "https://share.google/DIeP3Qh1gvPvirfrX",
   facebook: "https://www.facebook.com/WindRiverRenewal",

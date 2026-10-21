@@ -23,12 +23,8 @@ export function LegacyPage({ page }) {
           dangerouslySetInnerHTML={{ __html: json }}
         />
       ))}
-      {page.thanksLeadEvent ? (
-        <Script id="thanks-lead-event" strategy="afterInteractive">
-          {`(function fireLeadEvent(){if(window.gtag){window.gtag('event','generate_lead',{method:'formspree'});}else{window.setTimeout(fireLeadEvent,100);}})();`}
-        </Script>
-      ) : null}
       <div className="legacy-page" dangerouslySetInnerHTML={{ __html: page.bodyHtml }} />
+      {(page.scripts || []).map(src => <Script key={src} src={src} strategy="afterInteractive" />)}
     </>
   );
 }
